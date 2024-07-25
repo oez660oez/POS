@@ -1,0 +1,15 @@
+C:\Users\LiYuan\Desktop\期中專題\IceShop\IceShop\bin\Debug\IceShop.exe.config
+C:\Users\LiYuan\Desktop\期中專題\IceShop\IceShop\bin\Debug\IceShop.exe
+C:\Users\LiYuan\Desktop\期中專題\IceShop\IceShop\bin\Debug\IceShop.pdb
+C:\Users\LiYuan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.csproj.AssemblyReference.cache
+C:\Users\LiYuan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.Form1.resources
+C:\Users\LiYuan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.Properties.Resources.resources
+C:\Users\LiYuan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.csproj.GenerateResource.cache
+C:\Users\LiYuan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.csproj.CoreCompileInputs.cache
+C:\Users\LiYuan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.exe
+C:\Users\LiYuan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.pdb
+C:\Users\LiYuan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.ShavedIce.resources
+C:\Users\LiYuan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.ShavedSnow.resources
+C:\Users\LiYuan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.GrassJelly.resources
+C:\Users\LiYuan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.Seasonal.resources
+C:\Users\LiYuan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.Drinks.resources

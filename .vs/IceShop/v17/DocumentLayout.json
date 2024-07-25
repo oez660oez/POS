@@ -1,0 +1,52 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B650F7C4-5CC3-4660-8960-C63E7E2D6485}|IceShop\\IceShop.csproj|c:\\users\\liyuan\\desktop\\\u671F\u4E2D\u5C08\u984C\\iceshop\\iceshop\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B650F7C4-5CC3-4660-8960-C63E7E2D6485}|IceShop\\IceShop.csproj|solutionrelative:iceshop\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B650F7C4-5CC3-4660-8960-C63E7E2D6485}|IceShop\\IceShop.csproj|c:\\users\\liyuan\\desktop\\\u671F\u4E2D\u5C08\u984C\\iceshop\\iceshop\\drinks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B650F7C4-5CC3-4660-8960-C63E7E2D6485}|IceShop\\IceShop.csproj|solutionrelative:iceshop\\drinks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [\u8A2D\u8A08]",
+              "DocumentMoniker": "C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\IceShop\\Form1.cs",
+              "RelativeDocumentMoniker": "IceShop\\Form1.cs",
+              "ToolTip": "C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\IceShop\\Form1.cs [\u8A2D\u8A08]",
+              "RelativeToolTip": "IceShop\\Form1.cs [\u8A2D\u8A08]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T14:55:57.877Z",
+              "EditorCaption": " [\u8A2D\u8A08]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Drinks.cs [\u8A2D\u8A08]",
+              "DocumentMoniker": "C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\IceShop\\Drinks.cs",
+              "RelativeDocumentMoniker": "IceShop\\Drinks.cs",
+              "ToolTip": "C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\IceShop\\Drinks.cs [\u8A2D\u8A08]",
+              "RelativeToolTip": "IceShop\\Drinks.cs [\u8A2D\u8A08]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T14:48:56.148Z",
+              "EditorCaption": " [\u8A2D\u8A08]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
