@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B650F7C4-5CC3-4660-8960-C63E7E2D6485}|IceShop\\IceShop.csproj|c:\\users\\liyuan\\desktop\\\u671F\u4E2D\u5C08\u984C\\iceshop\\iceshop\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B650F7C4-5CC3-4660-8960-C63E7E2D6485}|IceShop\\IceShop.csproj|solutionrelative:iceshop\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{B650F7C4-5CC3-4660-8960-C63E7E2D6485}|IceShop\\IceShop.csproj|C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\iceshop\\globalvar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B650F7C4-5CC3-4660-8960-C63E7E2D6485}|IceShop\\IceShop.csproj|solutionrelative:iceshop\\globalvar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B650F7C4-5CC3-4660-8960-C63E7E2D6485}|IceShop\\IceShop.csproj|c:\\users\\liyuan\\desktop\\\u671F\u4E2D\u5C08\u984C\\iceshop\\iceshop\\drinks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B650F7C4-5CC3-4660-8960-C63E7E2D6485}|IceShop\\IceShop.csproj|solutionrelative:iceshop\\drinks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{B650F7C4-5CC3-4660-8960-C63E7E2D6485}|IceShop\\IceShop.csproj|c:\\users\\liyuan\\desktop\\\u671F\u4E2D\u5C08\u984C\\iceshop\\iceshop\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B650F7C4-5CC3-4660-8960-C63E7E2D6485}|IceShop\\IceShop.csproj|solutionrelative:iceshop\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B650F7C4-5CC3-4660-8960-C63E7E2D6485}|IceShop\\IceShop.csproj|C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\iceshop\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B650F7C4-5CC3-4660-8960-C63E7E2D6485}|IceShop\\IceShop.csproj|solutionrelative:iceshop\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B650F7C4-5CC3-4660-8960-C63E7E2D6485}|IceShop\\IceShop.csproj|C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\iceshop\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B650F7C4-5CC3-4660-8960-C63E7E2D6485}|IceShop\\IceShop.csproj|solutionrelative:iceshop\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B650F7C4-5CC3-4660-8960-C63E7E2D6485}|IceShop\\IceShop.csproj|C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\iceshop\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B650F7C4-5CC3-4660-8960-C63E7E2D6485}|IceShop\\IceShop.csproj|solutionrelative:iceshop\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,31 +30,70 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form1.cs [\u8A2D\u8A08]",
-              "DocumentMoniker": "C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\IceShop\\Form1.cs",
-              "RelativeDocumentMoniker": "IceShop\\Form1.cs",
-              "ToolTip": "C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\IceShop\\Form1.cs [\u8A2D\u8A08]",
-              "RelativeToolTip": "IceShop\\Form1.cs [\u8A2D\u8A08]",
+              "DocumentIndex": 4,
+              "Title": "Register.cs",
+              "DocumentMoniker": "C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\IceShop\\Register.cs",
+              "RelativeDocumentMoniker": "IceShop\\Register.cs",
+              "ToolTip": "C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\IceShop\\Register.cs",
+              "RelativeToolTip": "IceShop\\Register.cs",
+              "ViewState": "AQIAACIAAAAAAAAAAAAUwDwAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T14:55:57.877Z",
-              "EditorCaption": " [\u8A2D\u8A08]"
+              "WhenOpened": "2024-08-06T13:39:27.294Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Drinks.cs [\u8A2D\u8A08]",
-              "DocumentMoniker": "C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\IceShop\\Drinks.cs",
-              "RelativeDocumentMoniker": "IceShop\\Drinks.cs",
-              "ToolTip": "C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\IceShop\\Drinks.cs [\u8A2D\u8A08]",
-              "RelativeToolTip": "IceShop\\Drinks.cs [\u8A2D\u8A08]",
+              "Title": "Register.cs [\u8A2D\u8A08]",
+              "DocumentMoniker": "C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\IceShop\\Register.cs",
+              "RelativeDocumentMoniker": "IceShop\\Register.cs",
+              "ToolTip": "C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\IceShop\\Register.cs [\u8A2D\u8A08]",
+              "RelativeToolTip": "IceShop\\Register.cs [\u8A2D\u8A08]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T14:48:56.148Z",
+              "WhenOpened": "2024-08-06T05:33:36.386Z",
               "EditorCaption": " [\u8A2D\u8A08]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.cs",
+              "DocumentMoniker": "C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\IceShop\\Login.cs",
+              "RelativeDocumentMoniker": "IceShop\\Login.cs",
+              "ToolTip": "C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\IceShop\\Login.cs",
+              "RelativeToolTip": "IceShop\\Login.cs",
+              "ViewState": "AQIAAD0AAAAAAAAAAAAgwFMAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T03:14:01.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Login.cs [\u8A2D\u8A08]",
+              "DocumentMoniker": "C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\IceShop\\Login.cs",
+              "RelativeDocumentMoniker": "IceShop\\Login.cs",
+              "ToolTip": "C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\IceShop\\Login.cs [\u8A2D\u8A08]",
+              "RelativeToolTip": "IceShop\\Login.cs [\u8A2D\u8A08]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T02:15:18.362Z",
+              "EditorCaption": " [\u8A2D\u8A08]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GlobalVar.cs",
+              "DocumentMoniker": "C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\IceShop\\GlobalVar.cs",
+              "RelativeDocumentMoniker": "IceShop\\GlobalVar.cs",
+              "ToolTip": "C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\IceShop\\GlobalVar.cs",
+              "RelativeToolTip": "IceShop\\GlobalVar.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T16:16:31.222Z",
+              "EditorCaption": ""
             }
           ]
         }

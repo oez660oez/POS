@@ -31,28 +31,24 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnReChoose = new System.Windows.Forms.Button();
             this.btnMemberCenter = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlDrinks = new System.Windows.Forms.Panel();
             this.btnDrinks01 = new System.Windows.Forms.Button();
-            this.btnDrinks02 = new System.Windows.Forms.Button();
             this.pnlSeasonal = new System.Windows.Forms.Panel();
-            this.btnSeasonal02 = new System.Windows.Forms.Button();
             this.btnSeasonal01 = new System.Windows.Forms.Button();
             this.pnlGrassJelly = new System.Windows.Forms.Panel();
             this.btnGrassJelly01 = new System.Windows.Forms.Button();
-            this.btnGrassJelly02 = new System.Windows.Forms.Button();
             this.pnlShavedSnow = new System.Windows.Forms.Panel();
-            this.btnShavedSnow02 = new System.Windows.Forms.Button();
             this.btnShavedSnow01 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnlShavedIce = new System.Windows.Forms.Panel();
             this.btnShavedIce01 = new System.Windows.Forms.Button();
-            this.btnShavedIce02 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlFormTitle = new System.Windows.Forms.Panel();
             this.lblCloseForm = new System.Windows.Forms.Label();
             this.pnlShow = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.pnlPurchase = new System.Windows.Forms.Panel();
             this.btnPruchase = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblTotalMoney = new System.Windows.Forms.Label();
@@ -62,19 +58,20 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblProductItemCount = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pnlPurchase = new System.Windows.Forms.Panel();
+            this.pnlShowDetail = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.pnlDrinks.SuspendLayout();
             this.pnlSeasonal.SuspendLayout();
             this.pnlGrassJelly.SuspendLayout();
             this.pnlShavedSnow.SuspendLayout();
             this.pnlShavedIce.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlFormTitle.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.pnlPurchase.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.pnlShowDetail.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -82,9 +79,9 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.btnReChoose);
             this.panel1.Controls.Add(this.btnMemberCenter);
-            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(0, 36);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 282);
             this.panel1.TabIndex = 4;
@@ -113,6 +110,15 @@
             this.btnMemberCenter.TabIndex = 2;
             this.btnMemberCenter.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::IceShop.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(338, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(124, 124);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(176)))), ((int)(((byte)(227)))));
@@ -131,7 +137,6 @@
             // pnlDrinks
             // 
             this.pnlDrinks.Controls.Add(this.btnDrinks01);
-            this.pnlDrinks.Controls.Add(this.btnDrinks02);
             this.pnlDrinks.Location = new System.Drawing.Point(602, 7);
             this.pnlDrinks.Name = "pnlDrinks";
             this.pnlDrinks.Size = new System.Drawing.Size(118, 118);
@@ -150,41 +155,14 @@
             this.btnDrinks01.TabIndex = 0;
             this.btnDrinks01.UseVisualStyleBackColor = true;
             // 
-            // btnDrinks02
-            // 
-            this.btnDrinks02.BackgroundImage = global::IceShop.Properties.Resources.飲品系列02;
-            this.btnDrinks02.Enabled = false;
-            this.btnDrinks02.FlatAppearance.BorderSize = 0;
-            this.btnDrinks02.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDrinks02.Location = new System.Drawing.Point(5, 4);
-            this.btnDrinks02.Name = "btnDrinks02";
-            this.btnDrinks02.Size = new System.Drawing.Size(107, 111);
-            this.btnDrinks02.TabIndex = 1;
-            this.btnDrinks02.UseVisualStyleBackColor = true;
-            this.btnDrinks02.Visible = false;
-            // 
             // pnlSeasonal
             // 
-            this.pnlSeasonal.Controls.Add(this.btnSeasonal02);
             this.pnlSeasonal.Controls.Add(this.btnSeasonal01);
             this.pnlSeasonal.Location = new System.Drawing.Point(472, 6);
             this.pnlSeasonal.Name = "pnlSeasonal";
             this.pnlSeasonal.Size = new System.Drawing.Size(118, 118);
             this.pnlSeasonal.TabIndex = 5;
             this.pnlSeasonal.Click += new System.EventHandler(this.pnlSeasonal_Click);
-            // 
-            // btnSeasonal02
-            // 
-            this.btnSeasonal02.BackgroundImage = global::IceShop.Properties.Resources.季節限定02;
-            this.btnSeasonal02.Enabled = false;
-            this.btnSeasonal02.FlatAppearance.BorderSize = 0;
-            this.btnSeasonal02.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeasonal02.Location = new System.Drawing.Point(5, 4);
-            this.btnSeasonal02.Name = "btnSeasonal02";
-            this.btnSeasonal02.Size = new System.Drawing.Size(107, 111);
-            this.btnSeasonal02.TabIndex = 1;
-            this.btnSeasonal02.UseVisualStyleBackColor = true;
-            this.btnSeasonal02.Visible = false;
             // 
             // btnSeasonal01
             // 
@@ -201,7 +179,6 @@
             // pnlGrassJelly
             // 
             this.pnlGrassJelly.Controls.Add(this.btnGrassJelly01);
-            this.pnlGrassJelly.Controls.Add(this.btnGrassJelly02);
             this.pnlGrassJelly.Location = new System.Drawing.Point(342, 6);
             this.pnlGrassJelly.Name = "pnlGrassJelly";
             this.pnlGrassJelly.Size = new System.Drawing.Size(118, 118);
@@ -220,41 +197,14 @@
             this.btnGrassJelly01.TabIndex = 0;
             this.btnGrassJelly01.UseVisualStyleBackColor = true;
             // 
-            // btnGrassJelly02
-            // 
-            this.btnGrassJelly02.BackgroundImage = global::IceShop.Properties.Resources.仙草系列02;
-            this.btnGrassJelly02.Enabled = false;
-            this.btnGrassJelly02.FlatAppearance.BorderSize = 0;
-            this.btnGrassJelly02.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGrassJelly02.Location = new System.Drawing.Point(5, 4);
-            this.btnGrassJelly02.Name = "btnGrassJelly02";
-            this.btnGrassJelly02.Size = new System.Drawing.Size(107, 111);
-            this.btnGrassJelly02.TabIndex = 1;
-            this.btnGrassJelly02.UseVisualStyleBackColor = true;
-            this.btnGrassJelly02.Visible = false;
-            // 
             // pnlShavedSnow
             // 
-            this.pnlShavedSnow.Controls.Add(this.btnShavedSnow02);
             this.pnlShavedSnow.Controls.Add(this.btnShavedSnow01);
             this.pnlShavedSnow.Location = new System.Drawing.Point(79, 6);
             this.pnlShavedSnow.Name = "pnlShavedSnow";
             this.pnlShavedSnow.Size = new System.Drawing.Size(118, 118);
             this.pnlShavedSnow.TabIndex = 2;
             this.pnlShavedSnow.Click += new System.EventHandler(this.pnlShavedSnow_Click);
-            // 
-            // btnShavedSnow02
-            // 
-            this.btnShavedSnow02.BackgroundImage = global::IceShop.Properties.Resources.綿綿冰系列02;
-            this.btnShavedSnow02.Enabled = false;
-            this.btnShavedSnow02.FlatAppearance.BorderSize = 0;
-            this.btnShavedSnow02.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShavedSnow02.Location = new System.Drawing.Point(6, 4);
-            this.btnShavedSnow02.Name = "btnShavedSnow02";
-            this.btnShavedSnow02.Size = new System.Drawing.Size(107, 111);
-            this.btnShavedSnow02.TabIndex = 0;
-            this.btnShavedSnow02.UseVisualStyleBackColor = true;
-            this.btnShavedSnow02.Visible = false;
             // 
             // btnShavedSnow01
             // 
@@ -278,7 +228,6 @@
             // pnlShavedIce
             // 
             this.pnlShavedIce.Controls.Add(this.btnShavedIce01);
-            this.pnlShavedIce.Controls.Add(this.btnShavedIce02);
             this.pnlShavedIce.Location = new System.Drawing.Point(212, 6);
             this.pnlShavedIce.Name = "pnlShavedIce";
             this.pnlShavedIce.Size = new System.Drawing.Size(118, 118);
@@ -296,28 +245,6 @@
             this.btnShavedIce01.Size = new System.Drawing.Size(107, 111);
             this.btnShavedIce01.TabIndex = 1;
             this.btnShavedIce01.UseVisualStyleBackColor = true;
-            // 
-            // btnShavedIce02
-            // 
-            this.btnShavedIce02.BackgroundImage = global::IceShop.Properties.Resources.刨冰系列02;
-            this.btnShavedIce02.Enabled = false;
-            this.btnShavedIce02.FlatAppearance.BorderSize = 0;
-            this.btnShavedIce02.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShavedIce02.Location = new System.Drawing.Point(5, 4);
-            this.btnShavedIce02.Name = "btnShavedIce02";
-            this.btnShavedIce02.Size = new System.Drawing.Size(107, 111);
-            this.btnShavedIce02.TabIndex = 0;
-            this.btnShavedIce02.UseVisualStyleBackColor = true;
-            this.btnShavedIce02.Visible = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::IceShop.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(338, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(124, 124);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // pnlFormTitle
             // 
@@ -346,7 +273,7 @@
             // pnlShow
             // 
             this.pnlShow.BackColor = System.Drawing.Color.Transparent;
-            this.pnlShow.Location = new System.Drawing.Point(0, 315);
+            this.pnlShow.Location = new System.Drawing.Point(0, 282);
             this.pnlShow.Name = "pnlShow";
             this.pnlShow.Size = new System.Drawing.Size(800, 520);
             this.pnlShow.TabIndex = 5;
@@ -354,13 +281,20 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Transparent;
-            this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.pnlPurchase);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 834);
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Location = new System.Drawing.Point(0, 799);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(800, 196);
-            this.panel4.TabIndex = 6;
+            this.panel4.TabIndex = 0;
+            // 
+            // pnlPurchase
+            // 
+            this.pnlPurchase.Controls.Add(this.btnPruchase);
+            this.pnlPurchase.Location = new System.Drawing.Point(634, 38);
+            this.pnlPurchase.Name = "pnlPurchase";
+            this.pnlPurchase.Size = new System.Drawing.Size(158, 152);
+            this.pnlPurchase.TabIndex = 3;
             // 
             // btnPruchase
             // 
@@ -487,13 +421,16 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "已選";
             // 
-            // pnlPurchase
+            // pnlShowDetail
             // 
-            this.pnlPurchase.Controls.Add(this.btnPruchase);
-            this.pnlPurchase.Location = new System.Drawing.Point(634, 38);
-            this.pnlPurchase.Name = "pnlPurchase";
-            this.pnlPurchase.Size = new System.Drawing.Size(158, 152);
-            this.pnlPurchase.TabIndex = 3;
+            this.pnlShowDetail.BackColor = System.Drawing.Color.White;
+            this.pnlShowDetail.Controls.Add(this.panel4);
+            this.pnlShowDetail.Controls.Add(this.panel1);
+            this.pnlShowDetail.Controls.Add(this.pnlShow);
+            this.pnlShowDetail.Location = new System.Drawing.Point(0, 37);
+            this.pnlShowDetail.Name = "pnlShowDetail";
+            this.pnlShowDetail.Size = new System.Drawing.Size(800, 993);
+            this.pnlShowDetail.TabIndex = 6;
             // 
             // Form1
             // 
@@ -501,29 +438,29 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 1030);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.pnlFormTitle);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pnlShow);
+            this.Controls.Add(this.pnlShowDetail);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.pnlDrinks.ResumeLayout(false);
             this.pnlSeasonal.ResumeLayout(false);
             this.pnlGrassJelly.ResumeLayout(false);
             this.pnlShavedSnow.ResumeLayout(false);
             this.pnlShavedIce.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlFormTitle.ResumeLayout(false);
             this.pnlFormTitle.PerformLayout();
             this.panel4.ResumeLayout(false);
+            this.pnlPurchase.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.pnlPurchase.ResumeLayout(false);
+            this.pnlShowDetail.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -534,22 +471,17 @@
         private System.Windows.Forms.Label lblCloseForm;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnShavedSnow02;
         private System.Windows.Forms.Button btnShavedSnow01;
         private System.Windows.Forms.Panel pnlShavedSnow;
         private System.Windows.Forms.Button btnShavedIce01;
         private System.Windows.Forms.Panel pnlShavedIce;
-        private System.Windows.Forms.Button btnShavedIce02;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel pnlShow;
         private System.Windows.Forms.Panel pnlGrassJelly;
         private System.Windows.Forms.Button btnGrassJelly01;
-        private System.Windows.Forms.Button btnGrassJelly02;
         private System.Windows.Forms.Panel pnlSeasonal;
         private System.Windows.Forms.Button btnSeasonal01;
-        private System.Windows.Forms.Button btnSeasonal02;
         private System.Windows.Forms.Panel pnlDrinks;
-        private System.Windows.Forms.Button btnDrinks02;
         private System.Windows.Forms.Button btnDrinks01;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
@@ -564,6 +496,7 @@
         private System.Windows.Forms.Button btnMemberCenter;
         private System.Windows.Forms.Button btnReChoose;
         private System.Windows.Forms.Panel pnlPurchase;
+        private System.Windows.Forms.Panel pnlShowDetail;
     }
 }
 

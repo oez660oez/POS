@@ -19,11 +19,7 @@ namespace IceShop
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            btnShavedIce02.Visible = false;
-            btnShavedSnow02.Visible = false;
-            btnGrassJelly02.Visible = false;
-            btnSeasonal02.Visible = false;
-            btnDrinks02.Visible = false;
+            ImageChange();
         }
         private void lblCloseForm_Click(object sender, EventArgs e)
         {
@@ -38,99 +34,100 @@ namespace IceShop
                 Location = loc1;
             }
         }
-
-        private void pnlShavedIce_Click(object sender, EventArgs e)
+        void ImageChange()
         {
-            btnShavedIce01.Visible = false;
-            btnShavedIce02.Visible = true;
-            btnShavedSnow01.Visible = true;
-            btnShavedSnow02.Visible = false;
-            btnGrassJelly01.Visible = true;
-            btnGrassJelly02.Visible = false;
-            btnSeasonal01.Visible = true;
-            btnSeasonal02.Visible = false;
-            btnDrinks01.Visible = true;
-            btnDrinks02.Visible = false;
-            pnlShow.Controls.Clear();
-            ShavedIce shavedIce = new ShavedIce() { TopLevel = false, TopMost = false };
-            shavedIce.FormBorderStyle = FormBorderStyle.None;
-            pnlShow.Controls.Add(shavedIce);
-            shavedIce.Show();
+            btnShavedSnow01.BackgroundImage = new Bitmap("C:\\Users\\iSpan\\Desktop\\期中專題\\source\\綿綿冰系列01.png");
+            btnShavedIce01.BackgroundImage = new Bitmap("C:\\Users\\iSpan\\Desktop\\期中專題\\source\\刨冰系列01.png");
+            btnGrassJelly01.BackgroundImage = new Bitmap("C:\\Users\\iSpan\\Desktop\\期中專題\\source\\仙草系列01.png");
+            btnSeasonal01.BackgroundImage = new Bitmap("C:\\Users\\iSpan\\Desktop\\期中專題\\source\\季節限定01.png");
+            btnDrinks01.BackgroundImage = new Bitmap("C:\\Users\\iSpan\\Desktop\\期中專題\\source\\飲品系列01.png");
         }
-
+        void ShowProductImage()
+        {
+            ProductThumbnails ProductThumbnails = new ProductThumbnails(this) { TopLevel = false, TopMost = false }; // 傳遞Form1的實例
+            ProductThumbnails.FormBorderStyle = FormBorderStyle.None;
+            pnlShow.Controls.Add(ProductThumbnails);
+            ProductThumbnails.Show();
+        }
         private void pnlShavedSnow_Click(object sender, EventArgs e)
         {
-            btnShavedIce01.Visible = true;
-            btnShavedIce02.Visible = false;
-            btnShavedSnow01.Visible = false;
-            btnShavedSnow02.Visible = true;
-            btnGrassJelly01.Visible = true;
-            btnGrassJelly02.Visible = false;
-            btnSeasonal01.Visible = true;
-            btnSeasonal02.Visible = false;
-            btnDrinks01.Visible = true;
-            btnDrinks02.Visible = false;
+            GlobalVar.listChooseCategory.Clear();
+            GlobalVar.listChooseCategory.Add(1);
+            ImageChange();
+            btnShavedSnow01.BackgroundImage = new Bitmap("C:\\Users\\iSpan\\Desktop\\期中專題\\source\\綿綿冰系列02.png");
             pnlShow.Controls.Clear();
-            ShavedSnow ShavedSnow = new ShavedSnow() { TopLevel = false, TopMost = false };
-            ShavedSnow.FormBorderStyle = FormBorderStyle.None;
-            pnlShow.Controls.Add(ShavedSnow);
-            ShavedSnow.Show();
+            ShowProductImage();
+        }
+        private void pnlShavedIce_Click(object sender, EventArgs e)
+        {
+            GlobalVar.listChooseCategory.Clear();
+            GlobalVar.listChooseCategory.Add(2);
+            ImageChange();
+            btnShavedIce01.BackgroundImage = new Bitmap("C:\\Users\\iSpan\\Desktop\\期中專題\\source\\刨冰系列02.png");
+            pnlShow.Controls.Clear();
+            ShowProductImage();
         }
         private void pnlGrassJelly_Click(object sender, EventArgs e)
         {
-            btnShavedIce01.Visible = true;
-            btnShavedIce02.Visible = false;
-            btnShavedSnow01.Visible = true;
-            btnShavedSnow02.Visible = false;
-            btnGrassJelly01.Visible = false;
-            btnGrassJelly02.Visible = true;
-            btnSeasonal01.Visible = true;
-            btnSeasonal02.Visible = false;
-            btnDrinks01.Visible = true;
-            btnDrinks02.Visible = false;
+            GlobalVar.listChooseCategory.Clear();
+            GlobalVar.listChooseCategory.Add(3);
+            ImageChange();
+            btnGrassJelly01.BackgroundImage = new Bitmap("C:\\Users\\iSpan\\Desktop\\期中專題\\source\\仙草系列02.png");
             pnlShow.Controls.Clear();
-            GrassJelly GrassJelly = new GrassJelly() { TopLevel = false, TopMost = false };
-            GrassJelly.FormBorderStyle = FormBorderStyle.None;
-            pnlShow.Controls.Add(GrassJelly);
-            GrassJelly.Show();
+            ShowProductImage();
         }
 
         private void pnlSeasonal_Click(object sender, EventArgs e)
         {
-            btnShavedIce01.Visible = true;
-            btnShavedIce02.Visible = false;
-            btnShavedSnow01.Visible = true;
-            btnShavedSnow02.Visible = false;
-            btnGrassJelly01.Visible = true;
-            btnGrassJelly02.Visible = false;
-            btnSeasonal01.Visible = false;
-            btnSeasonal02.Visible = true;
-            btnDrinks01.Visible = true;
-            btnDrinks02.Visible = false;
+            GlobalVar.listChooseCategory.Clear();
+            GlobalVar.listChooseCategory.Add(4);
+            ImageChange();
+            btnSeasonal01.BackgroundImage = new Bitmap("C:\\Users\\iSpan\\Desktop\\期中專題\\source\\季節限定02.png");
             pnlShow.Controls.Clear();
-            Seasonal Seasonal = new Seasonal() { TopLevel = false, TopMost = false };
-            Seasonal.FormBorderStyle = FormBorderStyle.None;
-            pnlShow.Controls.Add(Seasonal);
-            Seasonal.Show();
+            ShowProductImage();
         }
 
         private void pnlDrinks_Click(object sender, EventArgs e)
         {
-            btnShavedIce01.Visible = true;
-            btnShavedIce02.Visible = false;
-            btnShavedSnow01.Visible = true;
-            btnShavedSnow02.Visible = false;
-            btnGrassJelly01.Visible = true;
-            btnGrassJelly02.Visible = false;
-            btnSeasonal01.Visible = true;
-            btnSeasonal02.Visible = false;
-            btnDrinks01.Visible = false;
-            btnDrinks02.Visible = true;
+            GlobalVar.listChooseCategory.Clear();
+            GlobalVar.listChooseCategory.Add(5);
+            ImageChange();
+            btnDrinks01.BackgroundImage = new Bitmap("C:\\Users\\iSpan\\Desktop\\期中專題\\source\\飲品系列02.png");
             pnlShow.Controls.Clear();
-            Drinks Drinks = new Drinks() { TopLevel = false, TopMost = false };
-            Drinks.FormBorderStyle = FormBorderStyle.None;
-            pnlShow.Controls.Add(Drinks);
-            Drinks.Show();
+            ShowProductImage();
+        }
+        public void ShowProductDetail(Form productDetailForm)
+        {
+            RemoveProductDetailForm();
+            productDetailForm.TopLevel = false;
+            productDetailForm.TopMost = false;
+            productDetailForm.FormBorderStyle = FormBorderStyle.None;
+            pnlShowDetail.Controls.Add(productDetailForm);
+            productDetailForm.Show();
+            panel1.Visible = false;
+            pnlShow.Visible = false;
+            panel4.Visible = false;
+        }
+        public void RemoveProductDetailForm()
+        {
+            if (pnlShowDetail.Controls.Count > 0)
+            {
+                var productDetailForm = pnlShowDetail.Controls[0] as Form;
+                if (productDetailForm != null)
+                {
+                    pnlShowDetail.Controls.Remove(productDetailForm);
+                    productDetailForm.Dispose();
+                }
+            }
+        }
+        public void CheckShavedSnow()
+        {
+            RemoveProductDetailForm();
+            panel1.Visible = true;
+            pnlShow.Visible = true;
+            panel4.Visible = true;
+            pnlShow.Controls.Clear();
+            ShowProductImage();
         }
     }
 }
