@@ -40,6 +40,10 @@
             this.lblProductPrice = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBoxIce = new System.Windows.Forms.PictureBox();
+            this.lblFlavorTitle = new System.Windows.Forms.Label();
+            this.lblFlavorSubTitle = new System.Windows.Forms.Label();
+            this.lblAddSubTitle = new System.Windows.Forms.Label();
+            this.lblAddTitle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIce)).BeginInit();
             this.SuspendLayout();
             // 
@@ -185,12 +189,64 @@
             this.pictureBoxIce.TabIndex = 31;
             this.pictureBoxIce.TabStop = false;
             // 
-            // OriginalMilkShavedSnow
+            // lblFlavorTitle
+            // 
+            this.lblFlavorTitle.AutoSize = true;
+            this.lblFlavorTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblFlavorTitle.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFlavorTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
+            this.lblFlavorTitle.Location = new System.Drawing.Point(34, 303);
+            this.lblFlavorTitle.Name = "lblFlavorTitle";
+            this.lblFlavorTitle.Size = new System.Drawing.Size(178, 42);
+            this.lblFlavorTitle.TabIndex = 32;
+            this.lblFlavorTitle.Text = "綿綿冰口味";
+            // 
+            // lblFlavorSubTitle
+            // 
+            this.lblFlavorSubTitle.AutoSize = true;
+            this.lblFlavorSubTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblFlavorSubTitle.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFlavorSubTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
+            this.lblFlavorSubTitle.Location = new System.Drawing.Point(220, 313);
+            this.lblFlavorSubTitle.Name = "lblFlavorSubTitle";
+            this.lblFlavorSubTitle.Size = new System.Drawing.Size(100, 26);
+            this.lblFlavorSubTitle.TabIndex = 33;
+            this.lblFlavorSubTitle.Text = "只能選1個";
+            // 
+            // lblAddSubTitle
+            // 
+            this.lblAddSubTitle.AutoSize = true;
+            this.lblAddSubTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblAddSubTitle.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddSubTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
+            this.lblAddSubTitle.Location = new System.Drawing.Point(118, 480);
+            this.lblAddSubTitle.Name = "lblAddSubTitle";
+            this.lblAddSubTitle.Size = new System.Drawing.Size(219, 26);
+            this.lblAddSubTitle.TabIndex = 35;
+            this.lblAddSubTitle.Text = "最少選0個，最多選10個";
+            // 
+            // lblAddTitle
+            // 
+            this.lblAddTitle.AutoSize = true;
+            this.lblAddTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblAddTitle.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
+            this.lblAddTitle.Location = new System.Drawing.Point(34, 470);
+            this.lblAddTitle.Name = "lblAddTitle";
+            this.lblAddTitle.Size = new System.Drawing.Size(82, 42);
+            this.lblAddTitle.TabIndex = 34;
+            this.lblAddTitle.Text = "加料";
+            // 
+            // ProductDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::IceShop.Properties.Resources.Demo_Detail_993_complete;
+            this.BackgroundImage = global::IceShop.Properties.Resources.Demo_Detail_993_Empty;
             this.ClientSize = new System.Drawing.Size(800, 993);
+            this.Controls.Add(this.lblAddSubTitle);
+            this.Controls.Add(this.lblAddTitle);
+            this.Controls.Add(this.lblFlavorSubTitle);
+            this.Controls.Add(this.lblFlavorTitle);
             this.Controls.Add(this.pictureBoxIce);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblProductPrice);
@@ -204,7 +260,7 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnCheck);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "OriginalMilkShavedSnow";
+            this.Name = "ProductDetail";
             this.Text = "OriginalMilkShavedSnow";
             this.Activated += new System.EventHandler(this.OriginalMilkShavedSnow_Activated);
             this.Load += new System.EventHandler(this.OriginalMilkShavedSnow_Load);
@@ -227,5 +283,9 @@
         private System.Windows.Forms.Label lblProductPrice;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBoxIce;
+        private System.Windows.Forms.Label lblFlavorTitle;
+        private System.Windows.Forms.Label lblFlavorSubTitle;
+        private System.Windows.Forms.Label lblAddSubTitle;
+        private System.Windows.Forms.Label lblAddTitle;
     }
 }

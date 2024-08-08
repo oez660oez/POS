@@ -48,7 +48,6 @@
             this.lblCloseForm = new System.Windows.Forms.Label();
             this.pnlShow = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pnlPurchase = new System.Windows.Forms.Panel();
             this.btnPruchase = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblTotalMoney = new System.Windows.Forms.Label();
@@ -69,7 +68,6 @@
             this.pnlShavedIce.SuspendLayout();
             this.pnlFormTitle.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.pnlPurchase.SuspendLayout();
             this.panel5.SuspendLayout();
             this.pnlShowDetail.SuspendLayout();
             this.SuspendLayout();
@@ -89,7 +87,6 @@
             // btnReChoose
             // 
             this.btnReChoose.BackgroundImage = global::IceShop.Properties.Resources.重新選購按鈕;
-            this.btnReChoose.Enabled = false;
             this.btnReChoose.FlatAppearance.BorderSize = 0;
             this.btnReChoose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReChoose.Location = new System.Drawing.Point(0, 31);
@@ -97,6 +94,7 @@
             this.btnReChoose.Size = new System.Drawing.Size(75, 106);
             this.btnReChoose.TabIndex = 3;
             this.btnReChoose.UseVisualStyleBackColor = true;
+            this.btnReChoose.Click += new System.EventHandler(this.btnReChoose_Click);
             // 
             // btnMemberCenter
             // 
@@ -281,32 +279,24 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Transparent;
-            this.panel4.Controls.Add(this.pnlPurchase);
+            this.panel4.Controls.Add(this.btnPruchase);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Location = new System.Drawing.Point(0, 799);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(800, 196);
             this.panel4.TabIndex = 0;
             // 
-            // pnlPurchase
-            // 
-            this.pnlPurchase.Controls.Add(this.btnPruchase);
-            this.pnlPurchase.Location = new System.Drawing.Point(634, 38);
-            this.pnlPurchase.Name = "pnlPurchase";
-            this.pnlPurchase.Size = new System.Drawing.Size(158, 152);
-            this.pnlPurchase.TabIndex = 3;
-            // 
             // btnPruchase
             // 
             this.btnPruchase.BackgroundImage = global::IceShop.Properties.Resources.結帳按鈕;
-            this.btnPruchase.Enabled = false;
             this.btnPruchase.FlatAppearance.BorderSize = 0;
             this.btnPruchase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPruchase.Location = new System.Drawing.Point(4, 4);
+            this.btnPruchase.Location = new System.Drawing.Point(638, 40);
             this.btnPruchase.Name = "btnPruchase";
             this.btnPruchase.Size = new System.Drawing.Size(152, 146);
             this.btnPruchase.TabIndex = 2;
             this.btnPruchase.UseVisualStyleBackColor = true;
+            this.btnPruchase.Click += new System.EventHandler(this.btnPruchase_Click);
             // 
             // panel5
             // 
@@ -445,6 +435,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Activated += new System.EventHandler(this.Form1_Activated);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -457,7 +448,6 @@
             this.pnlFormTitle.ResumeLayout(false);
             this.pnlFormTitle.PerformLayout();
             this.panel4.ResumeLayout(false);
-            this.pnlPurchase.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.pnlShowDetail.ResumeLayout(false);
@@ -495,7 +485,6 @@
         private System.Windows.Forms.Button btnPruchase;
         private System.Windows.Forms.Button btnMemberCenter;
         private System.Windows.Forms.Button btnReChoose;
-        private System.Windows.Forms.Panel pnlPurchase;
         private System.Windows.Forms.Panel pnlShowDetail;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,11 @@ namespace IceShop
         private void Form1_Load(object sender, EventArgs e)
         {
             ImageChange();
+            ShowTotalCost();
+        }
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+            ShowTotalCost();
         }
         private void lblCloseForm_Click(object sender, EventArgs e)
         {
@@ -36,11 +42,11 @@ namespace IceShop
         }
         void ImageChange()
         {
-            btnShavedSnow01.BackgroundImage = new Bitmap("C:\\Users\\iSpan\\Desktop\\期中專題\\source\\綿綿冰系列01.png");
-            btnShavedIce01.BackgroundImage = new Bitmap("C:\\Users\\iSpan\\Desktop\\期中專題\\source\\刨冰系列01.png");
-            btnGrassJelly01.BackgroundImage = new Bitmap("C:\\Users\\iSpan\\Desktop\\期中專題\\source\\仙草系列01.png");
-            btnSeasonal01.BackgroundImage = new Bitmap("C:\\Users\\iSpan\\Desktop\\期中專題\\source\\季節限定01.png");
-            btnDrinks01.BackgroundImage = new Bitmap("C:\\Users\\iSpan\\Desktop\\期中專題\\source\\飲品系列01.png");
+            btnShavedSnow01.BackgroundImage = new Bitmap($"{GlobalVar.image_dir}\\綿綿冰系列01.png");
+            btnShavedIce01.BackgroundImage = new Bitmap($"{GlobalVar.image_dir}\\刨冰系列01.png");
+            btnGrassJelly01.BackgroundImage = new Bitmap($"{GlobalVar.image_dir}\\仙草系列01.png");
+            btnSeasonal01.BackgroundImage = new Bitmap($"{GlobalVar.image_dir}\\季節限定01.png");
+            btnDrinks01.BackgroundImage = new Bitmap($"{GlobalVar.image_dir}\\飲品系列01.png");
         }
         void ShowProductImage()
         {
@@ -54,7 +60,7 @@ namespace IceShop
             GlobalVar.listChooseCategory.Clear();
             GlobalVar.listChooseCategory.Add(1);
             ImageChange();
-            btnShavedSnow01.BackgroundImage = new Bitmap("C:\\Users\\iSpan\\Desktop\\期中專題\\source\\綿綿冰系列02.png");
+            btnShavedSnow01.BackgroundImage = new Bitmap($"{GlobalVar.image_dir}\\綿綿冰系列02.png");
             pnlShow.Controls.Clear();
             ShowProductImage();
         }
@@ -63,7 +69,7 @@ namespace IceShop
             GlobalVar.listChooseCategory.Clear();
             GlobalVar.listChooseCategory.Add(2);
             ImageChange();
-            btnShavedIce01.BackgroundImage = new Bitmap("C:\\Users\\iSpan\\Desktop\\期中專題\\source\\刨冰系列02.png");
+            btnShavedIce01.BackgroundImage = new Bitmap($"{GlobalVar.image_dir}\\刨冰系列02.png");
             pnlShow.Controls.Clear();
             ShowProductImage();
         }
@@ -72,7 +78,7 @@ namespace IceShop
             GlobalVar.listChooseCategory.Clear();
             GlobalVar.listChooseCategory.Add(3);
             ImageChange();
-            btnGrassJelly01.BackgroundImage = new Bitmap("C:\\Users\\iSpan\\Desktop\\期中專題\\source\\仙草系列02.png");
+            btnGrassJelly01.BackgroundImage = new Bitmap($"{GlobalVar.image_dir}\\仙草系列02.png");
             pnlShow.Controls.Clear();
             ShowProductImage();
         }
@@ -82,7 +88,7 @@ namespace IceShop
             GlobalVar.listChooseCategory.Clear();
             GlobalVar.listChooseCategory.Add(4);
             ImageChange();
-            btnSeasonal01.BackgroundImage = new Bitmap("C:\\Users\\iSpan\\Desktop\\期中專題\\source\\季節限定02.png");
+            btnSeasonal01.BackgroundImage = new Bitmap($"{GlobalVar.image_dir}\\季節限定02.png");
             pnlShow.Controls.Clear();
             ShowProductImage();
         }
@@ -92,7 +98,7 @@ namespace IceShop
             GlobalVar.listChooseCategory.Clear();
             GlobalVar.listChooseCategory.Add(5);
             ImageChange();
-            btnDrinks01.BackgroundImage = new Bitmap("C:\\Users\\iSpan\\Desktop\\期中專題\\source\\飲品系列02.png");
+            btnDrinks01.BackgroundImage = new Bitmap($"{GlobalVar.image_dir}\\飲品系列02.png");
             pnlShow.Controls.Clear();
             ShowProductImage();
         }
@@ -127,7 +133,38 @@ namespace IceShop
             pnlShow.Visible = true;
             panel4.Visible = true;
             pnlShow.Controls.Clear();
+            ShowTotalCost();
             ShowProductImage();
+        }
+
+        public void ShowTotalCost()
+        {
+            HashSet<int> uniqueProductIds = new HashSet<int>();
+            int totalMoney = 0;
+
+            foreach (ArrayList item in GlobalVar.listOrderItemCollect)
+            {
+                int productId = (int)item[7]; // 假設 productId 是 item 的第一個字段
+                int itemTotalPrice = (int)item[4]; // item[4] 是商品總價
+
+                uniqueProductIds.Add(productId);
+                totalMoney += itemTotalPrice;
+            }
+
+            lblProductItemCount.Text = uniqueProductIds.Count.ToString();
+            lblTotalMoney.Text = totalMoney.ToString();
+        }
+        private void btnPruchase_Click(object sender, EventArgs e)
+        {
+            ShoppingCart shoppingcart = new ShoppingCart();
+            shoppingcart.Show(); // 使用 Show 而不是 ShowDialog
+            this.Hide();
+        }
+
+        private void btnReChoose_Click(object sender, EventArgs e)
+        {
+            GlobalVar.listOrderItemCollect.Clear();
+            ShowTotalCost();
         }
     }
 }

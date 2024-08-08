@@ -75,7 +75,6 @@ namespace IceShop
                     listId.Add((int)reader["ProductId"]);
                     string image_name = (string)reader["ProductImage"];
                     string FullImagePath = $"{GlobalVar.image_dir}\\商品縮圖\\{image_name}";
-                    Console.WriteLine(FullImagePath);
 
                     using (FileStream fs = File.OpenRead(FullImagePath))
                     {

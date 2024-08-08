@@ -16,7 +16,8 @@ namespace IceShop
         public static List<int> listShavedSnowAllId = new List<int>();
         public static List<ArrayList> listOrderItemCollect = new List<ArrayList>();
         //C:\Users\iSpan\Desktop\Code\LiYuan\C#_AdoDotNet\Practice\20240730_ListView\Source
-        public static string image_dir = @"C:\Users\iSpan\Desktop\期中專題\source";//@"C:\Users\LiYuan\Desktop\期中專題\source";
+        public static string image_dir = @"C:\Users\LiYuan\Desktop\期中專題\source";
+        //public static string image_dir = @"C:\Users\ISpan\Desktop\期中專題\source";
         public static string strDBConnectionString = "";
         public static SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
 

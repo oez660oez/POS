@@ -59,6 +59,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment.Designer.cs">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductThumbnails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,11 +85,20 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShoppingCart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShoppingCart.Designer.cs">
+      <DependentUpon>ShoppingCart.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment.resx">
+      <DependentUpon>Payment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -103,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShoppingCart.resx">
+      <DependentUpon>ShoppingCart.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -287,6 +305,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Birthday.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Demo_CheckOrder_1030.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\付款按鈕.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Demo_Detail_993_Empty.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

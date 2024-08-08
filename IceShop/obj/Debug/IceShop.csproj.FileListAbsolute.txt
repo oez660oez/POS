@@ -51,3 +51,6 @@ C:\Users\LiYuan\Desktop\期中專題\backup\20240806_0927\IceShop\IceShop\bin\De
 C:\Users\LiYuan\Desktop\期中專題\backup\20240806_0927\IceShop\IceShop\bin\Debug\IceShop.pdb
 C:\Users\LiYuan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.Login.resources
 C:\Users\LiYuan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.Register.resources
+C:\Users\iSpan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.Register.resources
+C:\Users\iSpan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.ShoppingCart.resources
+C:\Users\LiYuan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.ShoppingCart.resources
