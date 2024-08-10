@@ -45,6 +45,14 @@
             this.checkBoxBag = new System.Windows.Forms.CheckBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.cBoxHour = new System.Windows.Forms.ComboBox();
+            this.cBoxMinute = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cBoxDate = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.pnlFormTitle.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -139,7 +147,7 @@
             this.button5.BackgroundImage = global::IceShop.Properties.Resources.現金付款;
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(558, 635);
+            this.button5.Location = new System.Drawing.Point(558, 683);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(170, 80);
             this.button5.TabIndex = 41;
@@ -150,7 +158,7 @@
             this.button4.BackgroundImage = global::IceShop.Properties.Resources.信用卡付款1;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(303, 635);
+            this.button4.Location = new System.Drawing.Point(303, 683);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(170, 80);
             this.button4.TabIndex = 40;
@@ -161,7 +169,7 @@
             this.button3.BackgroundImage = global::IceShop.Properties.Resources.LinePay1;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(57, 635);
+            this.button3.Location = new System.Drawing.Point(57, 683);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(170, 80);
             this.button3.TabIndex = 39;
@@ -185,7 +193,7 @@
             this.button2.BackgroundImage = global::IceShop.Properties.Resources.手機載具按鈕;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(66, 439);
+            this.button2.Location = new System.Drawing.Point(66, 505);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(152, 146);
             this.button2.TabIndex = 36;
@@ -197,7 +205,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
-            this.label1.Location = new System.Drawing.Point(267, 62);
+            this.label1.Location = new System.Drawing.Point(281, 60);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(219, 64);
@@ -210,7 +218,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
-            this.label4.Location = new System.Drawing.Point(268, 379);
+            this.label4.Location = new System.Drawing.Point(281, 519);
             this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(219, 64);
@@ -222,7 +230,7 @@
             this.checkBoxBag.AutoSize = true;
             this.checkBoxBag.Font = new System.Drawing.Font("Microsoft YaHei UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxBag.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
-            this.checkBoxBag.Location = new System.Drawing.Point(172, 297);
+            this.checkBoxBag.Location = new System.Drawing.Point(172, 248);
             this.checkBoxBag.Name = "checkBoxBag";
             this.checkBoxBag.Size = new System.Drawing.Size(250, 43);
             this.checkBoxBag.TabIndex = 45;
@@ -235,7 +243,7 @@
             this.radioButton1.AutoSize = true;
             this.radioButton1.Font = new System.Drawing.Font("Microsoft YaHei UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
-            this.radioButton1.Location = new System.Drawing.Point(172, 178);
+            this.radioButton1.Location = new System.Drawing.Point(172, 157);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(114, 54);
             this.radioButton1.TabIndex = 46;
@@ -248,7 +256,7 @@
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("Microsoft YaHei UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
-            this.radioButton2.Location = new System.Drawing.Point(465, 178);
+            this.radioButton2.Location = new System.Drawing.Point(486, 157);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(114, 54);
             this.radioButton2.TabIndex = 47;
@@ -256,12 +264,112 @@
             this.radioButton2.Text = "外帶";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
+            // cBoxHour
+            // 
+            this.cBoxHour.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cBoxHour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
+            this.cBoxHour.FormattingEnabled = true;
+            this.cBoxHour.Location = new System.Drawing.Point(429, 413);
+            this.cBoxHour.Name = "cBoxHour";
+            this.cBoxHour.Size = new System.Drawing.Size(83, 39);
+            this.cBoxHour.TabIndex = 50;
+            // 
+            // cBoxMinute
+            // 
+            this.cBoxMinute.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cBoxMinute.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
+            this.cBoxMinute.FormattingEnabled = true;
+            this.cBoxMinute.Location = new System.Drawing.Point(560, 412);
+            this.cBoxMinute.Name = "cBoxMinute";
+            this.cBoxMinute.Size = new System.Drawing.Size(83, 39);
+            this.cBoxMinute.TabIndex = 51;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
+            this.label6.Location = new System.Drawing.Point(513, 409);
+            this.label6.Margin = new System.Windows.Forms.Padding(0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(50, 42);
+            this.label6.TabIndex = 52;
+            this.label6.Text = "點";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
+            this.label7.Location = new System.Drawing.Point(642, 409);
+            this.label7.Margin = new System.Windows.Forms.Padding(0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(50, 42);
+            this.label7.TabIndex = 53;
+            this.label7.Text = "分";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
+            this.label8.Location = new System.Drawing.Point(132, 411);
+            this.label8.Margin = new System.Windows.Forms.Padding(0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(182, 42);
+            this.label8.TabIndex = 54;
+            this.label8.Text = "2024年8月";
+            // 
+            // cBoxDate
+            // 
+            this.cBoxDate.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cBoxDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
+            this.cBoxDate.FormattingEnabled = true;
+            this.cBoxDate.Location = new System.Drawing.Point(306, 413);
+            this.cBoxDate.Name = "cBoxDate";
+            this.cBoxDate.Size = new System.Drawing.Size(83, 39);
+            this.cBoxDate.TabIndex = 55;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
+            this.label9.Location = new System.Drawing.Point(386, 409);
+            this.label9.Margin = new System.Windows.Forms.Padding(0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(50, 42);
+            this.label9.TabIndex = 56;
+            this.label9.Text = "日";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
+            this.label5.Location = new System.Drawing.Point(281, 305);
+            this.label5.Margin = new System.Windows.Forms.Padding(0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(219, 64);
+            this.label5.TabIndex = 57;
+            this.label5.Text = "預定時間";
+            // 
             // Payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 1030);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.cBoxDate);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.cBoxMinute);
+            this.Controls.Add(this.cBoxHour);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.checkBoxBag);
@@ -275,6 +383,9 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pnlFormTitle);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label9);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Payment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -309,5 +420,13 @@
         private System.Windows.Forms.CheckBox checkBoxBag;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.ComboBox cBoxHour;
+        private System.Windows.Forms.ComboBox cBoxMinute;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cBoxDate;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label5;
     }
 }

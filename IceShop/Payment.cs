@@ -15,7 +15,7 @@ namespace IceShop
 {
     public partial class Payment : Form
     {
-
+        
         public Payment()
         {
             InitializeComponent();
@@ -25,6 +25,21 @@ namespace IceShop
         {
             radioButton1.Checked = true; // 預設選擇內用
             UpdateTotalMoney(); // 初始時更新總價
+            for (int i = 1; i <= 31; i += 1)
+            {
+                cBoxDate.Items.Add($"{i}");
+            }
+            cBoxDate.SelectedIndex = 0;
+            for (int i = 1; i <= 23; i++)
+            {
+                cBoxHour.Items.Add($"{i}");
+            }
+            cBoxHour.SelectedIndex = 0;
+            for (int i = 0; i <= 50; i+= 10)
+            {
+                cBoxMinute.Items.Add($"{i}");
+            }
+            cBoxMinute.SelectedIndex = 0;
         }
 
         private void Payment_Activated(object sender, EventArgs e)
@@ -163,7 +178,7 @@ namespace IceShop
             {
                 listOrderExport.Add($"加購購物袋+2元");
             }
-
+            listOrderExport.Add($"預定日期： 2024年 8月 {cBoxDate.SelectedItem.ToString()}日 {cBoxHour.SelectedItem.ToString()}點 {cBoxMinute.SelectedItem.ToString()}分");
             listOrderExport.Add("========= << 訂購品項 >> =========");
 
             foreach (ArrayList item in GlobalVar.listOrderItemCollect)

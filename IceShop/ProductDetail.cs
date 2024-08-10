@@ -30,6 +30,7 @@ namespace IceShop
         int Totalprice = 0;
         string Flavor = "";
         string AddIngredients = "";
+        int SwitchAdd = 0;
 
         // 新增接收 Form1 和 productId 的構造函式
         public ProductDetail(Form1 form, int productId)
@@ -45,91 +46,139 @@ namespace IceShop
             txtInput.Text = Count.ToString();
             LoadProductDetails();
             CalculateItemPrice();
+
+            // 根据产品分类动态生成选项
             foreach (var item in GlobalVar.listChooseCategory)
             {
-                switch (item)
-                {
-                    case 1:
-                        ProgrammingRadioButton();
-                        ProgrammingCheckBox();
-                        break;
-                    case 2:
-                        ProgrammingCheckBox();
-                        break;
-                    case 3:
-                        ProgrammingCheckBox();
-                        break;
-                    case 4:
-                        ProgrammingRadioButton();
-                        ProgrammingCheckBox();
-                        break;
-                    case 5:
-                        ProgrammingRadioButton();
-                        break;
-                    default:
-                        break;
-                }
+                GenerateOptionsForCategory(item);
             }
         }
         private void OriginalMilkShavedSnow_Activated(object sender, EventArgs e)
         {
             foreach (var item in GlobalVar.listChooseCategory)
             {
-                switch (item)
-                {
-                    case 1:
-                        lblFlavorTitle.Text = "綿綿冰口味";
-                        lblFlavorSubTitle.Text = "只能選1個";
-                        lblAddTitle.Text = "加料";
-                        lblAddSubTitle.Text = "最少選0個，最多選10個";
-                        lblFlavorTitle.Location = new Point(34, 303);
-                        lblFlavorSubTitle.Location = new Point(220, 313);
-                        ProgrammingRadioButton();
-                        ProgrammingCheckBox();
-                        break;
-                    case 2:
-                        ProgrammingCheckBox();
-                        break;
-                    case 3:
-                        ProgrammingCheckBox();
-                        break;
-                    case 4:
-                        ProgrammingRadioButton();
-                        ProgrammingCheckBox();
-                        break;
-                    case 5:
-                        ProgrammingRadioButton();
-                        break;
-                    default:
-                        break;
-                }
+                GenerateOptionsForCategory(item);
             }
         }
+        private void GenerateOptionsForCategory(int category)
+        {
+            switch (category)
+            {
+                case 1:
+                    lblFlavorTitle.Text = "綿綿冰口味";
+                    lblFlavorSubTitle.Text = "只能選1個";
+                    lblAddTitle.Text = "加料";
+                    lblAddSubTitle.Text = "最少選0個，最多選10個";
+                    lblFlavorSubTitle.Location = new Point(220, 313);
+                    SwitchAdd = 0;
+                    CreateRadioButton();
+                    CreateCheckBox();
+                    break;
 
+                case 2:
+                    lblFlavorTitle.Text = "加料";
+                    lblFlavorSubTitle.Text = "最少選0個，最多選10個";
+                    lblAddTitle.Text = "";
+                    lblAddSubTitle.Text = "";
+                    lblFlavorSubTitle.Location = new Point(118, 313);
+                    SwitchAdd = 1;
+                    CreateCheckBox();
+                    break;
+                case 3:
+                    lblFlavorTitle.Text = "加料";
+                    lblFlavorSubTitle.Text = "最少選0個，最多選10個";
+                    lblAddTitle.Text = "";
+                    lblAddSubTitle.Text = "";
+                    lblFlavorSubTitle.Location = new Point(118, 313);
+                    SwitchAdd = 1;
+                    CreateCheckBox();
+                    break;
+
+                case 4:
+                    SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
+                    con.Open();
+                    string strSQL = @"
+                    SELECT CustomizationId 
+                    FROM ProductCustomization p
+                    WHERE p.ProductId = @ProductId";
+
+                    SqlCommand cmd = new SqlCommand(strSQL, con);
+                    cmd.Parameters.AddWithValue("@ProductId", productId);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        int CustomizationId = Convert.ToInt32(reader["CustomizationId"]);
+                        if (CustomizationId == 1 && CustomizationId == 2)
+                        {
+                            lblFlavorTitle.Text = "綿綿冰口味";
+                            lblFlavorSubTitle.Text = "只能選1個";
+                            lblAddTitle.Text = "加料";
+                            lblAddSubTitle.Text = "最少選0個，最多選10個";
+                            lblFlavorSubTitle.Location = new Point(220, 313);
+                            SwitchAdd = 0;
+                            CreateRadioButton();
+                            CreateCheckBox();
+                        }
+                        else if (CustomizationId == 2)
+                        {
+                            lblFlavorTitle.Text = "加料";
+                            lblFlavorSubTitle.Text = "最少選0個，最多選10個";
+                            lblAddTitle.Text = "";
+                            lblAddSubTitle.Text = "";
+                            lblFlavorSubTitle.Location = new Point(118, 313);
+                            SwitchAdd = 1;
+                            CreateCheckBox();
+                        }
+                    }
+                    reader.Close();
+                    con.Close();
+                    CreateRadioButton();
+                    CreateCheckBox();
+                    break;
+
+                case 5:
+                    lblFlavorTitle.Text = "甜度";
+                    lblFlavorSubTitle.Text = "只能選1個";
+                    lblAddTitle.Text = "";
+                    lblAddSubTitle.Text = "";
+                    lblFlavorSubTitle.Location = new Point(118, 313);
+                    SwitchAdd = 0;
+                    CreateRadioButton();
+                    break;
+
+                default:
+                    break;
+            }
+        }
         private void LoadProductDetails()
         {
             try
             {
                 SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
                 con.Open();
-                string strSQL = "select * from product where ProductId = @ProductId;";
+                string strSQL = @"
+        SELECT p.*, c.CustomizationId 
+        FROM Product p
+        LEFT JOIN ProductCustomization c ON p.ProductId = c.ProductId
+        WHERE p.ProductId = @ProductId";
+
                 SqlCommand cmd = new SqlCommand(strSQL, con);
                 cmd.Parameters.AddWithValue("@ProductId", productId);
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 if (reader.Read())
                 {
-                    // 在這裡處理讀取到的產品資料，並更新表單顯示
                     string productName = reader["ProductName"].ToString();
-                    string ProductDescribe = reader["ProductDescribe"].ToString();
+                    string productDescribe = reader["ProductDescribe"].ToString();
                     string productPrice = reader["UnitPrice"].ToString();
-                    // 根據資料庫中的資料更新表單的控件
+
                     lblProductName.Text = productName;
-                    lblProductDescribe.Text = InsertLineBreaks(ProductDescribe, 21);
+                    lblProductDescribe.Text = InsertLineBreaks(productDescribe, 21);
                     lblProductPrice.Text = productPrice.ToString();
+
                     string image_name = (string)reader["ProductImage"];
                     string FullImagePath = $"{GlobalVar.image_dir}\\細項\\{image_name}";
-                    Console.WriteLine(FullImagePath);
                     FileStream fs = File.OpenRead(FullImagePath);
                     pictureBoxIce.Image = Image.FromStream(fs);
                 }
@@ -142,42 +191,41 @@ namespace IceShop
                 MessageBox.Show("讀取產品資料時出現錯誤: " + ex.Message);
             }
         }
-        void ProgrammingRadioButton()
+
+        void CreateRadioButton()
         {
-            foreach (var item in GlobalVar.listChooseCategory)
+            myPanel = new Panel();
+            myPanel.BackColor = Color.Transparent;
+            myPanel.Location = new Point(55, 394);
+            myPanel.Size = new Size(700, 40);
+
+            SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
+            con.Open();
+            string strSQL = @"
+            SELECT f.FlavorId, f.FlavorName, s.SweetnessId, s.SweetnessLevel
+            FROM ProductCustomization c
+            LEFT JOIN Flavor f ON c.CustomizationId = f.CustomizationId
+            LEFT JOIN Sweetness s ON c.CustomizationId = s.CustomizationId
+            WHERE c.ProductId = @ProductId;";
+
+            SqlCommand cmd = new SqlCommand(strSQL, con);
+            cmd.Parameters.AddWithValue("@ProductId", productId);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            int i = 0;
+            while (reader.Read() && i < 3)
             {
-                if (productId == 18 || productId == 20)
-                {
-
-                }
-                else if (item == 5)
-                {
-                    lblFlavorTitle.Text = "甜度";
-                    lblFlavorSubTitle.Text = "只能選1個";
-                    lblAddTitle.Text = "";
-                    lblAddSubTitle.Text = "";
-                    lblFlavorTitle.Location = new Point(34, 303);
-                    lblFlavorSubTitle.Location = new Point(118, 313);
-
-                    myPanel = new Panel();
-                    myPanel.BackColor = Color.Transparent;
-                    myPanel.Location = new Point(55, 394);
-                    myPanel.Size = new Size(700, 40);
-
-                    SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
-                    con.Open();
-                    string strSQL = "select top 200 * from Sweetness;";
-                    SqlCommand cmd = new SqlCommand(strSQL, con);
-                    SqlDataReader reader = cmd.ExecuteReader();
-
-                    int i = 0;
-                    while (reader.Read() && i < 3)
-                    {
-                        int SweetnessId = Convert.ToInt32(reader["SweetnessId"]);
-                        string SweetnessLevel = reader["SweetnessLevel"].ToString();
-                        System.Windows.Forms.RadioButton myRadioButton = new System.Windows.Forms.RadioButton();
+                int SweetnessId = reader["SweetnessId"] != DBNull.Value ? Convert.ToInt32(reader["SweetnessId"]) : 0;
+                string SweetnessLevel = reader["SweetnessLevel"].ToString();
+                int FlavorId = reader["FlavorId"] != DBNull.Value ? Convert.ToInt32(reader["FlavorId"]) : 0;
+                string FlavorName = reader["FlavorName"].ToString();
+                System.Windows.Forms.RadioButton myRadioButton = new System.Windows.Forms.RadioButton();
                         myRadioButton.BackColor = Color.Transparent;
                         myRadioButton.Font = new Font("Microsoft YaHei UI", 18, FontStyle.Bold);
+                foreach (var item in GlobalVar.listChooseCategory)
+                {
+                    if(item == 5)
+                    {
                         myRadioButton.Text = $"{SweetnessLevel}";
                         if (i == 0)
                         {
@@ -204,31 +252,8 @@ namespace IceShop
                         }
                         i++;
                     }
-
-                    reader.Close();
-                    con.Close();
-                }
-                else
-                {
-                    myPanel = new Panel();
-                    myPanel.BackColor = Color.Transparent;
-                    myPanel.Location = new Point(55, 394);
-                    myPanel.Size = new Size(700, 40);
-
-                    SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
-                    con.Open();
-                    string strSQL = "select top 200 * from Flavor;";
-                    SqlCommand cmd = new SqlCommand(strSQL, con);
-                    SqlDataReader reader = cmd.ExecuteReader();
-
-                    int i = 0;
-                    while (reader.Read() && i < 3)
+                    else
                     {
-                        int FlavorId = Convert.ToInt32(reader["FlavorId"]);
-                        string FlavorName = reader["FlavorName"].ToString();
-                        System.Windows.Forms.RadioButton myRadioButton = new System.Windows.Forms.RadioButton();
-                        myRadioButton.BackColor = Color.Transparent;
-                        myRadioButton.Font = new Font("Microsoft YaHei UI", 18, FontStyle.Bold);
                         myRadioButton.Text = $"{FlavorName}";
                         if (i == 0)
                         {
@@ -255,116 +280,69 @@ namespace IceShop
                         }
                         i++;
                     }
-
-                    reader.Close();
-                    con.Close();
                 }
             }
+                    reader.Close();
+                    con.Close();
             Controls.Add(myPanel);
         }
-        void ProgrammingCheckBox()
+        void CreateCheckBox()
         {
-            foreach (var item in GlobalVar.listChooseCategory)
+            myPanel = new Panel();
+            myPanel.BackColor = Color.Transparent;
+            if(SwitchAdd == 0)
             {
-                if ((item == 1) || (item == 4 && productId == 19 || productId == 21))
-                {
-                    myPanel = new Panel();
-                    myPanel.BackColor = Color.Transparent;
-                    myPanel.Location = new Point(55, 510);
-                    myPanel.Size = new Size(700, 230);
-
-                    SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
-                    con.Open();
-                    string strSQL = "select top 200 * from AddIngredient;";
-                    SqlCommand cmd = new SqlCommand(strSQL, con);
-                    SqlDataReader reader = cmd.ExecuteReader();
-
-                    int i = 0;
-                    int columnCount = 4; // 每列顯示 4 個 CheckBox
-                    int rowCount = 4; // 總共 4 列
-                    int checkBoxWidth = 160;
-                    int checkBoxHeight = 35;
-                    int verticalSpacing = 20; // 垂直間距
-                    int horizontalSpacing = 20; // 水平間距
-
-                    while (reader.Read() && i < 16)
-                    {
-                        int addIngredientId = Convert.ToInt32(reader["AddIngredientId"]);
-                        string addIngredientName = reader["AddIngredientName"].ToString();
-                        System.Windows.Forms.CheckBox myCheckBox = new System.Windows.Forms.CheckBox();
-                        myCheckBox.BackColor = Color.Transparent;
-                        myCheckBox.Font = new Font("Microsoft YaHei UI", 18, FontStyle.Bold);
-                        myCheckBox.Text = $"{addIngredientName}";
-
-                        int rowIndex = i / columnCount; // 計算當前 CheckBox 的行索引
-                        int columnIndex = i % columnCount; // 計算當前 CheckBox 的列索引
-
-                        myCheckBox.Location = new Point(10 + (checkBoxWidth + horizontalSpacing) * columnIndex, 25 + (checkBoxHeight + verticalSpacing) * rowIndex);
-                        myCheckBox.Size = new Size(checkBoxWidth, checkBoxHeight);
-                        myCheckBox.Name = $"checkBox{addIngredientId}";
-                        myCheckBox.Click += new EventHandler(cboxAddIngredientsItems_Click);
-                        myCheckBox.Tag = $"{addIngredientId}";
-                        myPanel.Controls.Add(myCheckBox);
-                        i++;
-                    }
-                    reader.Close();
-                    con.Close();
-                }
-                else if (item == 2 || item == 3 || productId == 18 || productId == 20)
-                {
-                    lblFlavorTitle.Text = "加料";
-                    lblFlavorSubTitle.Text = "最少選0個，最多選10個";
-                    lblAddTitle.Text = "";
-                    lblAddSubTitle.Text = "";
-                    lblFlavorTitle.Location = new Point(34, 303);
-                    lblFlavorSubTitle.Location = new Point(118, 313);
-
-                    myPanel = new Panel();
-                    myPanel.BackColor = Color.Transparent;
-                    myPanel.Location = new Point(55, 394);
-                    myPanel.Size = new Size(700, 230);
-
-                    SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
-                    con.Open();
-                    string strSQL = "select top 200 * from AddIngredient;";
-                    SqlCommand cmd = new SqlCommand(strSQL, con);
-                    SqlDataReader reader = cmd.ExecuteReader();
-
-                    int i = 0;
-                    int columnCount = 4; // 每列顯示 4 個 CheckBox
-                    int rowCount = 4; // 總共 4 列
-                    int checkBoxWidth = 160;
-                    int checkBoxHeight = 35;
-                    int verticalSpacing = 20; // 垂直間距
-                    int horizontalSpacing = 20; // 水平間距
-
-                    while (reader.Read() && i < 16)
-                    {
-                        int addIngredientId = Convert.ToInt32(reader["AddIngredientId"]);
-                        string addIngredientName = reader["AddIngredientName"].ToString();
-                        System.Windows.Forms.CheckBox myCheckBox = new System.Windows.Forms.CheckBox();
-                        myCheckBox.BackColor = Color.Transparent;
-                        myCheckBox.Font = new Font("Microsoft YaHei UI", 18, FontStyle.Bold);
-                        myCheckBox.Text = $"{addIngredientName}";
-
-                        int rowIndex = i / columnCount; // 計算當前 CheckBox 的行索引
-                        int columnIndex = i % columnCount; // 計算當前 CheckBox 的列索引
-
-                        myCheckBox.Location = new Point(10 + (checkBoxWidth + horizontalSpacing) * columnIndex, 25 + (checkBoxHeight + verticalSpacing) * rowIndex);
-                        myCheckBox.Size = new Size(checkBoxWidth, checkBoxHeight);
-                        myCheckBox.Name = $"checkBox{addIngredientId}";
-                        myCheckBox.Click += new EventHandler(cboxAddIngredientsItems_Click);
-                        myCheckBox.Tag = $"{addIngredientId}";
-                        myPanel.Controls.Add(myCheckBox);
-                        i++;
-                    }
-                    reader.Close();
-                    con.Close();
-                }
-
+                myPanel.Location = new Point(55, 510);
             }
+            else
+            {
+                myPanel.Location = new Point(55, 394);
+            }
+            myPanel.Size = new Size(700, 230);
 
+            SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
+            con.Open();
+            string strSQL = @"
+            SELECT b.ProductName, c.ProductId, ai.AddIngredientId, ai.AddIngredientName
+            FROM Product b
+			LEFT JOIN ProductCustomization c ON b.ProductId = c.ProductId
+            LEFT JOIN AddIngredient ai ON c.CustomizationId = ai.CustomizationId
+            WHERE c.ProductId = 1 and ai.AddIngredientId is not null;";
 
+            SqlCommand cmd = new SqlCommand(strSQL, con);
+            cmd.Parameters.AddWithValue("@ProductId", productId);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            int i = 0;
+            int columnCount = 4; // 每列顯示 4 個 CheckBox
+                    int rowCount = 4; // 總共 4 列
+                    int checkBoxWidth = 160;
+                    int checkBoxHeight = 35;
+                    int verticalSpacing = 20; // 垂直間距
+                    int horizontalSpacing = 20; // 水平間距
+
+                    while (reader.Read() && i < 16)
+                    {
+                        int addIngredientId = Convert.ToInt32(reader["addIngredientId"]);
+                        string addIngredientName = reader["AddIngredientName"].ToString();
+                        System.Windows.Forms.CheckBox myCheckBox = new System.Windows.Forms.CheckBox();
+                        myCheckBox.BackColor = Color.Transparent;
+                        myCheckBox.Font = new Font("Microsoft YaHei UI", 18, FontStyle.Bold);
+                        myCheckBox.Text = $"{addIngredientName}";
+
+                        int rowIndex = i / columnCount; // 計算當前 CheckBox 的行索引
+                        int columnIndex = i % columnCount; // 計算當前 CheckBox 的列索引
+
+                        myCheckBox.Location = new Point(10 + (checkBoxWidth + horizontalSpacing) * columnIndex, 25 + (checkBoxHeight + verticalSpacing) * rowIndex);
+                        myCheckBox.Size = new Size(checkBoxWidth, checkBoxHeight);
+                        myCheckBox.Name = $"checkBox{addIngredientId}";
+                        myCheckBox.Click += new EventHandler(cboxAddIngredientsItems_Click);
+                        myCheckBox.Tag = $"{addIngredientId}";
+                        myPanel.Controls.Add(myCheckBox);
+                        i++;
+                    }
+                    reader.Close();
+                    con.Close();
             Controls.Add(myPanel);
         }
         private string InsertLineBreaks(string text, int interval)
@@ -381,43 +359,10 @@ namespace IceShop
         }
         private void rbuttonFlavor_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
-            con.Open();
-            string strSQL = "SELECT UnitPrice FROM product WHERE ProductId = @ProductId;";
-            SqlCommand cmd = new SqlCommand(strSQL, con);
-            cmd.Parameters.AddWithValue("@ProductId", productId);
-            SqlDataReader reader = cmd.ExecuteReader();
-
             System.Windows.Forms.RadioButton myRadio = (System.Windows.Forms.RadioButton)sender;
             Flavor = myRadio.Text;
 
-            int basePrice = 0;
-            if (reader.Read())
-            {
-                basePrice = Convert.ToInt32(reader["UnitPrice"]);
-            }
-            reader.Close();
-
-            // 恢復到基礎價格
-            Price = basePrice;
-
-            // 添加加料的價格
-            foreach (var ingredient in listAddIngredientsItems)
-            {
-                Price += int.Parse(ingredient.Split('+')[1]);
-            }
-
-            // 如果新選擇的口味有額外費用，增加到價格中
-            if (Flavor.Contains("+"))
-            {
-                Price += int.Parse(Flavor.Split('+')[1]);
-            }
-
-            previousSelectedFlavor = Flavor; // 更新之前選擇的口味
-            listFlavorItems.Clear();
-            listFlavorItems.Add(Flavor);
-            foreach (var item in listFlavorItems) { Console.WriteLine($"{item}"); }
-
+            UpdatePrice();
             CalculateItemPrice();
         }
         private void cboxAddIngredientsItems_Click(object sender, EventArgs e)
@@ -445,6 +390,7 @@ namespace IceShop
                 Price -= int.Parse(AddIngredients.Split('+')[1]);
             }
             foreach (var item in listAddIngredientsItems) { Console.Write($"{item}"); }
+            UpdatePrice();
             CalculateItemPrice();
         }
         private void txtInput_TextChanged(object sender, EventArgs e)
@@ -465,6 +411,48 @@ namespace IceShop
                 CalculateItemPrice();
             }
 
+        }
+        private void UpdatePrice()
+        {
+            // 根據選項更新價格的邏輯
+            Price = GetBasePrice() + CalculateAdditionalCost();
+        }
+        private int GetBasePrice()
+        {
+            // 獲取基礎價格
+            SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
+            con.Open();
+            string strSQL = "SELECT UnitPrice FROM Product WHERE ProductId = @ProductId;";
+            SqlCommand cmd = new SqlCommand(strSQL, con);
+            cmd.Parameters.AddWithValue("@ProductId", productId);
+            SqlDataReader reader = cmd.ExecuteReader();
+            int basePrice = 0;
+
+            if (reader.Read())
+            {
+                basePrice = Convert.ToInt32(reader["UnitPrice"]);
+            }
+            reader.Close();
+            con.Close();
+
+            return basePrice;
+        }
+
+        private int CalculateAdditionalCost()
+        {
+            int additionalCost = 0;
+            // 計算選擇的額外口味或加料的費用
+            foreach (var ingredient in listAddIngredientsItems)
+            {
+                additionalCost += int.Parse(ingredient.Split('+')[1]);
+            }
+
+            if (Flavor.Contains("+"))
+            {
+                additionalCost += int.Parse(Flavor.Split('+')[1]);
+            }
+
+            return additionalCost;
         }
         void CalculateItemPrice()
         {
