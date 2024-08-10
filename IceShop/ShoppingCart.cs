@@ -196,7 +196,7 @@ namespace IceShop
             return formattedIngredients.ToString().TrimEnd(',', ' ');
         }
 
-        void ShoppingCartTotalMoney()
+        public void ShoppingCartTotalMoney()
         {
 
             int totalMoney = 0;
@@ -221,14 +221,16 @@ namespace IceShop
 
         private void btnPruchase_Click(object sender, EventArgs e)
         {
-
+            Payment Payment = new Payment();
+            Payment.Show();
+            this.Hide();
         }
 
         private void btnReChoose_Click(object sender, EventArgs e)
         {
             Form1 form1 = new Form1();
-            form1.ShowDialog();
-            this.Close();
+            form1.Show();
+            this.Hide();
         }
     }
 }

@@ -54,3 +54,4 @@ C:\Users\LiYuan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.Register.
 C:\Users\iSpan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.Register.resources
 C:\Users\iSpan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.ShoppingCart.resources
 C:\Users\LiYuan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.ShoppingCart.resources
+C:\Users\LiYuan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.Payment.resources

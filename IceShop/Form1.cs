@@ -139,19 +139,16 @@ namespace IceShop
 
         public void ShowTotalCost()
         {
-            HashSet<int> uniqueProductIds = new HashSet<int>();
             int totalMoney = 0;
 
             foreach (ArrayList item in GlobalVar.listOrderItemCollect)
             {
-                int productId = (int)item[7]; // 假設 productId 是 item 的第一個字段
                 int itemTotalPrice = (int)item[4]; // item[4] 是商品總價
-
-                uniqueProductIds.Add(productId);
                 totalMoney += itemTotalPrice;
             }
 
-            lblProductItemCount.Text = uniqueProductIds.Count.ToString();
+            // 設定品項數量和總金額
+            lblProductItemCount.Text = GlobalVar.listOrderItemCollect.Count.ToString();
             lblTotalMoney.Text = totalMoney.ToString();
         }
         private void btnPruchase_Click(object sender, EventArgs e)

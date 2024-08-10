@@ -90,12 +90,13 @@ namespace IceShop
                 cmd.Parameters.AddWithValue("@SearchPassword", strPassWord);
                 SqlDataReader reader = cmd.ExecuteReader();
 
-                if (reader.Read())//true，用if是因為理論一次只有一人登入
+                if (reader.Read()) // true，用if是因為理論一次只有一人登入
                 {
-                    //登入成功
+                    // 登入成功
                     GlobalVar.isLoginSuccess = true;
+                    GlobalVar.UserID = (int)reader["CustomerId"]; // 假設資料表中客戶ID的欄位名為CustomerId
                     GlobalVar.UserName = reader["Name"].ToString();
-                    GlobalVar.UserAuthority = 5; //1-10:admin，11-20:店長，21-30:店員，101-200:會員，0:訪客
+                    GlobalVar.UserAuthority = 5; // 1-10:admin，11-20:店長，21-30:店員，101-200:會員，0:訪客
                     MessageBox.Show("登入成功");
                     reader.Close();
                     con.Close();

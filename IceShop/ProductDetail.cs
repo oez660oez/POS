@@ -487,6 +487,7 @@ namespace IceShop
                     return;
                 }
             }
+
             AddIngredients = string.Join(", ", listAddIngredientsItems);
             IceName = lblProductName.Text;
             IceDescribe = lblProductDescribe.Text;
@@ -496,30 +497,33 @@ namespace IceShop
             for (int i = 0; i < GlobalVar.listOrderItemCollect.Count; i++)
             {
                 var existingItem = (ArrayList)GlobalVar.listOrderItemCollect[i];
-                if ((int)existingItem[7] == productId) // 如果產品ID相同
+                int existingProductId = (int)existingItem[7]; // productId
+
+                // 比較商品ID及其他屬性是否相同
+                if (existingProductId == productId &&
+                    (int)existingItem[3] == Count &&
+                    (string)existingItem[5] == Flavor &&
+                    (string)existingItem[6] == AddIngredients)
                 {
-                    // 更新數量和總價格
-                    existingItem[3] = Count; // 更新數量
-                    existingItem[4] = Totalprice; // 更新總價格
-                    existingItem[5] = Flavor; // 更新口味
-                    existingItem[6] = AddIngredients; // 更新加料
+                    // 如果所有屬性都相同，則不做任何動作
                     itemExists = true;
                     break;
                 }
             }
 
+            // 如果沒有完全相同的商品，則新增一筆新資料
             if (!itemExists)
             {
                 ArrayList OrderItemData = new ArrayList
         {
-             IceName,
-             IceDescribe,
-             Price,
-             Count,
-             Totalprice,
-             Flavor,
-             AddIngredients,
-             productId
+            IceName,
+            IceDescribe,
+            Price,
+            Count,
+            Totalprice,
+            Flavor,
+            AddIngredients,
+            productId
         };
 
                 GlobalVar.listOrderItemCollect.Add(OrderItemData);

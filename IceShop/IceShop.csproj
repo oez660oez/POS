@@ -315,5 +315,32 @@
   <ItemGroup>
     <None Include="Resources\Demo_Detail_993_Empty.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\內用按鈕.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\外帶按鈕.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\手機載具按鈕.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LinePay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LinePay1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\信用卡付款.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\信用卡付款1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\現金付款.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\輸出訂單.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

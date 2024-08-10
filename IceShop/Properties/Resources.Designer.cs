@@ -163,6 +163,26 @@ namespace IceShop.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap LinePay {
+            get {
+                object obj = ResourceManager.GetObject("LinePay", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap LinePay1 {
+            get {
+                object obj = ResourceManager.GetObject("LinePay1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);
@@ -253,6 +273,36 @@ namespace IceShop.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap 信用卡付款 {
+            get {
+                object obj = ResourceManager.GetObject("信用卡付款", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 信用卡付款1 {
+            get {
+                object obj = ResourceManager.GetObject("信用卡付款1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 內用按鈕 {
+            get {
+                object obj = ResourceManager.GetObject("內用按鈕", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap 刨冰系列01 {
             get {
                 object obj = ResourceManager.GetObject("刨冰系列01", resourceCulture);
@@ -296,6 +346,16 @@ namespace IceShop.Properties {
         internal static System.Drawing.Bitmap 原味牛奶綿綿冰_Detail_993 {
             get {
                 object obj = ResourceManager.GetObject("原味牛奶綿綿冰_Detail_993", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 外帶按鈕 {
+            get {
+                object obj = ResourceManager.GetObject("外帶按鈕", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -413,6 +473,16 @@ namespace IceShop.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap 手機載具按鈕 {
+            get {
+                object obj = ResourceManager.GetObject("手機載具按鈕", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap 招牌八寶刨冰 {
             get {
                 object obj = ResourceManager.GetObject("招牌八寶刨冰", resourceCulture);
@@ -486,6 +556,16 @@ namespace IceShop.Properties {
         internal static System.Drawing.Bitmap 泰奶奶的綿綿冰 {
             get {
                 object obj = ResourceManager.GetObject("泰奶奶的綿綿冰", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 現金付款 {
+            get {
+                object obj = ResourceManager.GetObject("現金付款", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -626,6 +706,16 @@ namespace IceShop.Properties {
         internal static System.Drawing.Bitmap 註冊按鈕 {
             get {
                 object obj = ResourceManager.GetObject("註冊按鈕", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 輸出訂單 {
+            get {
+                object obj = ResourceManager.GetObject("輸出訂單", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
