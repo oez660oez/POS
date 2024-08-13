@@ -133,8 +133,8 @@
   <data name="季節限定_新鮮芒果西瓜刨冰" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\季節限定_新鮮芒果西瓜刨冰.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="綠豆牛奶刨冰" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\綠豆牛奶刨冰.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="會員修改01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\會員修改01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="刨冰系列01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\刨冰系列01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,6 +172,12 @@
   <data name="綿綿冰系列02" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\綿綿冰系列02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="訂單查詢01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\訂單查詢01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo_WhiteInside" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo_WhiteInside.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="確認按鈕" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\確認按鈕.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -190,8 +196,8 @@
   <data name="信用卡付款1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\信用卡付款1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="綿綿冰系列01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\綿綿冰系列01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="數量增加" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\數量增加.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="脆花生綿綿冰" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\脆花生綿綿冰.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -207,6 +213,9 @@
   </data>
   <data name="綜合嫩仙草" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\綜合嫩仙草.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="綠豆牛奶刨冰" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\綠豆牛奶刨冰.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="重新選購按鈕" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\重新選購按鈕.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -235,14 +244,20 @@
   <data name="LinePay1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LinePay1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="綿綿冰系列01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\綿綿冰系列01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="結帳按鈕" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\結帳按鈕.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="輸出訂單" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\輸出訂單.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Demo_HomePage_1150" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Demo_HomePage_1150.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="新鮮百香果水果綿綿冰" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\新鮮百香果水果綿綿冰.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="現金付款" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\現金付款.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="內用按鈕" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\內用按鈕.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -259,8 +274,8 @@
   <data name="黑砂糖刨冰" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\黑砂糖刨冰.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="數量增加" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\數量增加.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="新鮮百香果水果綿綿冰" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\新鮮百香果水果綿綿冰.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="飲品系列02" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\飲品系列02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -285,9 +300,6 @@
   </data>
   <data name="Demo_Detail_993_Empty" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Demo_Detail_993_Empty.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="現金付款" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\現金付款.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="原味牛奶綿綿冰" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\原味牛奶綿綿冰.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -328,7 +340,7 @@
   <data name="Demo_Detail_993_complete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Demo_Detail_993_complete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="輸出訂單" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\輸出訂單.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="會員資料查詢01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\會員資料查詢01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -14,6 +14,7 @@ namespace IceShop
 {
     public partial class Register : Form
     {
+        int UserAuthority = 0;
         public Register()
         {
             InitializeComponent();
@@ -38,11 +39,11 @@ namespace IceShop
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if ((txtName.Text != "") && (txtPhone.Text != "") && (txtEmail.Text != ""))
+            if ((txtName.Text != "") && (txtPhone.Text != "") && (txtEmail.Text != "") && (txtUserName.Text != "") && (txtPassword.Text != "") && (txtAddress.Text != ""))
             {
                 SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
                 con.Open();
-                string strSQL = "INSERT INTO Customer (Name, Phone, Address, Email, Birth, MaritalStatus, Username, Password) VALUES (@NewName, @NewPhone, @NewAddress, @NewEmail, @NewBirth, @NewMarital, @Username, @Password);";
+                string strSQL = "INSERT INTO Customer (Name, Phone, Address, Email, Birth, MaritalStatus, Username, Password, UserAuthority) VALUES (@NewName, @NewPhone, @NewAddress, @NewEmail, @NewBirth, @NewMarital, @Username, @Password, @UserAuthority);";
                 SqlCommand cmd = new SqlCommand(strSQL, con);
                 //新增資料不用ID
                 cmd.Parameters.AddWithValue("@NewName", txtName.Text);
@@ -53,6 +54,7 @@ namespace IceShop
                 cmd.Parameters.AddWithValue("@NewMarital", chkMarry.Checked);
                 cmd.Parameters.AddWithValue("@Username", txtUserName.Text);
                 cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
+                cmd.Parameters.AddWithValue("@UserAuthority", UserAuthority);
                 int rows = cmd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show($"資料新增成功，{rows} 列資料受影響。");
@@ -64,6 +66,21 @@ namespace IceShop
             {
                 MessageBox.Show("欄位資料不齊全");
             }
+        }
+
+        private void radioMemberLogin_CheckedChanged(object sender, EventArgs e)
+        {
+            UserAuthority = 3;
+        }
+
+        private void radioStaffLogin_CheckedChanged(object sender, EventArgs e)
+        {
+            UserAuthority = 2;
+        }
+
+        private void radioManagerLogin_CheckedChanged(object sender, EventArgs e)
+        {
+            UserAuthority = 1;
         }
     }
 }

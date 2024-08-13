@@ -34,6 +34,6 @@ namespace IceShop
         public static string UserName = "";
         public static int UserID = 0;
         public static int UserAuthority = 0;
-        public static int UserRole = 0;//會員:2, 員工:1
+        //public static int UserRole = 0;//會員:2, 員工:1
     }
 }

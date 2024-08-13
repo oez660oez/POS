@@ -52,7 +52,8 @@ namespace IceShop
                         case 4:
                             strSQL = "select top 200 * from product where ProductCategory = 4;";
                             break;
-                    ;   case 5:
+                            ;
+                        case 5:
                             strSQL = "select top 200 * from product where ProductCategory = 5;";
                             break;
                         default:
@@ -72,30 +73,63 @@ namespace IceShop
 
                 while (reader.Read())
                 {
-                    listId.Add((int)reader["ProductId"]);
-                    string image_name = (string)reader["ProductImage"];
-                    string FullImagePath = $"{GlobalVar.image_dir}\\商品縮圖\\{image_name}";
-
-                    using (FileStream fs = File.OpenRead(FullImagePath))
+                    bool ProductInventory = (bool)reader["Inventory"];
+                    if (ProductInventory == false)
                     {
-                        Image imgProductImage = Image.FromStream(fs);
+                        listId.Add((int)reader["ProductId"]);
+                        string image_name = (string)reader["ProductInStockImage"];
+                        string FullImagePath = $"{GlobalVar.image_dir}\\缺貨\\{image_name}";
 
-                        Button dbutton = new Button
+                        using (FileStream fs = File.OpenRead(FullImagePath))
                         {
-                            BackColor = Color.Transparent,
-                            BackgroundImage = imgProductImage,
-                            BackgroundImageLayout = ImageLayout.Stretch,
-                            FlatStyle = FlatStyle.Flat,
-                            Text = "",
-                            FlatAppearance = { BorderSize = 0 },
-                            Size = new Size(buttonWidth, buttonHeight),
-                            Location = new Point(xOffset + (count % buttonsPerRow) * (buttonWidth), yOffset + (count / buttonsPerRow) * (buttonHeight)),
-                            Name = $"btn{count}",
-                            Tag = listId[count]
-                        };
+                            Image imgProductImage = Image.FromStream(fs);
 
-                        dbutton.Click += new EventHandler(dbutton_Click);
-                        Controls.Add(dbutton);
+                            Button dbutton = new Button
+                            {
+                                BackColor = Color.Transparent,
+                                BackgroundImage = imgProductImage,
+                                BackgroundImageLayout = ImageLayout.Zoom,
+                                FlatStyle = FlatStyle.Flat,
+                                Text = "",
+                                FlatAppearance = { BorderSize = 0 },
+                                Size = new Size(buttonWidth, buttonHeight),
+                                Name = $"btn{count}",
+                                Tag = listId[count],
+                                Location = new Point(xOffset + (count % buttonsPerRow) * buttonWidth, yOffset + (count / buttonsPerRow) * buttonHeight),
+                                Enabled = false
+                            };
+
+                            dbutton.Click += new EventHandler(dbutton_Click);
+                            Controls.Add(dbutton); // 將按鈕添加到pnlShow面板中
+                        }
+                    }
+                    else
+                    {
+                        listId.Add((int)reader["ProductId"]);
+                        string image_name = (string)reader["ProductThumbnails"];
+                        string FullImagePath = $"{GlobalVar.image_dir}\\商品縮圖\\{image_name}";
+
+                        using (FileStream fs = File.OpenRead(FullImagePath))
+                        {
+                            Image imgProductImage = Image.FromStream(fs);
+
+                            Button dbutton = new Button
+                            {
+                                BackColor = Color.Transparent,
+                                BackgroundImage = imgProductImage,
+                                BackgroundImageLayout = ImageLayout.Zoom,
+                                FlatStyle = FlatStyle.Flat,
+                                Text = "",
+                                FlatAppearance = { BorderSize = 0 },
+                                Size = new Size(buttonWidth, buttonHeight),
+                                Name = $"btn{count}",
+                                Tag = listId[count],
+                                Location = new Point(xOffset + (count % buttonsPerRow) * buttonWidth, yOffset + (count / buttonsPerRow) * buttonHeight)
+                            };
+
+                            dbutton.Click += new EventHandler(dbutton_Click);
+                            Controls.Add(dbutton); // 將按鈕添加到pnlShow面板中
+                        }
                     }
 
                     count++;

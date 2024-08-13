@@ -159,6 +159,7 @@
             this.radioManagerLogin.TabStop = true;
             this.radioManagerLogin.Text = "店長";
             this.radioManagerLogin.UseVisualStyleBackColor = true;
+            this.radioManagerLogin.CheckedChanged += new System.EventHandler(this.radioManagerLogin_CheckedChanged);
             // 
             // radioStaffLogin
             // 
@@ -171,6 +172,7 @@
             this.radioStaffLogin.TabStop = true;
             this.radioStaffLogin.Text = "員工";
             this.radioStaffLogin.UseVisualStyleBackColor = true;
+            this.radioStaffLogin.CheckedChanged += new System.EventHandler(this.radioStaffLogin_CheckedChanged);
             // 
             // radioMemberLogin
             // 
@@ -183,6 +185,7 @@
             this.radioMemberLogin.TabStop = true;
             this.radioMemberLogin.Text = "會員";
             this.radioMemberLogin.UseVisualStyleBackColor = true;
+            this.radioMemberLogin.CheckedChanged += new System.EventHandler(this.radioMemberLogin_CheckedChanged);
             // 
             // pnlFormTitle
             // 

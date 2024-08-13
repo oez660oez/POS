@@ -193,6 +193,16 @@ namespace IceShop.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap logo_WhiteInside {
+            get {
+                object obj = ResourceManager.GetObject("logo_WhiteInside", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap Name {
             get {
                 object obj = ResourceManager.GetObject("Name", resourceCulture);
@@ -553,6 +563,26 @@ namespace IceShop.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap 會員修改01 {
+            get {
+                object obj = ResourceManager.GetObject("會員修改01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 會員資料查詢01 {
+            get {
+                object obj = ResourceManager.GetObject("會員資料查詢01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap 泰奶奶的綿綿冰 {
             get {
                 object obj = ResourceManager.GetObject("泰奶奶的綿綿冰", resourceCulture);
@@ -696,6 +726,16 @@ namespace IceShop.Properties {
         internal static System.Drawing.Bitmap 薏仁牛奶刨冰 {
             get {
                 object obj = ResourceManager.GetObject("薏仁牛奶刨冰", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 訂單查詢01 {
+            get {
+                object obj = ResourceManager.GetObject("訂單查詢01", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

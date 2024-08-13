@@ -24,12 +24,12 @@ namespace IceShop
 
         private void Login_Load(object sender, EventArgs e)
         {
-            radioMemberLogin.Checked = true;
             if (!string.IsNullOrEmpty(Properties.Settings.Default.SavedUsername))
             {
                 txtUserName.Text = Properties.Settings.Default.SavedUsername;
                 txtUserName.ForeColor = SystemColors.WindowText;
                 txtUserName.Font = new Font(txtUserName.Font, FontStyle.Regular);
+                chkRememberme.Checked = true;
             }
         }
         private void pnlFormTitle_MouseMove(object sender, MouseEventArgs e)
@@ -45,89 +45,76 @@ namespace IceShop
         {
             Close();
         }
-
-        private void radioMemberLogin_CheckedChanged(object sender, EventArgs e)
-        {
-            GlobalVar.UserRole = 2;
-        }
-
-        private void radioStaffLogin_CheckedChanged(object sender, EventArgs e)
-        {
-            GlobalVar.UserRole = 1;//牽涉到系統登入，不要用0，0應是預設登入
-        }
-
-        private void radioManagerLogin_CheckedChanged(object sender, EventArgs e)
-        {
-            GlobalVar.UserRole = 3;
-        }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string strUserName = txtUserName.Text.Trim();
-            string strPassWord = txtPassword.Text.Trim();
-
-            if ((strUserName != "") && (strPassWord != ""))
+            try
             {
-                SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
-                con.Open();
+                string strUserName = txtUserName.Text.Trim();
+                string strPassWord = txtPassword.Text.Trim();
 
-                string tableName = "";
-
-                switch (GlobalVar.UserRole)
+                if ((strUserName != "") && (strPassWord != ""))
                 {
-                    case 1:
-                        tableName = "staff"; //員工table
-                        break;
-                    case 2:
-                        tableName = "Customer"; //會員table
-                        break;
-                    default:
-                        break;
-                }
-                string strSQL = $"select * from {tableName} where Username = @SearchUsername and Password = @SearchPassword";
-                SqlCommand cmd = new SqlCommand(strSQL, con);
-                cmd.Parameters.AddWithValue("@SearchUsername", strUserName);
-                cmd.Parameters.AddWithValue("@SearchPassword", strPassWord);
-                SqlDataReader reader = cmd.ExecuteReader();
+                    SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
+                    con.Open();
 
-                if (reader.Read()) // true，用if是因為理論一次只有一人登入
-                {
-                    // 登入成功
-                    GlobalVar.isLoginSuccess = true;
-                    GlobalVar.UserID = (int)reader["CustomerId"]; // 假設資料表中客戶ID的欄位名為CustomerId
-                    GlobalVar.UserName = reader["Name"].ToString();
-                    GlobalVar.UserAuthority = 5; // 1-10:admin，11-20:店長，21-30:店員，101-200:會員，0:訪客
-                    MessageBox.Show("登入成功");
+                    string strSQL = $"select * from Customer where Username = @SearchUsername and Password = @SearchPassword";
+                    SqlCommand cmd = new SqlCommand(strSQL, con);
+                    cmd.Parameters.AddWithValue("@SearchUsername", strUserName);
+                    cmd.Parameters.AddWithValue("@SearchPassword", strPassWord);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.Read()) // true，用if是因為理論一次只有一人登入
+                    {
+                        // 登入成功
+                        GlobalVar.isLoginSuccess = true;
+                        GlobalVar.UserID = (int)reader["CustomerId"]; // 假設資料表中客戶ID的欄位名為CustomerId
+                        GlobalVar.UserName = reader["Name"].ToString();
+                        GlobalVar.UserAuthority = (int)reader["UserAuthority"]; // 1-10:admin，11-20:店長，21-30:店員，101-200:會員，0:訪客
+                        MessageBox.Show("登入成功");
+                        reader.Close();
+                        con.Close();
+                        if (GlobalVar.UserAuthority == 3)
+                        {
+                            Form1 form1 = new Form1();
+                            form1.Show(); // 使用 Show 而不是 ShowDialog
+                        }
+                        else
+                        {
+                            ProductBackend BackendSystem = new ProductBackend();
+                            BackendSystem.Show(); // 使用 Show 而不是 ShowDialog
+                        }
+
+                        this.Hide();
+                    }
+                    if (GlobalVar.isLoginSuccess == false)//false
+                    {
+                        MessageBox.Show("登入資料有誤，請重新登入");
+                    }
+                    // 保存用户名
+                    if (chkRememberme.Checked)
+                    {
+                        Properties.Settings.Default.SavedUsername = strUserName;
+                        Properties.Settings.Default.Save();
+                    }
+                    else
+                    {
+                        Properties.Settings.Default.SavedUsername = "";
+                        Properties.Settings.Default.Save();
+                    }
+
                     reader.Close();
                     con.Close();
-                    Form1 form1 = new Form1();
-                    form1.Show(); // 使用 Show 而不是 ShowDialog
-                    this.Hide();
-                }
-                if (GlobalVar.isLoginSuccess == false)//false
-                {
-                    MessageBox.Show("登入資料有誤，請重新登入");
-                }
-                // 保存用户名
-                if (chkRememberme.Checked)
-                {
-                    Properties.Settings.Default.SavedUsername = strUserName;
-                    Properties.Settings.Default.Save();
+
+
                 }
                 else
                 {
-                    Properties.Settings.Default.SavedUsername = "";
-                    Properties.Settings.Default.Save();
+                    MessageBox.Show("登入欄必填！！");
                 }
-
-                reader.Close();
-                con.Close();
-
-
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("登入欄必填！！");
+                Console.WriteLine("出現錯誤: " + ex.Message);
             }
         }
 

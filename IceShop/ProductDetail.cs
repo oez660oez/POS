@@ -31,7 +31,7 @@ namespace IceShop
         string Flavor = "";
         string AddIngredients = "";
         int SwitchAdd = 0;
-
+        int UseCustomizationId = 0;
         // 新增接收 Form1 和 productId 的構造函式
         public ProductDetail(Form1 form, int productId)
         {
@@ -47,24 +47,38 @@ namespace IceShop
             LoadProductDetails();
             CalculateItemPrice();
 
-            // 根据产品分类动态生成选项
-            foreach (var item in GlobalVar.listChooseCategory)
+            DecideAdd();
+            GenerateOptionsForCategory();
+        }
+        void DecideAdd()
+        {
+            SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
+            con.Open();
+            string strSQL = @"
+                    SELECT * 
+                    FROM Product
+                    WHERE ProductId = @ProductId";
+
+            SqlCommand cmd = new SqlCommand(strSQL, con);
+            cmd.Parameters.AddWithValue("@ProductId", productId);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
             {
-                GenerateOptionsForCategory(item);
+                UseCustomizationId = (int)reader["CustomizationId"];
+                Console.WriteLine(UseCustomizationId);
             }
+            reader.Close();
+            con.Close();
         }
         private void OriginalMilkShavedSnow_Activated(object sender, EventArgs e)
         {
-            foreach (var item in GlobalVar.listChooseCategory)
-            {
-                GenerateOptionsForCategory(item);
-            }
+            DecideAdd();
+            GenerateOptionsForCategory();
         }
-        private void GenerateOptionsForCategory(int category)
+        private void GenerateOptionsForCategory()
         {
-            switch (category)
-            {
-                case 1:
+            if (UseCustomizationId == 1) { 
                     lblFlavorTitle.Text = "綿綿冰口味";
                     lblFlavorSubTitle.Text = "只能選1個";
                     lblAddTitle.Text = "加料";
@@ -73,82 +87,25 @@ namespace IceShop
                     SwitchAdd = 0;
                     CreateRadioButton();
                     CreateCheckBox();
-                    break;
-
-                case 2:
-                    lblFlavorTitle.Text = "加料";
-                    lblFlavorSubTitle.Text = "最少選0個，最多選10個";
-                    lblAddTitle.Text = "";
-                    lblAddSubTitle.Text = "";
-                    lblFlavorSubTitle.Location = new Point(118, 313);
-                    SwitchAdd = 1;
-                    CreateCheckBox();
-                    break;
-                case 3:
-                    lblFlavorTitle.Text = "加料";
-                    lblFlavorSubTitle.Text = "最少選0個，最多選10個";
-                    lblAddTitle.Text = "";
-                    lblAddSubTitle.Text = "";
-                    lblFlavorSubTitle.Location = new Point(118, 313);
-                    SwitchAdd = 1;
-                    CreateCheckBox();
-                    break;
-
-                case 4:
-                    SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
-                    con.Open();
-                    string strSQL = @"
-                    SELECT CustomizationId 
-                    FROM ProductCustomization p
-                    WHERE p.ProductId = @ProductId";
-
-                    SqlCommand cmd = new SqlCommand(strSQL, con);
-                    cmd.Parameters.AddWithValue("@ProductId", productId);
-                    SqlDataReader reader = cmd.ExecuteReader();
-
-                    if (reader.Read())
-                    {
-                        int CustomizationId = Convert.ToInt32(reader["CustomizationId"]);
-                        if (CustomizationId == 1 && CustomizationId == 2)
-                        {
-                            lblFlavorTitle.Text = "綿綿冰口味";
-                            lblFlavorSubTitle.Text = "只能選1個";
-                            lblAddTitle.Text = "加料";
-                            lblAddSubTitle.Text = "最少選0個，最多選10個";
-                            lblFlavorSubTitle.Location = new Point(220, 313);
-                            SwitchAdd = 0;
-                            CreateRadioButton();
-                            CreateCheckBox();
-                        }
-                        else if (CustomizationId == 2)
-                        {
-                            lblFlavorTitle.Text = "加料";
-                            lblFlavorSubTitle.Text = "最少選0個，最多選10個";
-                            lblAddTitle.Text = "";
-                            lblAddSubTitle.Text = "";
-                            lblFlavorSubTitle.Location = new Point(118, 313);
-                            SwitchAdd = 1;
-                            CreateCheckBox();
-                        }
-                    }
-                    reader.Close();
-                    con.Close();
-                    CreateRadioButton();
-                    CreateCheckBox();
-                    break;
-
-                case 5:
-                    lblFlavorTitle.Text = "甜度";
-                    lblFlavorSubTitle.Text = "只能選1個";
-                    lblAddTitle.Text = "";
-                    lblAddSubTitle.Text = "";
-                    lblFlavorSubTitle.Location = new Point(118, 313);
-                    SwitchAdd = 0;
-                    CreateRadioButton();
-                    break;
-
-                default:
-                    break;
+            }else if (UseCustomizationId == 2)
+            {
+                lblFlavorTitle.Text = "加料";
+                lblFlavorSubTitle.Text = "最少選0個，最多選10個";
+                lblAddTitle.Text = "";
+                lblAddSubTitle.Text = "";
+                lblFlavorSubTitle.Location = new Point(118, 313);
+                SwitchAdd = 1;
+                CreateCheckBox();
+            }
+            else
+            {
+                lblFlavorTitle.Text = "甜度";
+                lblFlavorSubTitle.Text = "只能選1個";
+                lblAddTitle.Text = "";
+                lblAddSubTitle.Text = "";
+                lblFlavorSubTitle.Location = new Point(118, 313);
+                SwitchAdd = 0;
+                CreateRadioButton();
             }
         }
         private void LoadProductDetails()
@@ -158,10 +115,9 @@ namespace IceShop
                 SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
                 con.Open();
                 string strSQL = @"
-        SELECT p.*, c.CustomizationId 
-        FROM Product p
-        LEFT JOIN ProductCustomization c ON p.ProductId = c.ProductId
-        WHERE p.ProductId = @ProductId";
+        SELECT * 
+        FROM Product 
+        WHERE ProductId = @ProductId";
 
                 SqlCommand cmd = new SqlCommand(strSQL, con);
                 cmd.Parameters.AddWithValue("@ProductId", productId);
@@ -203,10 +159,10 @@ namespace IceShop
             con.Open();
             string strSQL = @"
             SELECT f.FlavorId, f.FlavorName, s.SweetnessId, s.SweetnessLevel
-            FROM ProductCustomization c
-            LEFT JOIN Flavor f ON c.CustomizationId = f.CustomizationId
-            LEFT JOIN Sweetness s ON c.CustomizationId = s.CustomizationId
-            WHERE c.ProductId = @ProductId;";
+            FROM Product p
+            LEFT JOIN Flavor f ON p.CustomizationId = f.CustomizationId
+            LEFT JOIN Sweetness s ON p.CustomizationId = s.CustomizationId
+            WHERE p.ProductId = @ProductId;";
 
             SqlCommand cmd = new SqlCommand(strSQL, con);
             cmd.Parameters.AddWithValue("@ProductId", productId);
@@ -222,65 +178,63 @@ namespace IceShop
                 System.Windows.Forms.RadioButton myRadioButton = new System.Windows.Forms.RadioButton();
                         myRadioButton.BackColor = Color.Transparent;
                         myRadioButton.Font = new Font("Microsoft YaHei UI", 18, FontStyle.Bold);
-                foreach (var item in GlobalVar.listChooseCategory)
+                if (UseCustomizationId == 3)
                 {
-                    if(item == 5)
+                    myRadioButton.Text = $"{SweetnessLevel}";
+                    if (i == 0)
                     {
-                        myRadioButton.Text = $"{SweetnessLevel}";
-                        if (i == 0)
-                        {
-                            myRadioButton.Location = new Point(50 + 160 * i, 0);
-                        }
-                        else if (i == 1)
-                        {
-                            myRadioButton.Location = new Point(50 + 260 * i, 0); // 縮小第一個和第二個之間的距離
-                        }
-                        else
-                        {
-                            myRadioButton.Location = new Point(50 + 260 * i, 0); // 保持第二個和第三個之間的距離
-                        }
-                        myRadioButton.Size = new Size(200, 35);
-                        myRadioButton.Name = $"radio{SweetnessId}";
-                        myRadioButton.Click += new EventHandler(rbuttonFlavor_Click);
-                        myRadioButton.Tag = $"{SweetnessId}";
-                        myPanel.Controls.Add(myRadioButton);
-                        if (myRadioButton.Name == "radio1")
-                        {
-                            myRadioButton.Checked = true;
-                            Flavor = myRadioButton.Text;
-                            listFlavorItems.Add(Flavor);
-                        }
-                        i++;
+                        myRadioButton.Location = new Point(50 + 160 * i, 0);
+                    }
+                    else if (i == 1)
+                    {
+                        myRadioButton.Location = new Point(50 + 260 * i, 0); // 縮小第一個和第二個之間的距離
                     }
                     else
                     {
-                        myRadioButton.Text = $"{FlavorName}";
-                        if (i == 0)
-                        {
-                            myRadioButton.Location = new Point(50 + 160 * i, 0);
-                        }
-                        else if (i == 1)
-                        {
-                            myRadioButton.Location = new Point(50 + 200 * i, 0); // 縮小第一個和第二個之間的距離
-                        }
-                        else
-                        {
-                            myRadioButton.Location = new Point(50 + 220 * i, 0); // 保持第二個和第三個之間的距離
-                        }
-                        myRadioButton.Size = new Size(200, 35);
-                        myRadioButton.Name = $"radio{FlavorId}";
-                        myRadioButton.Click += new EventHandler(rbuttonFlavor_Click);
-                        myRadioButton.Tag = $"{FlavorId}";
-                        myPanel.Controls.Add(myRadioButton);
-                        if (myRadioButton.Name == "radio1")
-                        {
-                            myRadioButton.Checked = true;
-                            Flavor = myRadioButton.Text;
-                            listFlavorItems.Add(Flavor);
-                        }
-                        i++;
+                        myRadioButton.Location = new Point(50 + 260 * i, 0); // 保持第二個和第三個之間的距離
                     }
+                    myRadioButton.Size = new Size(200, 35);
+                    myRadioButton.Name = $"radio{SweetnessId}";
+                    myRadioButton.Click += new EventHandler(rbuttonFlavor_Click);
+                    myRadioButton.Tag = $"{SweetnessId}";
+                    myPanel.Controls.Add(myRadioButton);
+                    if (myRadioButton.Name == "radio1")
+                    {
+                        myRadioButton.Checked = true;
+                        Flavor = myRadioButton.Text;
+                        listFlavorItems.Add(Flavor);
+                    }
+                    i++;
                 }
+                else
+                {
+                    myRadioButton.Text = $"{FlavorName}";
+                    if (i == 0)
+                    {
+                        myRadioButton.Location = new Point(50 + 160 * i, 0);
+                    }
+                    else if (i == 1)
+                    {
+                        myRadioButton.Location = new Point(50 + 200 * i, 0); // 縮小第一個和第二個之間的距離
+                    }
+                    else
+                    {
+                        myRadioButton.Location = new Point(50 + 220 * i, 0); // 保持第二個和第三個之間的距離
+                    }
+                    myRadioButton.Size = new Size(200, 35);
+                    myRadioButton.Name = $"radio{FlavorId}";
+                    myRadioButton.Click += new EventHandler(rbuttonFlavor_Click);
+                    myRadioButton.Tag = $"{FlavorId}";
+                    myPanel.Controls.Add(myRadioButton);
+                    if (myRadioButton.Name == "radio1")
+                    {
+                        myRadioButton.Checked = true;
+                        Flavor = myRadioButton.Text;
+                        listFlavorItems.Add(Flavor);
+                    }
+                    i++;
+                }
+                
             }
                     reader.Close();
                     con.Close();
@@ -303,11 +257,10 @@ namespace IceShop
             SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
             con.Open();
             string strSQL = @"
-            SELECT b.ProductName, c.ProductId, ai.AddIngredientId, ai.AddIngredientName
-            FROM Product b
-			LEFT JOIN ProductCustomization c ON b.ProductId = c.ProductId
-            LEFT JOIN AddIngredient ai ON c.CustomizationId = ai.CustomizationId
-            WHERE c.ProductId = 1 and ai.AddIngredientId is not null;";
+            SELECT p.ProductName, p.ProductId, ai.AddIngredientId, ai.AddIngredientName
+            FROM Product p
+            LEFT JOIN AddIngredient ai ON p.CustomizationId = ai.CustomizationId
+            WHERE p.ProductId = @ProductId and ai.AddIngredientId is not null;";
 
             SqlCommand cmd = new SqlCommand(strSQL, con);
             cmd.Parameters.AddWithValue("@ProductId", productId);

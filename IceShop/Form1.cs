@@ -163,5 +163,12 @@ namespace IceShop
             GlobalVar.listOrderItemCollect.Clear();
             ShowTotalCost();
         }
+
+        private void btnMemberCenter_Click(object sender, EventArgs e)
+        {
+            CustomBackend BackendSystem = new CustomBackend();
+            BackendSystem.Show(); // 使用 Show 而不是 ShowDialog
+            this.Hide();
+        }
     }
 }

@@ -99,7 +99,6 @@
             // btnMemberCenter
             // 
             this.btnMemberCenter.BackgroundImage = global::IceShop.Properties.Resources.會員中心按鈕;
-            this.btnMemberCenter.Enabled = false;
             this.btnMemberCenter.FlatAppearance.BorderSize = 0;
             this.btnMemberCenter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMemberCenter.Location = new System.Drawing.Point(677, 29);
@@ -107,6 +106,7 @@
             this.btnMemberCenter.Size = new System.Drawing.Size(107, 111);
             this.btnMemberCenter.TabIndex = 2;
             this.btnMemberCenter.UseVisualStyleBackColor = true;
+            this.btnMemberCenter.Click += new System.EventHandler(this.btnMemberCenter_Click);
             // 
             // pictureBox1
             // 

@@ -40,9 +40,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.radioMemberLogin = new System.Windows.Forms.RadioButton();
-            this.radioStaffLogin = new System.Windows.Forms.RadioButton();
-            this.radioManagerLogin = new System.Windows.Forms.RadioButton();
             this.pnlFormTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -139,7 +136,7 @@
             this.btnRegister.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnRegister.FlatAppearance.BorderSize = 0;
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegister.Location = new System.Drawing.Point(42, 407);
+            this.btnRegister.Location = new System.Drawing.Point(42, 388);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(110, 110);
             this.btnRegister.TabIndex = 10;
@@ -186,51 +183,12 @@
             this.btnLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Location = new System.Drawing.Point(312, 407);
+            this.btnLogin.Location = new System.Drawing.Point(312, 388);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(110, 110);
             this.btnLogin.TabIndex = 3;
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // radioMemberLogin
-            // 
-            this.radioMemberLogin.AutoSize = true;
-            this.radioMemberLogin.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioMemberLogin.Location = new System.Drawing.Point(56, 366);
-            this.radioMemberLogin.Name = "radioMemberLogin";
-            this.radioMemberLogin.Size = new System.Drawing.Size(60, 26);
-            this.radioMemberLogin.TabIndex = 11;
-            this.radioMemberLogin.TabStop = true;
-            this.radioMemberLogin.Text = "會員";
-            this.radioMemberLogin.UseVisualStyleBackColor = true;
-            this.radioMemberLogin.CheckedChanged += new System.EventHandler(this.radioMemberLogin_CheckedChanged);
-            // 
-            // radioStaffLogin
-            // 
-            this.radioStaffLogin.AutoSize = true;
-            this.radioStaffLogin.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioStaffLogin.Location = new System.Drawing.Point(195, 366);
-            this.radioStaffLogin.Name = "radioStaffLogin";
-            this.radioStaffLogin.Size = new System.Drawing.Size(60, 26);
-            this.radioStaffLogin.TabIndex = 12;
-            this.radioStaffLogin.TabStop = true;
-            this.radioStaffLogin.Text = "員工";
-            this.radioStaffLogin.UseVisualStyleBackColor = true;
-            this.radioStaffLogin.CheckedChanged += new System.EventHandler(this.radioStaffLogin_CheckedChanged);
-            // 
-            // radioManagerLogin
-            // 
-            this.radioManagerLogin.AutoSize = true;
-            this.radioManagerLogin.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioManagerLogin.Location = new System.Drawing.Point(331, 366);
-            this.radioManagerLogin.Name = "radioManagerLogin";
-            this.radioManagerLogin.Size = new System.Drawing.Size(60, 26);
-            this.radioManagerLogin.TabIndex = 13;
-            this.radioManagerLogin.TabStop = true;
-            this.radioManagerLogin.Text = "店長";
-            this.radioManagerLogin.UseVisualStyleBackColor = true;
-            this.radioManagerLogin.CheckedChanged += new System.EventHandler(this.radioManagerLogin_CheckedChanged);
             // 
             // Login
             // 
@@ -238,9 +196,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(450, 526);
-            this.Controls.Add(this.radioManagerLogin);
-            this.Controls.Add(this.radioStaffLogin);
-            this.Controls.Add(this.radioMemberLogin);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.pnlFormTitle);
             this.Controls.Add(this.pictureBox3);
@@ -281,8 +236,5 @@
         private System.Windows.Forms.Label lblCloseForm;
         private System.Windows.Forms.Label lblClose;
         private System.Windows.Forms.Button btnRegister;
-        private System.Windows.Forms.RadioButton radioMemberLogin;
-        private System.Windows.Forms.RadioButton radioStaffLogin;
-        private System.Windows.Forms.RadioButton radioManagerLogin;
     }
 }
