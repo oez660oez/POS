@@ -79,3 +79,7 @@ C:\Users\LiYuan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.StaffBack
 C:\Users\iSpan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.CustomBackend.resources
 C:\Users\iSpan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.ProductBackend.resources
 C:\Users\iSpan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.StaffBackend.resources
+C:\Users\iSpan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.MemberBackend.resources
+C:\Users\LiYuan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.OrderBackend.resources
+C:\Users\LiYuan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.MemberBackend.resources
+C:\Users\LiYuan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.CalculateMoney.resources

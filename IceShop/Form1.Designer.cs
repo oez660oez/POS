@@ -58,6 +58,8 @@
             this.lblProductItemCount = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlShowDetail = new System.Windows.Forms.Panel();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -279,6 +281,8 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Controls.Add(this.txtSearch);
             this.panel4.Controls.Add(this.btnPruchase);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Location = new System.Drawing.Point(0, 799);
@@ -422,6 +426,29 @@
             this.pnlShowDetail.Size = new System.Drawing.Size(800, 993);
             this.pnlShowDetail.TabIndex = 6;
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(291, 31);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(214, 32);
+            this.txtSearch.TabIndex = 4;
+            this.txtSearch.TextChanged += new System.EventHandler(this.TxtSearch_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
+            this.label2.Location = new System.Drawing.Point(159, 29);
+            this.label2.Margin = new System.Windows.Forms.Padding(0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(130, 35);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "搜尋商品:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -448,6 +475,7 @@
             this.pnlFormTitle.ResumeLayout(false);
             this.pnlFormTitle.PerformLayout();
             this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.pnlShowDetail.ResumeLayout(false);
@@ -486,6 +514,8 @@
         private System.Windows.Forms.Button btnMemberCenter;
         private System.Windows.Forms.Button btnReChoose;
         private System.Windows.Forms.Panel pnlShowDetail;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label label2;
     }
 }
 

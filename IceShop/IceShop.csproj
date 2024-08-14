@@ -71,10 +71,28 @@
     <Compile Include="Payment.Designer.cs">
       <DependentUpon>Payment.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductBackend.cs">
+    <Compile Include="StaffBackend\CalculateMoney.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductBackend.Designer.cs">
+    <Compile Include="StaffBackend\CalculateMoney.Designer.cs">
+      <DependentUpon>CalculateMoney.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StaffBackend\OrderBackend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffBackend\OrderBackend.Designer.cs">
+      <DependentUpon>OrderBackend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StaffBackend\MemberBackend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffBackend\MemberBackend.Designer.cs">
+      <DependentUpon>MemberBackend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StaffBackend\ProductBackend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffBackend\ProductBackend.Designer.cs">
       <DependentUpon>ProductBackend.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductThumbnails.cs">
@@ -103,10 +121,10 @@
     <Compile Include="ShoppingCart.Designer.cs">
       <DependentUpon>ShoppingCart.cs</DependentUpon>
     </Compile>
-    <Compile Include="StaffBackend.cs">
+    <Compile Include="StaffBackend\StaffBackend.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StaffBackend.Designer.cs">
+    <Compile Include="StaffBackend\StaffBackend.Designer.cs">
       <DependentUpon>StaffBackend.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="CustomBackend.resx">
@@ -121,7 +139,16 @@
     <EmbeddedResource Include="Payment.resx">
       <DependentUpon>Payment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductBackend.resx">
+    <EmbeddedResource Include="StaffBackend\CalculateMoney.resx">
+      <DependentUpon>CalculateMoney.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffBackend\OrderBackend.resx">
+      <DependentUpon>OrderBackend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffBackend\MemberBackend.resx">
+      <DependentUpon>MemberBackend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffBackend\ProductBackend.resx">
       <DependentUpon>ProductBackend.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -146,7 +173,7 @@
     <EmbeddedResource Include="ShoppingCart.resx">
       <DependentUpon>ShoppingCart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StaffBackend.resx">
+    <EmbeddedResource Include="StaffBackend\StaffBackend.resx">
       <DependentUpon>StaffBackend.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -380,6 +407,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\會員資料查詢01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\搜尋按鈕.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\修改訂單狀態按鈕.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\修改訂單狀態按鈕1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\新增產品01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\修改產品01.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

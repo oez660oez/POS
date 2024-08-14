@@ -118,8 +118,8 @@ namespace IceShop
                 con.Open();
 
                 // 插入 Order 表並取得自動遞增的 OrderNumber
-                string strSQL = "INSERT INTO [Order] (CustomerId, UserName, OrderDate, TotalAmount, BagOption, DiningOption) " +
-                                "VALUES (@CustomerId, @UserName, @OrderDate, @TotalAmount, @BagOption, @DiningOption); " +
+                string strSQL = "INSERT INTO [Order] (CustomerId, UserName, OrderDate, TotalAmount, BagOption, DiningOption, OrderStatus) " +
+                                "VALUES (@CustomerId, @UserName, @OrderDate, @TotalAmount, @BagOption, @DiningOption, @OrderStatus); " +
                                 "SELECT SCOPE_IDENTITY();";
                 SqlCommand cmd = new SqlCommand(strSQL, con);
                 cmd.Parameters.AddWithValue("@CustomerId", GlobalVar.UserID);
@@ -129,6 +129,7 @@ namespace IceShop
                 cmd.Parameters.AddWithValue("@TotalAmount", totalMoney);
                 cmd.Parameters.AddWithValue("@BagOption", checkBoxBag.Checked);
                 cmd.Parameters.AddWithValue("@DiningOption", dineOption);
+                cmd.Parameters.AddWithValue("@OrderStatus", 0);
 
                 // 執行插入並取得 OrderNumber
                 int newOrderNumber = Convert.ToInt32(cmd.ExecuteScalar());

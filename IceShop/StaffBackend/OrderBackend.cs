@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,42 +8,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace IceShop
 {
-    public partial class CustomBackend : Form
+    public partial class OrderBackend : Form
     {
+        int intMaritalStatus = 0; //0:全部 1:單身 2:已婚
         List<int> SearchIDs = new List<int>();//搜尋結果
+        List<int> OrderIDs = new List<int>();//訂單結果
         int selectId = 0;
-        public CustomBackend()
+        int selectOrderId = 0;
+        public OrderBackend()
         {
             InitializeComponent();
         }
-        private void BackendSystem_Load(object sender, EventArgs e)
-        {
-            pnlShowMember.Visible = false;
-            LoadLoginData();
-        }
-        private void BackendSystem_Activated(object sender, EventArgs e)
-        {
-            LoadLoginData();
-        }
-        private void pnlFormTitle_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                Point loc1 = MousePosition;
-                Location = loc1;
-            }
-        }
 
-        private void lblCloseForm_Click(object sender, EventArgs e)
+        private void OrderBackend_Load(object sender, EventArgs e)
         {
-            Close();
-        }
-        void LoadLoginData()
-        {
+            radioMaritalStatusAll.Checked = true;
+            cboxSearchCol.Items.Add("Name");
+            cboxSearchCol.Items.Add("Phone");
+            cboxSearchCol.Items.Add("Address");
+            cboxSearchCol.Items.Add("Email");
+            cboxSearchCol.Items.Add("CustomerId");
+            cboxSearchCol.SelectedIndex = 0;
+
             lblSystemTime.Text = DateTime.Now.ToString();
             if (GlobalVar.UserAuthority == 2)
             {
@@ -60,165 +48,155 @@ namespace IceShop
             }
             lblUserName.Text = GlobalVar.UserName;
         }
-        private void btnMemberSearchPicture_Click(object sender, EventArgs e)
-        {
-            btnMemberSearchPicture.BackgroundImage = new Bitmap($"{GlobalVar.image_dir}\\會員資料查詢02.png");
-            btnSearchOrder.BackgroundImage = new Bitmap($"{GlobalVar.image_dir}\\訂單查詢01.png");
-            lboxSearchResult.Items.Clear();
-            pnlShowMember.Visible = true;
-            SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
-            con.Open();
 
-            string strSQL = $"select * from Customer where CustomerId = @CustomerId";
-            SqlCommand cmd = new SqlCommand(strSQL, con);
-            cmd.Parameters.AddWithValue("@CustomerId", GlobalVar.UserID);
-            SqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read() == true)
+        private void pnlFormTitle_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
             {
-                txtUserName.Text = (string)reader["Username"];
-                txtPassword.Text = (string)reader["Password"];
-                txtName.Text = (string)reader["Name"];
-                txtPhone.Text = reader["Phone"].ToString();
-                txtAddress.Text = reader["Address"].ToString();
-                txtEmail.Text = reader["Email"].ToString();
-                dtpBirth.Value = (DateTime)reader["Birth"];
-                chkMarry.Checked = (bool)reader["MaritalStatus"];
-                int UserAuthority = (int)reader["UserAuthority"];
-                if (UserAuthority == 3)
-                {
-                    radioMemberLogin.Checked = true;
-                }
-                else if (UserAuthority == 2)
-                {
-                    radioStaffLogin.Checked = true;
-                }
-                else
-                {
-                    radioManagerLogin.Checked = true;
-                }
+                Point loc1 = MousePosition;
+                Location = loc1;
             }
-            lblOrderNumber.Text = "";
-            lblOrderTime.Text = "";
-            lblOrderPurchaser.Text = "";
-            lblTotalMoney.Text = "";
-            lblProductItemCount.Text = "";
-            reader.Close();
-            con.Close();
         }
 
-        private void btnSearchOrder_Click(object sender, EventArgs e)
+        private void lblCloseForm_Click(object sender, EventArgs e)
         {
-            pnlShowMember.Visible = false;
-            lboxSearchResult.Items.Clear();
-            btnSearchOrder.BackgroundImage = new Bitmap($"{GlobalVar.image_dir}\\訂單查詢02.png");
-            btnMemberSearchPicture.BackgroundImage = new Bitmap($"{GlobalVar.image_dir}\\會員資料查詢01.png");
-            SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
-            con.Open();
+            Close();
+        }
 
-            string strSQL = $"select * from \"Order\" where CustomerId = @CustomerId";
-            SqlCommand cmd = new SqlCommand(strSQL, con);
-            cmd.Parameters.AddWithValue("@CustomerId", GlobalVar.UserID);
-            SqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read() == true)
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (txtSearchKeyword.Text != "")
             {
-                lboxSearchResult.Items.Add($"{reader["OrderDate"]} {reader["TotalAmount"]}");
-                SearchIDs.Add((int)reader["OrderNumber"]);
+                lboxSearchResult.Items.Clear();
+                SearchIDs.Clear();
+
+                string strColName = cboxSearchCol.SelectedItem.ToString();
+                string sqlMaritalStatusCheckGrammar = "";//婚姻狀態查詢語法，假如不能用參數帶入的處理方式
+
+                switch (intMaritalStatus)
+                {
+                    case 0: //全部
+                        sqlMaritalStatusCheckGrammar = "";
+                        break;
+                    case 1: //單身
+                        sqlMaritalStatusCheckGrammar = "and (婚姻狀態 = 0)";
+                        break;
+                    case 2: //已婚
+                        sqlMaritalStatusCheckGrammar = "and (婚姻狀態 = 1)";
+                        break;
+                    default: //其他
+                        sqlMaritalStatusCheckGrammar = "";
+                        break;
+                }
+
+                SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
+                con.Open();
+
+                string strSQL = $"select * from Customer where ({strColName} like @SearchKeyword) and (Birth > @StartBirth) and (Birth < @EndBirth) {sqlMaritalStatusCheckGrammar}";
+                SqlCommand cmd = new SqlCommand(strSQL, con);
+                cmd.Parameters.AddWithValue("@SearchKeyword", $"%{txtSearchKeyword.Text.Trim()}%");
+                cmd.Parameters.AddWithValue("@StartBirth", dtpStartTime.Value);
+                cmd.Parameters.AddWithValue("@EndBirth", dtpEndTime.Value);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                int count = 0;
+                while (reader.Read() == true)
+                {
+                    string strUserAuthority = "";
+                    int UserAuthority = (int)reader["UserAuthority"];
+                    if (UserAuthority == 3)
+                    {
+                        strUserAuthority = "會員";
+                    }
+                    else if (UserAuthority == 2)
+                    {
+                        strUserAuthority = "員工";
+                    }
+                    else
+                    {
+                        strUserAuthority = "店長";
+                    }
+                    lboxSearchResult.Items.Add($"編號:{reader["CustomerId"]} {reader["Name"]} 權限:{strUserAuthority} 點數:{reader["Point"]}");
+                    SearchIDs.Add((int)reader["CustomerId"]);//索引值對應(同while迴圈新增的關係)
+                    count++;
+                }
+                if (count == 0)
+                {
+                    MessageBox.Show("查無此人");
+                }
+                reader.Close();
+                con.Close();
             }
-            reader.Close();
-            con.Close();
         }
 
         private void lboxSearchResult_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            if (lboxSearchResult.SelectedIndex >= 0)
+            if (lboxSearchResult.SelectedIndex >= 0 && lboxSearchResult.SelectedIndex < SearchIDs.Count)
             {
+                selectId = 0;
+                lboxSearchOrder.Items.Clear();
+                pnlShowProduct.Controls.Clear();
+                lblOrderNumber.Text = "";
+                lblOrderTime.Text = "";
+                lblOrderPurchaser.Text = "";
+                lblTotalMoney.Text = "";
+                lblProductItemCount.Text = "";
+                lblHowToEat.Text = "";
+                lblBag.Text = "";
+                lblOrderStatus.Text = "";
                 selectId = SearchIDs[lboxSearchResult.SelectedIndex];
-                DisplayShoppingProduct(selectId);
+                lboxOrderDisplay(selectId);
+                Console.WriteLine(selectId);
             }
         }
-        void DisplayMemberData()
+        void lboxOrderDisplay(int myId)
         {
-
-            Panel newPanel = new Panel
-            {
-                Anchor = AnchorStyles.Top | AnchorStyles.Left,
-                Location = new Point(297, 114),
-                Size = new Size(1203, 701),
-                BackColor = Color.Transparent,
-                AutoScroll = true
-            };
-
-            this.Controls.Add(newPanel); // 確保將 newPanel 添加到 ShoppingCart 表單中
-            SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
-            con.Open();
-
-            string strSQL = $"select * from \"Order\" o RIGHT JOIN OrderItem oi on oi.OrderNumber = o.OrderNumber RIGHT JOIN Product p on oi.ProductId = p.ProductId where oi.OrderNumber = @OrderNumber;";
-            SqlCommand cmd = new SqlCommand(strSQL, con);
-            cmd.Parameters.AddWithValue("@OrderNumber", selectId);
-            SqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read() == true)
-            {
-                string itemName = (string)reader["ProductName"];
-                string itemDescribe = (string)reader["ProductDescribe"];
-                int Price = (int)reader["Price"];
-                int count = (int)reader["Quantity"];
-                int totalPrice = (int)reader["TotalAmount"];
-                string flavor = (string)reader["Flavor"];
-                string addIngredients = (string)reader["AddIngredients"];
-            }
-            reader.Close();
-            con.Close();
-        }
-        private void dtpTime_ValueChanged(object sender, EventArgs e)
-        {
-            DateSearch();
-        }
-        void DateSearch()
-        {
-            lboxSearchResult.Items.Clear();  // 清空列表框
+            lboxSearchOrder.Items.Clear();  // 清空列表框
+            OrderIDs.Clear();  // 清空訂單結果
 
             SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
             con.Open();
 
             string strSQL = $"select * from \"Order\" where CustomerId = @CustomerId and (OrderDate >= @StartBirth) and (OrderDate <= @EndBirth);";
             SqlCommand cmd = new SqlCommand(strSQL, con);
-            cmd.Parameters.AddWithValue("@CustomerId", GlobalVar.UserID);
+            cmd.Parameters.AddWithValue("@CustomerId", myId);
             cmd.Parameters.AddWithValue("@StartBirth", dtpStartTime.Value);
             cmd.Parameters.AddWithValue("@EndBirth", dtpEndTime.Value);
 
             SqlDataReader reader = cmd.ExecuteReader();
-            SearchIDs.Clear();  // 清空之前的搜尋結果
+
             while (reader.Read())
             {
-                lboxSearchResult.Items.Add($"{reader["OrderDate"]} {reader["TotalAmount"]}");
-                SearchIDs.Add((int)reader["OrderNumber"]);
+                lboxSearchOrder.Items.Add($"{reader["OrderDate"]} {reader["TotalAmount"]}");
+                OrderIDs.Add((int)reader["OrderNumber"]);
             }
 
             reader.Close();
             con.Close();  // 關閉連線
         }
-        void DisplayShoppingProduct(int myId)
+
+        private void lboxSearchOrder_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lboxSearchOrder.SelectedIndex >= 0 && lboxSearchOrder.SelectedIndex < OrderIDs.Count)
+            {
+                selectOrderId = 0;
+                pnlShowProduct.Controls.Clear();
+                selectOrderId = OrderIDs[lboxSearchOrder.SelectedIndex];
+                DisplayOrderItem(selectOrderId);
+            }
+        }
+        void DisplayOrderItem(int Myid)
         {
             int yOffset = 10; // 初始Y偏移
             int xOffset = 10; // 初始X偏移
 
-            Panel newPanel = new Panel
-            {
-                Anchor = AnchorStyles.Top | AnchorStyles.Left,
-                Location = new Point(297, 114),
-                Size = new Size(1203, 701),
-                BackColor = Color.Transparent,
-                AutoScroll = true
-            };
-
-            this.Controls.Add(newPanel); // 確保將 newPanel 添加到 ShoppingCart 表單中
+            this.Controls.Add(pnlShowProduct); // 確保將 newPanel 添加到 ShoppingCart 表單中
             SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
             con.Open();
 
             string strSQL = $"select * from \"Order\" o RIGHT JOIN OrderItem oi on oi.OrderNumber = o.OrderNumber RIGHT JOIN Product p on oi.ProductId = p.ProductId where oi.OrderNumber = @OrderNumber;";
             SqlCommand cmd = new SqlCommand(strSQL, con);
-            cmd.Parameters.AddWithValue("@OrderNumber", selectId);
+            cmd.Parameters.AddWithValue("@OrderNumber", Myid);
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read() == true)
             {
@@ -278,7 +256,7 @@ namespace IceShop
                     BackColor = Color.Transparent,
                     Font = new Font("Microsoft YaHei UI", 14, FontStyle.Bold),
                     ForeColor = Color.FromArgb(0, 0, 51),
-                    Location = new Point(xOffset + 500, yOffset + 90),
+                    Location = new Point(xOffset + 400, yOffset + 90),
                     Text = "$" + Price.ToString()
                 };
 
@@ -287,7 +265,7 @@ namespace IceShop
                     BackColor = Color.Transparent,
                     Font = new Font("Microsoft YaHei UI", 14, FontStyle.Bold),
                     ForeColor = Color.FromArgb(0, 0, 51),
-                    Location = new Point(xOffset + 600, yOffset + 90),
+                    Location = new Point(xOffset + 500, yOffset + 90),
                     Text = "X" + count.ToString()
                 };
 
@@ -301,13 +279,13 @@ namespace IceShop
                     Text = "----------------------------------------------"
                 };
 
-                newPanel.Controls.Add(myLabelProductName);
-                newPanel.Controls.Add(myLabelProductDescribe);
-                newPanel.Controls.Add(myLabelFlavor);
-                newPanel.Controls.Add(myLabelAddIngredients);
-                newPanel.Controls.Add(myLabelPrice);
-                newPanel.Controls.Add(myLabelCount);
-                newPanel.Controls.Add(myDivider);
+                pnlShowProduct.Controls.Add(myLabelProductName);
+                pnlShowProduct.Controls.Add(myLabelProductDescribe);
+                pnlShowProduct.Controls.Add(myLabelFlavor);
+                pnlShowProduct.Controls.Add(myLabelAddIngredients);
+                pnlShowProduct.Controls.Add(myLabelPrice);
+                pnlShowProduct.Controls.Add(myLabelCount);
+                pnlShowProduct.Controls.Add(myDivider);
 
                 // Bring controls to front
                 myLabelProductName.BringToFront();
@@ -325,15 +303,24 @@ namespace IceShop
             // 第二次查詢，這次用不同的 SqlCommand 和 SqlDataReader
             string strSQL2 = $"select * from \"Order\" o RIGHT JOIN OrderItem oi on oi.OrderNumber = o.OrderNumber RIGHT JOIN Product p on oi.ProductId = p.ProductId where oi.OrderNumber = @OrderNumber;";
             SqlCommand cmd2 = new SqlCommand(strSQL2, con);
-            cmd2.Parameters.AddWithValue("@OrderNumber", selectId);
+            cmd2.Parameters.AddWithValue("@OrderNumber", Myid);
             SqlDataReader reader2 = cmd2.ExecuteReader();
             if (reader2.Read() == true)
             {
-                lblOrderNumber.Text = Convert.ToString(selectId);
+                lblOrderNumber.Text = Convert.ToString(Myid);
                 lblOrderTime.Text = Convert.ToDateTime(reader2["OrderDate"]).ToString("yyyy-MM-dd HH:mm:ss");
                 lblOrderPurchaser.Text = (string)reader2["UserName"];
                 lblTotalMoney.Text = Convert.ToString(reader2["TotalAmount"]);
-                if ((bool)reader2["OrderStatus"] == true)
+                lblHowToEat.Text = (string)reader2["DiningOption"];
+                if ((bool)reader2["BagOption"] == true)
+                {
+                    lblBag.Text = "是";
+                }
+                else
+                {
+                    lblBag.Text = "否";
+                }
+                if((bool)reader2["OrderStatus"] == true)
                 {
                     lblOrderStatus.Text = "已完成";
                 }
@@ -341,13 +328,14 @@ namespace IceShop
                 {
                     lblOrderStatus.Text = "處理中";
                 }
+
             }
             reader2.Close(); // 關閉第二個 reader
 
             // 最後的查詢，用於計算商品種類數量
             string countSQL = "select COUNT(oi.OrderNumber) as ProductCount from OrderItem oi where oi.OrderNumber = @OrderNumber;";
             SqlCommand countCmd = new SqlCommand(countSQL, con);
-            countCmd.Parameters.AddWithValue("@OrderNumber", myId);
+            countCmd.Parameters.AddWithValue("@OrderNumber", Myid);
             int productCount = (int)countCmd.ExecuteScalar();
 
             // 將計算的商品種類數顯示在 lblProductItemCount
@@ -377,9 +365,37 @@ namespace IceShop
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
-            form1.Show();
+            StaffBackend StaffBackend = new StaffBackend();
+            StaffBackend.Show();
             this.Hide();
+        }
+
+        private void btnOrderStatusModify_Click(object sender, EventArgs e)
+        {
+            if(selectOrderId != 0)
+            {
+                SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
+                con.Open();
+
+                bool OrderStatus = true;
+                if (lblOrderStatus.Text == "已完成")
+                {
+                    OrderStatus = false;
+                    lblOrderStatus.Text = "處理中";
+                }
+                else if (lblOrderStatus.Text == "處理中")
+                {
+                    OrderStatus = true;
+                    lblOrderStatus.Text = "已完成";
+                }
+                string strSQL = $"update \"Order\" set OrderStatus = '{OrderStatus}' where OrderNumber = @OrderNumber;";
+                SqlCommand cmd = new SqlCommand(strSQL, con);
+                cmd.Parameters.AddWithValue("@OrderNumber", selectOrderId);
+                SqlDataReader reader = cmd.ExecuteReader();
+                reader.Close(); // 關閉第二個 reader
+                con.Close(); // 關閉連線
+            }
+
         }
     }
 }

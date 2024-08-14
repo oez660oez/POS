@@ -464,7 +464,7 @@
             this.lblOrderStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblOrderStatus.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOrderStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
-            this.lblOrderStatus.Location = new System.Drawing.Point(1374, 964);
+            this.lblOrderStatus.Location = new System.Drawing.Point(1348, 961);
             this.lblOrderStatus.Margin = new System.Windows.Forms.Padding(0);
             this.lblOrderStatus.Name = "lblOrderStatus";
             this.lblOrderStatus.Size = new System.Drawing.Size(32, 36);

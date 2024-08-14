@@ -1,6 +1,6 @@
 ﻿namespace IceShop
 {
-    partial class ProductThumbnails
+    partial class CalculateMoney
     {
         /// <summary>
         /// Required designer variable.
@@ -30,18 +30,16 @@
         {
             this.SuspendLayout();
             // 
-            // ProductThumbnails
+            // CalculateMoney
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 520);
+            this.ClientSize = new System.Drawing.Size(600, 400);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ProductThumbnails";
-            this.Text = "pnlShavedSnow";
-            this.Activated += new System.EventHandler(this.ProductThumbnails_Activated);
-            this.Load += new System.EventHandler(this.ShavedSnow_Load);
+            this.Name = "CalculateMoney";
+            this.Text = "CalculateMoney";
+            this.Load += new System.EventHandler(this.CalculateMoney_Load);
             this.ResumeLayout(false);
 
         }

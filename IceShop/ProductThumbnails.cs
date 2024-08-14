@@ -15,54 +15,50 @@ namespace IceShop
     public partial class ProductThumbnails : Form
     {
         private Form1 mainForm;
+        private string filterProductName;
         SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
         List<int> listId = new List<int>();
         List<string> listProductName = new List<string>();
 
-        public ProductThumbnails(Form1 form)
+        public ProductThumbnails(Form1 form, string productName = "")
         {
             InitializeComponent();
             mainForm = form;
+            filterProductName = productName;
         }
         private void ShavedSnow_Load(object sender, EventArgs e)
         {
             LoadProductDatabase();
         }
 
-        void LoadProductDatabase()
+        private void ProductThumbnails_Activated(object sender, EventArgs e)
+        {
+            LoadProductDatabase();
+        }
+        public void LoadProductDatabase()
         {
             try
             {
                 SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
                 con.Open();
-                string strSQL = "";
-                foreach (var item in GlobalVar.listChooseCategory)
+                string strSQL = "select top 200 * from product where ProductCategory = @Category";
+                if (!string.IsNullOrEmpty(filterProductName))
                 {
-                    switch (item)
-                    {
-                        case 1:
-                            strSQL = "select top 200 * from product where ProductCategory = 1;";
-                            break;
-                        case 2:
-                            strSQL = "select top 200 * from product where ProductCategory = 2;";
-                            break;
-                        case 3:
-                            strSQL = "select top 200 * from product where ProductCategory = 3;";
-                            break;
-                        case 4:
-                            strSQL = "select top 200 * from product where ProductCategory = 4;";
-                            break;
-                            ;
-                        case 5:
-                            strSQL = "select top 200 * from product where ProductCategory = 5;";
-                            break;
-                        default:
-                            break;
-                    }
+                    strSQL += " AND ProductName LIKE @ProductName";
                 }
 
                 SqlCommand cmd = new SqlCommand(strSQL, con);
+                cmd.Parameters.AddWithValue("@Category", GlobalVar.listChooseCategory[0]);
+
+                if (!string.IsNullOrEmpty(filterProductName))
+                {
+                    cmd.Parameters.AddWithValue("@ProductName", "%" + filterProductName + "%");
+                }
+
                 SqlDataReader reader = cmd.ExecuteReader();
+
+                // 清除現有的縮圖按鈕
+                Controls.Clear();
 
                 int count = 0;
                 int xOffset = 5;
@@ -156,5 +152,6 @@ namespace IceShop
                 mainForm.ShowProductDetail(originalMilkShavedSnow);
             }
         }
+
     }
 }

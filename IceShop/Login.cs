@@ -80,8 +80,8 @@ namespace IceShop
                         }
                         else
                         {
-                            ProductBackend BackendSystem = new ProductBackend();
-                            BackendSystem.Show(); // 使用 Show 而不是 ShowDialog
+                            StaffBackend StaffBackend = new StaffBackend();
+                            StaffBackend.Show(); // 使用 Show 而不是 ShowDialog
                         }
 
                         this.Hide();

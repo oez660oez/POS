@@ -170,5 +170,23 @@ namespace IceShop
             BackendSystem.Show(); // 使用 Show 而不是 ShowDialog
             this.Hide();
         }
+
+        private void TxtSearch_TextChanged(object sender, EventArgs e)
+        {
+            FilterProducts(txtSearch.Text);
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            FilterProducts(txtSearch.Text);
+        }
+        private void FilterProducts(string productName)
+        {
+            pnlShow.Controls.Clear();
+            ProductThumbnails ProductThumbnails = new ProductThumbnails(this, productName) { TopLevel = false, TopMost = false }; // 傳遞Form1的實例
+            ProductThumbnails.FormBorderStyle = FormBorderStyle.None;
+            pnlShow.Controls.Add(ProductThumbnails);
+            ProductThumbnails.Show();
+        }
     }
 }

@@ -21,7 +21,6 @@ namespace IceShop
         private int productId;
         List<string> listAddIngredientsItems = new List<string>();
         List<string> listFlavorItems = new List<string>();
-        private string previousSelectedFlavor = "";//儲存冰磚口味
         Panel myPanel;
         string IceName = "";
         string IceDescribe = "";
@@ -268,7 +267,6 @@ namespace IceShop
 
             int i = 0;
             int columnCount = 4; // 每列顯示 4 個 CheckBox
-                    int rowCount = 4; // 總共 4 列
                     int checkBoxWidth = 160;
                     int checkBoxHeight = 35;
                     int verticalSpacing = 20; // 垂直間距
