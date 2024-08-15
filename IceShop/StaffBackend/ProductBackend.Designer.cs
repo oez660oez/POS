@@ -59,19 +59,21 @@
             this.pnlShavedIce = new System.Windows.Forms.Panel();
             this.pnlShavedSnow = new System.Windows.Forms.Panel();
             this.pnlShow = new System.Windows.Forms.Panel();
-            this.btnClearCol = new System.Windows.Forms.Button();
-            this.btnAddSave = new System.Windows.Forms.Button();
-            this.btnSelectImageAdd = new System.Windows.Forms.Button();
-            this.btnSelectImageModify = new System.Windows.Forms.Button();
-            this.btnModifySave = new System.Windows.Forms.Button();
-            this.btnDeleteProduct = new System.Windows.Forms.Button();
-            this.btnSelectImageThumbnailAdd = new System.Windows.Forms.Button();
-            this.btnSelectImageThumbnailModify = new System.Windows.Forms.Button();
             this.groupBoxStatus = new System.Windows.Forms.GroupBox();
             this.groupBoxCheckAdd = new System.Windows.Forms.GroupBox();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSelectImageThumbnailModify = new System.Windows.Forms.Button();
+            this.btnSelectImageThumbnailAdd = new System.Windows.Forms.Button();
+            this.btnDeleteProduct = new System.Windows.Forms.Button();
+            this.btnSelectImageModify = new System.Windows.Forms.Button();
+            this.btnModifySave = new System.Windows.Forms.Button();
+            this.btnClearCol = new System.Windows.Forms.Button();
+            this.btnAddSave = new System.Windows.Forms.Button();
+            this.btnSelectImageAdd = new System.Windows.Forms.Button();
             this.buttonModifyDisplay = new System.Windows.Forms.Button();
             this.btnAddProductDisplay = new System.Windows.Forms.Button();
             this.btnDrinks01 = new System.Windows.Forms.Button();
@@ -461,86 +463,6 @@
             this.pnlShow.Size = new System.Drawing.Size(616, 671);
             this.pnlShow.TabIndex = 113;
             // 
-            // btnClearCol
-            // 
-            this.btnClearCol.Location = new System.Drawing.Point(891, 969);
-            this.btnClearCol.Name = "btnClearCol";
-            this.btnClearCol.Size = new System.Drawing.Size(145, 41);
-            this.btnClearCol.TabIndex = 151;
-            this.btnClearCol.Text = "清空欄位";
-            this.btnClearCol.UseVisualStyleBackColor = true;
-            this.btnClearCol.Click += new System.EventHandler(this.btnClearCol_Click);
-            // 
-            // btnAddSave
-            // 
-            this.btnAddSave.Location = new System.Drawing.Point(891, 911);
-            this.btnAddSave.Name = "btnAddSave";
-            this.btnAddSave.Size = new System.Drawing.Size(145, 41);
-            this.btnAddSave.TabIndex = 150;
-            this.btnAddSave.Text = "新增儲存";
-            this.btnAddSave.UseVisualStyleBackColor = true;
-            this.btnAddSave.Click += new System.EventHandler(this.btnAddSave_Click);
-            // 
-            // btnSelectImageAdd
-            // 
-            this.btnSelectImageAdd.Location = new System.Drawing.Point(891, 798);
-            this.btnSelectImageAdd.Name = "btnSelectImageAdd";
-            this.btnSelectImageAdd.Size = new System.Drawing.Size(145, 41);
-            this.btnSelectImageAdd.TabIndex = 149;
-            this.btnSelectImageAdd.Text = "選取圖片";
-            this.btnSelectImageAdd.UseVisualStyleBackColor = true;
-            this.btnSelectImageAdd.Click += new System.EventHandler(this.btnSelectImageAdd_Click);
-            // 
-            // btnSelectImageModify
-            // 
-            this.btnSelectImageModify.Location = new System.Drawing.Point(1183, 837);
-            this.btnSelectImageModify.Name = "btnSelectImageModify";
-            this.btnSelectImageModify.Size = new System.Drawing.Size(145, 41);
-            this.btnSelectImageModify.TabIndex = 152;
-            this.btnSelectImageModify.Text = "選取圖片";
-            this.btnSelectImageModify.UseVisualStyleBackColor = true;
-            this.btnSelectImageModify.Click += new System.EventHandler(this.btnSelectImageModify_Click);
-            // 
-            // btnModifySave
-            // 
-            this.btnModifySave.Location = new System.Drawing.Point(1183, 946);
-            this.btnModifySave.Name = "btnModifySave";
-            this.btnModifySave.Size = new System.Drawing.Size(145, 41);
-            this.btnModifySave.TabIndex = 153;
-            this.btnModifySave.Text = "修改儲存";
-            this.btnModifySave.UseVisualStyleBackColor = true;
-            this.btnModifySave.Click += new System.EventHandler(this.btnModifySave_Click);
-            // 
-            // btnDeleteProduct
-            // 
-            this.btnDeleteProduct.Location = new System.Drawing.Point(1349, 838);
-            this.btnDeleteProduct.Name = "btnDeleteProduct";
-            this.btnDeleteProduct.Size = new System.Drawing.Size(145, 41);
-            this.btnDeleteProduct.TabIndex = 154;
-            this.btnDeleteProduct.Text = "刪除商品";
-            this.btnDeleteProduct.UseVisualStyleBackColor = true;
-            this.btnDeleteProduct.Click += new System.EventHandler(this.btnDeleteProduct_Click);
-            // 
-            // btnSelectImageThumbnailAdd
-            // 
-            this.btnSelectImageThumbnailAdd.Location = new System.Drawing.Point(891, 854);
-            this.btnSelectImageThumbnailAdd.Name = "btnSelectImageThumbnailAdd";
-            this.btnSelectImageThumbnailAdd.Size = new System.Drawing.Size(145, 41);
-            this.btnSelectImageThumbnailAdd.TabIndex = 155;
-            this.btnSelectImageThumbnailAdd.Text = "選取圖片縮圖";
-            this.btnSelectImageThumbnailAdd.UseVisualStyleBackColor = true;
-            this.btnSelectImageThumbnailAdd.Click += new System.EventHandler(this.btnSelectImageThumbnailAdd_Click);
-            // 
-            // btnSelectImageThumbnailModify
-            // 
-            this.btnSelectImageThumbnailModify.Location = new System.Drawing.Point(1183, 891);
-            this.btnSelectImageThumbnailModify.Name = "btnSelectImageThumbnailModify";
-            this.btnSelectImageThumbnailModify.Size = new System.Drawing.Size(145, 41);
-            this.btnSelectImageThumbnailModify.TabIndex = 156;
-            this.btnSelectImageThumbnailModify.Text = "選取圖片縮圖";
-            this.btnSelectImageThumbnailModify.UseVisualStyleBackColor = true;
-            this.btnSelectImageThumbnailModify.Click += new System.EventHandler(this.btnSelectImageThumbnailModify_Click);
-            // 
             // groupBoxStatus
             // 
             this.groupBoxStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
@@ -605,6 +527,141 @@
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "加料";
             this.radioButton4.UseVisualStyleBackColor = false;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(176)))), ((int)(((byte)(227)))));
+            this.label13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label13.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
+            this.label13.Location = new System.Drawing.Point(888, 61);
+            this.label13.Margin = new System.Windows.Forms.Padding(0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(130, 35);
+            this.label13.TabIndex = 160;
+            this.label13.Text = "搜尋商品:";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(1020, 63);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(214, 32);
+            this.txtSearch.TabIndex = 159;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // btnSelectImageThumbnailModify
+            // 
+            this.btnSelectImageThumbnailModify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(176)))), ((int)(((byte)(227)))));
+            this.btnSelectImageThumbnailModify.BackgroundImage = global::IceShop.Properties.Resources.選取圖片縮圖按鈕;
+            this.btnSelectImageThumbnailModify.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSelectImageThumbnailModify.FlatAppearance.BorderSize = 0;
+            this.btnSelectImageThumbnailModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelectImageThumbnailModify.Location = new System.Drawing.Point(1183, 891);
+            this.btnSelectImageThumbnailModify.Name = "btnSelectImageThumbnailModify";
+            this.btnSelectImageThumbnailModify.Size = new System.Drawing.Size(145, 41);
+            this.btnSelectImageThumbnailModify.TabIndex = 156;
+            this.btnSelectImageThumbnailModify.UseVisualStyleBackColor = false;
+            this.btnSelectImageThumbnailModify.Click += new System.EventHandler(this.btnSelectImageThumbnailModify_Click);
+            // 
+            // btnSelectImageThumbnailAdd
+            // 
+            this.btnSelectImageThumbnailAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(176)))), ((int)(((byte)(227)))));
+            this.btnSelectImageThumbnailAdd.BackgroundImage = global::IceShop.Properties.Resources.選取圖片縮圖按鈕;
+            this.btnSelectImageThumbnailAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSelectImageThumbnailAdd.FlatAppearance.BorderSize = 0;
+            this.btnSelectImageThumbnailAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelectImageThumbnailAdd.Location = new System.Drawing.Point(891, 854);
+            this.btnSelectImageThumbnailAdd.Name = "btnSelectImageThumbnailAdd";
+            this.btnSelectImageThumbnailAdd.Size = new System.Drawing.Size(145, 41);
+            this.btnSelectImageThumbnailAdd.TabIndex = 155;
+            this.btnSelectImageThumbnailAdd.UseVisualStyleBackColor = false;
+            this.btnSelectImageThumbnailAdd.Click += new System.EventHandler(this.btnSelectImageThumbnailAdd_Click);
+            // 
+            // btnDeleteProduct
+            // 
+            this.btnDeleteProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(176)))), ((int)(((byte)(227)))));
+            this.btnDeleteProduct.BackgroundImage = global::IceShop.Properties.Resources.刪除商品按鈕;
+            this.btnDeleteProduct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDeleteProduct.FlatAppearance.BorderSize = 0;
+            this.btnDeleteProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteProduct.Location = new System.Drawing.Point(1349, 838);
+            this.btnDeleteProduct.Name = "btnDeleteProduct";
+            this.btnDeleteProduct.Size = new System.Drawing.Size(145, 41);
+            this.btnDeleteProduct.TabIndex = 154;
+            this.btnDeleteProduct.UseVisualStyleBackColor = false;
+            this.btnDeleteProduct.Click += new System.EventHandler(this.btnDeleteProduct_Click);
+            // 
+            // btnSelectImageModify
+            // 
+            this.btnSelectImageModify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(176)))), ((int)(((byte)(227)))));
+            this.btnSelectImageModify.BackgroundImage = global::IceShop.Properties.Resources.選取圖片按鈕;
+            this.btnSelectImageModify.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSelectImageModify.FlatAppearance.BorderSize = 0;
+            this.btnSelectImageModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelectImageModify.Location = new System.Drawing.Point(1183, 837);
+            this.btnSelectImageModify.Name = "btnSelectImageModify";
+            this.btnSelectImageModify.Size = new System.Drawing.Size(145, 41);
+            this.btnSelectImageModify.TabIndex = 152;
+            this.btnSelectImageModify.UseVisualStyleBackColor = false;
+            this.btnSelectImageModify.Click += new System.EventHandler(this.btnSelectImageModify_Click);
+            // 
+            // btnModifySave
+            // 
+            this.btnModifySave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(176)))), ((int)(((byte)(227)))));
+            this.btnModifySave.BackgroundImage = global::IceShop.Properties.Resources.修改儲存;
+            this.btnModifySave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnModifySave.FlatAppearance.BorderSize = 0;
+            this.btnModifySave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModifySave.Location = new System.Drawing.Point(1183, 946);
+            this.btnModifySave.Name = "btnModifySave";
+            this.btnModifySave.Size = new System.Drawing.Size(145, 41);
+            this.btnModifySave.TabIndex = 153;
+            this.btnModifySave.UseVisualStyleBackColor = false;
+            this.btnModifySave.Click += new System.EventHandler(this.btnModifySave_Click);
+            // 
+            // btnClearCol
+            // 
+            this.btnClearCol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(176)))), ((int)(((byte)(227)))));
+            this.btnClearCol.BackgroundImage = global::IceShop.Properties.Resources.清空欄位按鈕;
+            this.btnClearCol.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClearCol.FlatAppearance.BorderSize = 0;
+            this.btnClearCol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClearCol.Location = new System.Drawing.Point(891, 969);
+            this.btnClearCol.Name = "btnClearCol";
+            this.btnClearCol.Size = new System.Drawing.Size(145, 41);
+            this.btnClearCol.TabIndex = 151;
+            this.btnClearCol.UseVisualStyleBackColor = false;
+            this.btnClearCol.Click += new System.EventHandler(this.btnClearCol_Click);
+            // 
+            // btnAddSave
+            // 
+            this.btnAddSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(176)))), ((int)(((byte)(227)))));
+            this.btnAddSave.BackgroundImage = global::IceShop.Properties.Resources.新增儲存按鈕;
+            this.btnAddSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddSave.FlatAppearance.BorderSize = 0;
+            this.btnAddSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddSave.Location = new System.Drawing.Point(891, 911);
+            this.btnAddSave.Name = "btnAddSave";
+            this.btnAddSave.Size = new System.Drawing.Size(145, 41);
+            this.btnAddSave.TabIndex = 150;
+            this.btnAddSave.UseVisualStyleBackColor = false;
+            this.btnAddSave.Click += new System.EventHandler(this.btnAddSave_Click);
+            // 
+            // btnSelectImageAdd
+            // 
+            this.btnSelectImageAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(176)))), ((int)(((byte)(227)))));
+            this.btnSelectImageAdd.BackgroundImage = global::IceShop.Properties.Resources.選取圖片按鈕;
+            this.btnSelectImageAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSelectImageAdd.FlatAppearance.BorderSize = 0;
+            this.btnSelectImageAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelectImageAdd.Location = new System.Drawing.Point(891, 798);
+            this.btnSelectImageAdd.Name = "btnSelectImageAdd";
+            this.btnSelectImageAdd.Size = new System.Drawing.Size(145, 41);
+            this.btnSelectImageAdd.TabIndex = 149;
+            this.btnSelectImageAdd.UseVisualStyleBackColor = false;
+            this.btnSelectImageAdd.Click += new System.EventHandler(this.btnSelectImageAdd_Click);
             // 
             // buttonModifyDisplay
             // 
@@ -745,6 +802,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1500, 1030);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.groupBoxCheckAdd);
             this.Controls.Add(this.groupBoxStatus);
             this.Controls.Add(this.btnSelectImageThumbnailModify);
@@ -866,5 +925,7 @@
         private System.Windows.Forms.RadioButton radioButton5;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtSearch;
     }
 }

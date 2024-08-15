@@ -35,14 +35,17 @@ namespace IceShop
             if (GlobalVar.UserAuthority == 2)
             {
                 lblCategory.Text = "員工";
+                btnDelete.Visible = false;
             }
             else if (GlobalVar.UserAuthority == 3)
             {
                 lblCategory.Text = "會員";
+                btnDelete.Visible = false;
             }
             else
             {
                 lblCategory.Text = "店長";
+                btnDelete.Visible = true;
             }
             lblUserName.Text = GlobalVar.UserName;
         }
@@ -114,7 +117,7 @@ namespace IceShop
                     {
                         strUserAuthority = "店長";
                     }
-                    lboxSearchResult.Items.Add($"編號:{reader["CustomerId"]} {reader["Name"]} 權限:{strUserAuthority} 點數:{reader["Point"]}");
+                    lboxSearchResult.Items.Add($"編號:{reader["CustomerId"]} {reader["Name"]} 權限:{strUserAuthority}");
                     SearchIDs.Add((int)reader["CustomerId"]);//索引值對應(同while迴圈新增的關係)
                     count++;
                 }
@@ -177,6 +180,34 @@ namespace IceShop
                 StaffBackend StaffBackend = new StaffBackend();
                 StaffBackend.Show();
                 this.Hide();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (selectId > 0)
+            {
+                SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
+                con.Open();
+                string strSQL = "delete from Customer where CustomerId = @DeleteId;";
+                SqlCommand cmd = new SqlCommand(strSQL, con);
+                cmd.Parameters.AddWithValue("@DeleteId", selectId);
+                int rows = cmd.ExecuteNonQuery();
+                con.Close();
+
+                txtUserName.Text = "";
+                txtPassword.Text = "";
+                txtName.Text = "";
+                txtPhone.Text = "";
+                txtAddress.Text = "";
+                txtEmail.Text = "";
+                dtpBirth.Value = DateTime.Now;
+                chkMarry.Checked = false;
+                radioMemberLogin.Checked = false;
+                radioStaffLogin.Checked = false;
+                radioManagerLogin.Checked = false;
+
+                MessageBox.Show($"資料已刪除\n {rows}筆資料受影響");
+            }
         }
     }
 }

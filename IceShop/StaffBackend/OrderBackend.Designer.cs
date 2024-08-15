@@ -580,7 +580,7 @@
             this.lblOrderStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblOrderStatus.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOrderStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
-            this.lblOrderStatus.Location = new System.Drawing.Point(1076, 955);
+            this.lblOrderStatus.Location = new System.Drawing.Point(1091, 952);
             this.lblOrderStatus.Margin = new System.Windows.Forms.Padding(0);
             this.lblOrderStatus.Name = "lblOrderStatus";
             this.lblOrderStatus.Size = new System.Drawing.Size(32, 36);
@@ -595,7 +595,7 @@
             this.label24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label24.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
-            this.label24.Location = new System.Drawing.Point(1053, 900);
+            this.label24.Location = new System.Drawing.Point(1076, 912);
             this.label24.Margin = new System.Windows.Forms.Padding(0);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(131, 36);
@@ -685,7 +685,7 @@
             this.lblOrderNumber.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblOrderNumber.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOrderNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
-            this.lblOrderNumber.Location = new System.Drawing.Point(831, 63);
+            this.lblOrderNumber.Location = new System.Drawing.Point(834, 63);
             this.lblOrderNumber.Margin = new System.Windows.Forms.Padding(0);
             this.lblOrderNumber.Name = "lblOrderNumber";
             this.lblOrderNumber.Size = new System.Drawing.Size(24, 26);

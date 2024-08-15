@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B650F7C4-5CC3-4660-8960-C63E7E2D6485}|IceShop\\IceShop.csproj|c:\\users\\liyuan\\desktop\\\u671F\u4E2D\u5C08\u984C\\iceshop\\iceshop\\staffbackend\\productbackend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B650F7C4-5CC3-4660-8960-C63E7E2D6485}|IceShop\\IceShop.csproj|solutionrelative:iceshop\\staffbackend\\productbackend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{B650F7C4-5CC3-4660-8960-C63E7E2D6485}|IceShop\\IceShop.csproj|c:\\users\\liyuan\\desktop\\\u671F\u4E2D\u5C08\u984C\\iceshop\\iceshop\\staffbackend\\orderbackend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B650F7C4-5CC3-4660-8960-C63E7E2D6485}|IceShop\\IceShop.csproj|solutionrelative:iceshop\\staffbackend\\orderbackend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B650F7C4-5CC3-4660-8960-C63E7E2D6485}|IceShop\\IceShop.csproj|c:\\users\\liyuan\\desktop\\\u671F\u4E2D\u5C08\u984C\\iceshop\\iceshop\\staffbackend\\orderbackend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B650F7C4-5CC3-4660-8960-C63E7E2D6485}|IceShop\\IceShop.csproj|solutionrelative:iceshop\\staffbackend\\orderbackend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B650F7C4-5CC3-4660-8960-C63E7E2D6485}|IceShop\\IceShop.csproj|C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\iceshop\\globalvar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,24 +27,37 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ProductBackend.cs [\u8A2D\u8A08]",
-              "DocumentMoniker": "C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\IceShop\\StaffBackend\\ProductBackend.cs",
-              "RelativeDocumentMoniker": "IceShop\\StaffBackend\\ProductBackend.cs",
-              "ToolTip": "C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\IceShop\\StaffBackend\\ProductBackend.cs [\u8A2D\u8A08]",
-              "RelativeToolTip": "IceShop\\StaffBackend\\ProductBackend.cs [\u8A2D\u8A08]",
+              "Title": "OrderBackend.cs",
+              "DocumentMoniker": "C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\IceShop\\StaffBackend\\OrderBackend.cs",
+              "RelativeDocumentMoniker": "IceShop\\StaffBackend\\OrderBackend.cs",
+              "ToolTip": "C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\IceShop\\StaffBackend\\OrderBackend.cs",
+              "RelativeToolTip": "IceShop\\StaffBackend\\OrderBackend.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAIwDwAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-14T16:37:01.326Z",
-              "EditorCaption": " [\u8A2D\u8A08]"
+              "WhenOpened": "2024-08-15T15:38:03.604Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "OrderBackend.cs [\u8A2D\u8A08]",
+              "DocumentMoniker": "C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\IceShop\\StaffBackend\\OrderBackend.cs",
+              "RelativeDocumentMoniker": "IceShop\\StaffBackend\\OrderBackend.cs",
+              "ToolTip": "C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\IceShop\\StaffBackend\\OrderBackend.cs [\u8A2D\u8A08]",
+              "RelativeToolTip": "IceShop\\StaffBackend\\OrderBackend.cs [\u8A2D\u8A08]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-15T15:36:24.83Z",
+              "EditorCaption": " [\u8A2D\u8A08]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "GlobalVar.cs",
               "DocumentMoniker": "C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\IceShop\\GlobalVar.cs",
               "RelativeDocumentMoniker": "IceShop\\GlobalVar.cs",
               "ToolTip": "C:\\Users\\LiYuan\\Desktop\\\u671F\u4E2D\u5C08\u984C\\IceShop\\IceShop\\GlobalVar.cs",
               "RelativeToolTip": "IceShop\\GlobalVar.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAABFAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-13T13:23:11.225Z",
               "EditorCaption": ""

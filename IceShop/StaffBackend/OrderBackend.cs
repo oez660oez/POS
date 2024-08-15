@@ -25,6 +25,7 @@ namespace IceShop
 
         private void OrderBackend_Load(object sender, EventArgs e)
         {
+            DisplayText();
             radioMaritalStatusAll.Checked = true;
             cboxSearchCol.Items.Add("Name");
             cboxSearchCol.Items.Add("Phone");
@@ -48,7 +49,18 @@ namespace IceShop
             }
             lblUserName.Text = GlobalVar.UserName;
         }
+        void DisplayText()
+        {
+            lblOrderNumber.Text = "";
+            lblOrderTime.Text = "";
+            lblOrderPurchaser.Text = "";
+            lblTotalMoney.Text = "";
+            lblProductItemCount.Text = "";
+            lblHowToEat.Text = "";
+            lblBag.Text = "";
+            lblOrderStatus.Text = "";
 
+        }
         private void pnlFormTitle_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -116,7 +128,7 @@ namespace IceShop
                     {
                         strUserAuthority = "店長";
                     }
-                    lboxSearchResult.Items.Add($"編號:{reader["CustomerId"]} {reader["Name"]} 權限:{strUserAuthority} 點數:{reader["Point"]}");
+                    lboxSearchResult.Items.Add($"編號:{reader["CustomerId"]} {reader["Name"]} 權限:{strUserAuthority}");
                     SearchIDs.Add((int)reader["CustomerId"]);//索引值對應(同while迴圈新增的關係)
                     count++;
                 }

@@ -303,6 +303,16 @@ namespace IceShop.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap 修改儲存 {
+            get {
+                object obj = ResourceManager.GetObject("修改儲存", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap 修改產品01 {
             get {
                 object obj = ResourceManager.GetObject("修改產品01", resourceCulture);
@@ -356,6 +366,16 @@ namespace IceShop.Properties {
         internal static System.Drawing.Bitmap 刨冰系列02 {
             get {
                 object obj = ResourceManager.GetObject("刨冰系列02", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 刪除商品按鈕 {
+            get {
+                object obj = ResourceManager.GetObject("刪除商品按鈕", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -523,6 +543,16 @@ namespace IceShop.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap 打卡系統 {
+            get {
+                object obj = ResourceManager.GetObject("打卡系統", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap 招牌八寶刨冰 {
             get {
                 object obj = ResourceManager.GetObject("招牌八寶刨冰", resourceCulture);
@@ -566,6 +596,16 @@ namespace IceShop.Properties {
         internal static System.Drawing.Bitmap 數量減少 {
             get {
                 object obj = ResourceManager.GetObject("數量減少", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 新增儲存按鈕 {
+            get {
+                object obj = ResourceManager.GetObject("新增儲存按鈕", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -623,6 +663,36 @@ namespace IceShop.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap 會員刪除按鈕 {
+            get {
+                object obj = ResourceManager.GetObject("會員刪除按鈕", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 會員查詢修改按鈕 {
+            get {
+                object obj = ResourceManager.GetObject("會員查詢修改按鈕", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 會員訂單查詢按鈕 {
+            get {
+                object obj = ResourceManager.GetObject("會員訂單查詢按鈕", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap 會員資料查詢01 {
             get {
                 object obj = ResourceManager.GetObject("會員資料查詢01", resourceCulture);
@@ -643,9 +713,39 @@ namespace IceShop.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap 清空欄位按鈕 {
+            get {
+                object obj = ResourceManager.GetObject("清空欄位按鈕", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap 現金付款 {
             get {
                 object obj = ResourceManager.GetObject("現金付款", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 生成報告按鈕 {
+            get {
+                object obj = ResourceManager.GetObject("生成報告按鈕", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 產品新刪修按鈕 {
+            get {
+                object obj = ResourceManager.GetObject("產品新刪修按鈕", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -793,6 +893,16 @@ namespace IceShop.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap 計算營業額按鈕 {
+            get {
+                object obj = ResourceManager.GetObject("計算營業額按鈕", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap 註冊按鈕 {
             get {
                 object obj = ResourceManager.GetObject("註冊按鈕", resourceCulture);
@@ -816,6 +926,26 @@ namespace IceShop.Properties {
         internal static System.Drawing.Bitmap 返回按鈕 {
             get {
                 object obj = ResourceManager.GetObject("返回按鈕", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 選取圖片按鈕 {
+            get {
+                object obj = ResourceManager.GetObject("選取圖片按鈕", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 選取圖片縮圖按鈕 {
+            get {
+                object obj = ResourceManager.GetObject("選取圖片縮圖按鈕", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

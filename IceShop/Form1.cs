@@ -175,11 +175,6 @@ namespace IceShop
         {
             FilterProducts(txtSearch.Text);
         }
-
-        private void BtnSearch_Click(object sender, EventArgs e)
-        {
-            FilterProducts(txtSearch.Text);
-        }
         private void FilterProducts(string productName)
         {
             pnlShow.Controls.Clear();

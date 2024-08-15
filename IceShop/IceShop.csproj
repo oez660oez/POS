@@ -423,5 +423,44 @@
   <ItemGroup>
     <None Include="Resources\修改產品01.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\選取圖片按鈕.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\選取圖片縮圖按鈕.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\新增儲存按鈕.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\清空欄位按鈕.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\修改儲存.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\刪除商品按鈕.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\會員查詢修改按鈕.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\會員訂單查詢按鈕.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\產品新刪修按鈕.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\打卡系統.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\計算營業額按鈕.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\會員刪除按鈕.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\生成報告按鈕.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

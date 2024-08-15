@@ -21,6 +21,7 @@ namespace IceShop
         string strModifiedImageNameThumbnails = "";
         bool isModifyImage = false;
         int productId = 0;
+        string filterProductName = "";
         public ProductBackend()
         {
             InitializeComponent();
@@ -100,6 +101,11 @@ namespace IceShop
             pnlShow.Controls.Clear();
             LoadProductDatabase();
         }
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            filterProductName = txtSearch.Text;
+            LoadProductDatabase();
+        }
         void LoadProductDatabase()
         {
             try
@@ -107,33 +113,24 @@ namespace IceShop
                 listId.Clear();
                 SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
                 con.Open();
-                string strSQL = "";
-                foreach (var item in GlobalVar.listChooseCategory)
+                string strSQL = "select top 200 * from product where ProductCategory = @Category";
+                if (!string.IsNullOrEmpty(filterProductName))
                 {
-                    switch (item)
-                    {
-                        case 1:
-                            strSQL = "select top 200 * from product where ProductCategory = 1;";
-                            break;
-                        case 2:
-                            strSQL = "select top 200 * from product where ProductCategory = 2;";
-                            break;
-                        case 3:
-                            strSQL = "select top 200 * from product where ProductCategory = 3;";
-                            break;
-                        case 4:
-                            strSQL = "select top 200 * from product where ProductCategory = 4;";
-                            break;
-                        case 5:
-                            strSQL = "select top 200 * from product where ProductCategory = 5;";
-                            break;
-                        default:
-                            break;
-                    }
+                    strSQL += " AND ProductName LIKE @ProductName";
                 }
 
                 SqlCommand cmd = new SqlCommand(strSQL, con);
+                cmd.Parameters.AddWithValue("@Category", GlobalVar.listChooseCategory[0]);
+
+                if (!string.IsNullOrEmpty(filterProductName))
+                {
+                    cmd.Parameters.AddWithValue("@ProductName", "%" + filterProductName + "%");
+                }
+
                 SqlDataReader reader = cmd.ExecuteReader();
+
+                // 清除現有的縮圖按鈕
+                pnlShow.Controls.Clear();
 
                 int count = 0;
                 int xOffset = 5;

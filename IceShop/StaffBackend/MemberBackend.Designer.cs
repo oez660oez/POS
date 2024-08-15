@@ -68,6 +68,7 @@
             this.lblSystemTime = new System.Windows.Forms.Label();
             this.lblCategory = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -601,6 +602,20 @@
             this.lblUserName.TabIndex = 143;
             this.lblUserName.Text = "0";
             // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(176)))), ((int)(((byte)(227)))));
+            this.btnDelete.BackgroundImage = global::IceShop.Properties.Resources.會員刪除按鈕;
+            this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Location = new System.Drawing.Point(1137, 893);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(125, 125);
+            this.btnDelete.TabIndex = 144;
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
@@ -732,6 +747,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1500, 1030);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.lblCategory);
             this.Controls.Add(this.lblSystemTime);
@@ -852,5 +868,6 @@
         private System.Windows.Forms.Label lblSystemTime;
         private System.Windows.Forms.Label lblCategory;
         private System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
