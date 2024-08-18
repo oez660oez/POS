@@ -13,7 +13,7 @@ namespace IceShop
 {
     public partial class MemberBackend : Form
     {
-        int intMaritalStatus = 0; //0:全部 1:單身 2:已婚
+        
         List<int> SearchIDs = new List<int>();//搜尋結果
         int selectId = 0;
         public MemberBackend()
@@ -74,20 +74,17 @@ namespace IceShop
                 string strColName = cboxSearchCol.SelectedItem.ToString();
                 string sqlMaritalStatusCheckGrammar = "";//婚姻狀態查詢語法，假如不能用參數帶入的處理方式
 
-                switch (intMaritalStatus)
+                if (MaritalStatusSingle.Checked == true)
                 {
-                    case 0: //全部
-                        sqlMaritalStatusCheckGrammar = "";
-                        break;
-                    case 1: //單身
-                        sqlMaritalStatusCheckGrammar = "and (婚姻狀態 = 0)";
-                        break;
-                    case 2: //已婚
-                        sqlMaritalStatusCheckGrammar = "and (婚姻狀態 = 1)";
-                        break;
-                    default: //其他
-                        sqlMaritalStatusCheckGrammar = "";
-                        break;
+                    sqlMaritalStatusCheckGrammar = "and (MaritalStatus = 0)";
+                }
+                else if (radioMaritalStatusMarried.Checked == true)
+                {
+                    sqlMaritalStatusCheckGrammar = "and (MaritalStatus = 1)";
+                }
+                else
+                {
+                    sqlMaritalStatusCheckGrammar = "";
                 }
 
                 SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);

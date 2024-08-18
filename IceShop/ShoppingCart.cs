@@ -22,13 +22,13 @@ namespace IceShop
         {
             DisplayShoppingProduct();
             ShoppingCartTotalMoney();
+
         }
         private void ShoppingCart_Activated(object sender, EventArgs e)
         {
             DisplayShoppingProduct();
             ShoppingCartTotalMoney();
         }
-
         private void pnlFormTitle_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)

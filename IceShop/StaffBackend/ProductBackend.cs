@@ -19,6 +19,7 @@ namespace IceShop
         List<int> listId = new List<int>();
         string strModifiedImageName = "";
         string strModifiedImageNameThumbnails = "";
+        string strModifiedImageNameInStock = "";
         bool isModifyImage = false;
         int productId = 0;
         string filterProductName = "";
@@ -31,6 +32,20 @@ namespace IceShop
         {
             ImageChange();
             HideAllButton();
+            lblSystemTime.Text = DateTime.Now.ToString();
+            if (GlobalVar.UserAuthority == 2)
+            {
+                lblCategory.Text = "員工";
+            }
+            else if (GlobalVar.UserAuthority == 3)
+            {
+                lblCategory.Text = "會員";
+            }
+            else
+            {
+                lblCategory.Text = "店長";
+            }
+            lblUserName.Text = GlobalVar.UserName;
         }
         void ImageChange()
         {
@@ -234,8 +249,13 @@ namespace IceShop
                     strModifiedImageNameThumbnails = reader["ProductThumbnails"].ToString();
                     string strFullImagePath2 = $"{GlobalVar.image_dir}\\商品縮圖\\{strModifiedImageNameThumbnails}";
                     System.IO.FileStream fs2 = System.IO.File.OpenRead(strFullImagePath2);
-                    pictureBoxThumbnails.Image = Image.FromStream(fs2);//fs被視為檔案，需要從檔案讀出圖片
+                    pictureBoxThumbnails.Image = Image.FromStream(fs2);//fs2被視為檔案，需要從檔案讀出圖片
                     fs2.Close();
+                    strModifiedImageNameInStock = reader["ProductInStockImage"].ToString();
+                    string strFullImagePath3 = $"{GlobalVar.image_dir}\\缺貨\\{strModifiedImageNameInStock}";
+                    System.IO.FileStream fs3 = System.IO.File.OpenRead(strFullImagePath3);
+                    pictureBoxInStock.Image = Image.FromStream(fs3);//fs3被視為檔案，需要從檔案讀出圖片
+                    fs3.Close();
                     txtProductName.Text = (string)reader["ProductName"].ToString();
                     txtUnitPrice.Text = reader["UnitPrice"].ToString();
                     txtProductDescribe.Text = reader["ProductDescribe"].ToString();
@@ -299,13 +319,17 @@ namespace IceShop
             SelectImage(pictureBoxThumbnails, ref strModifiedImageNameThumbnails);
         }
 
+        private void btnSelectInStockImageModify_Click(object sender, EventArgs e)
+        {
+            SelectImage(pictureBoxInStock, ref strModifiedImageNameInStock);
+        }
         private void btnModifySave_Click(object sender, EventArgs e)
         {
             if ((txtProductName.Text != "") && (txtUnitPrice.Text != "") && (txtProductDescribe.Text != "") && (txtProductCategory.Text != "") && (pictureBoxIce.Image != null) && (pictureBoxThumbnails.Image != null))
             {
                 SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
                 con.Open();
-                string strSQL = "update product set ProductName = @NewProductName, UnitPrice = @NewPrice, Inventory = @NewInventory, ProductImage = @NewProductImage, ProductThumbnails = @NewProductThumbnails, ProductDescribe = @NewProductDescribe, CustomizationId = @NewCustomizationId, ProductCategory = @ProductCategory where ProductId = @ProductId;";
+                string strSQL = "update product set ProductName = @NewProductName, UnitPrice = @NewPrice, Inventory = @NewInventory, ProductImage = @NewProductImage, ProductInStockImage = @NewProductInStockImage, ProductThumbnails = @NewProductThumbnails, ProductDescribe = @NewProductDescribe, CustomizationId = @NewCustomizationId, ProductCategory = @ProductCategory where ProductId = @ProductId;";
                 SqlCommand cmd = new SqlCommand(strSQL, con);
                 cmd.Parameters.AddWithValue("@ProductId", productId);
                 cmd.Parameters.AddWithValue("@NewProductName", txtProductName.Text);
@@ -324,6 +348,7 @@ namespace IceShop
 
                 cmd.Parameters.AddWithValue("@NewProductDescribe", txtProductDescribe.Text);
                 cmd.Parameters.AddWithValue("@NewProductImage", strModifiedImageName);
+                cmd.Parameters.AddWithValue("@NewProductInStockImage", strModifiedImageNameInStock);
                 cmd.Parameters.AddWithValue("@NewProductThumbnails", strModifiedImageNameThumbnails);
                 cmd.Parameters.AddWithValue("@ProductCategory", txtProductCategory.Text);
 
@@ -350,6 +375,10 @@ namespace IceShop
                     // 儲存縮圖圖片
                     string fullImagePathThumbnails = $"{GlobalVar.image_dir}\\商品縮圖\\{strModifiedImageNameThumbnails}";
                     pictureBoxThumbnails.Image.Save(fullImagePathThumbnails);
+
+                    // 儲存缺貨圖片
+                    string fullImagePathInStock = $"{GlobalVar.image_dir}\\缺貨\\{strModifiedImageNameInStock}";
+                    pictureBoxInStock.Image.Save(fullImagePathInStock);
 
                     isModifyImage = false; // 重置圖片修改狀態
                 }
@@ -374,11 +403,15 @@ namespace IceShop
         {
             SelectImage(pictureBoxThumbnails, ref strModifiedImageNameThumbnails);
         }
-
+        private void btnSelectInStockImageAdd_Click(object sender, EventArgs e)
+        {
+            SelectImage(pictureBoxInStock, ref strModifiedImageNameInStock);
+        }
         void ClearAllCol()
         {
             pictureBoxIce.Image = null;
             pictureBoxThumbnails.Image = null;
+            pictureBoxInStock.Image = null;
             txtProductName.Text = "";
             txtUnitPrice.Text = "";
             txtProductDescribe.Text = "";
@@ -400,7 +433,7 @@ namespace IceShop
             {
                 SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
                 con.Open();
-                string strSQL = "insert into Product (ProductName,UnitPrice,Inventory,ProductImage,ProductThumbnails,ProductDescribe,CustomizationId,ProductCategory)values (@NewProductName,@NewPrice,@NewInventory,@NewProductImage,@NewProductThumbnails,@NewProductDescribe,@NewCustomizationId,@ProductCategory);";
+                string strSQL = "insert into Product (ProductName,UnitPrice,Inventory,ProductImage,ProductInStockImage,ProductThumbnails,ProductDescribe,CustomizationId,ProductCategory)values (@NewProductName,@NewPrice,@NewInventory,@NewProductImage,@NewProductInStockImage,@NewProductThumbnails,@NewProductDescribe,@NewCustomizationId,@ProductCategory);";
                 SqlCommand cmd = new SqlCommand(strSQL, con);
                 cmd.Parameters.AddWithValue("@NewProductName", txtProductName.Text);
                 int intPrice = 0;
@@ -418,6 +451,7 @@ namespace IceShop
 
                 cmd.Parameters.AddWithValue("@NewProductDescribe", txtProductDescribe.Text);
                 cmd.Parameters.AddWithValue("@NewProductImage", strModifiedImageName);
+                cmd.Parameters.AddWithValue("@NewProductInStockImage", strModifiedImageNameInStock);
                 cmd.Parameters.AddWithValue("@NewProductThumbnails", strModifiedImageNameThumbnails);
                 cmd.Parameters.AddWithValue("@ProductCategory", txtProductCategory.Text);
 
@@ -444,6 +478,10 @@ namespace IceShop
                     // 儲存縮圖圖片
                     string fullImagePathThumbnails = $"{GlobalVar.image_dir}\\商品縮圖\\{strModifiedImageNameThumbnails}";
                     pictureBoxThumbnails.Image.Save(fullImagePathThumbnails);
+
+                    // 儲存缺貨圖片
+                    string fullImagePathInStock = $"{GlobalVar.image_dir}\\缺貨\\{strModifiedImageNameInStock}";
+                    pictureBoxInStock.Image.Save(fullImagePathInStock);
 
                     isModifyImage = false; // 重置圖片修改狀態
                 }
@@ -473,6 +511,7 @@ namespace IceShop
 
                 System.IO.File.Delete($"{GlobalVar.image_dir}\\細項\\{strModifiedImageName}");//之前有把完整檔案路徑藏在tag中
                 System.IO.File.Delete($"{GlobalVar.image_dir}\\商品縮圖\\{strModifiedImageNameThumbnails}");
+                System.IO.File.Delete($"{GlobalVar.image_dir}\\缺貨\\{strModifiedImageNameInStock}");
                 ClearAllCol();
                 MessageBox.Show($"資料已刪除\n {rows}筆資料受影響");
             }
@@ -481,9 +520,11 @@ namespace IceShop
         {
             btnSelectImageAdd.Visible = false;
             btnSelectImageThumbnailAdd.Visible = false;
+            btnSelectInStockImageAdd.Visible = false;
             btnAddSave.Visible = false;
             btnClearCol.Visible = false;
             btnSelectImageModify.Visible = false;
+            btnSelectInStockImageModify.Visible = false;
             btnSelectImageThumbnailModify.Visible = false;
             btnModifySave.Visible = false;
         }
@@ -494,6 +535,7 @@ namespace IceShop
             buttonModifyDisplay.BackgroundImage = new Bitmap($"{GlobalVar.image_dir}\\修改產品01.png");
             btnSelectImageAdd.Visible = true;
             btnSelectImageThumbnailAdd.Visible = true;
+            btnSelectInStockImageAdd.Visible = true;
             btnAddSave.Visible = true;
             btnClearCol.Visible = true;
         }
@@ -503,6 +545,7 @@ namespace IceShop
             btnAddProductDisplay.BackgroundImage = new Bitmap($"{GlobalVar.image_dir}\\新增產品01.png");
             buttonModifyDisplay.BackgroundImage = new Bitmap($"{GlobalVar.image_dir}\\修改產品02.png");
             btnSelectImageModify.Visible = true;
+            btnSelectInStockImageModify.Visible = true;
             btnSelectImageThumbnailModify.Visible = true;
             btnModifySave.Visible = true;
         }
@@ -513,5 +556,6 @@ namespace IceShop
                 StaffBackend.Show();
                 this.Hide();
         }
+
     }
 }

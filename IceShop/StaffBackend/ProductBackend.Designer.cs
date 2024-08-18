@@ -66,6 +66,12 @@
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.label13 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.lblSystemTime = new System.Windows.Forms.Label();
+            this.lblCategory = new System.Windows.Forms.Label();
+            this.lblUserName = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.btnSelectInStockImageAdd = new System.Windows.Forms.Button();
+            this.pictureBoxInStock = new System.Windows.Forms.PictureBox();
             this.btnSelectImageThumbnailModify = new System.Windows.Forms.Button();
             this.btnSelectImageThumbnailAdd = new System.Windows.Forms.Button();
             this.btnDeleteProduct = new System.Windows.Forms.Button();
@@ -85,6 +91,7 @@
             this.pictureBoxIce = new System.Windows.Forms.PictureBox();
             this.btnBack = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnSelectInStockImageModify = new System.Windows.Forms.Button();
             this.pnlFormTitle.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlDrinks.SuspendLayout();
@@ -94,6 +101,7 @@
             this.pnlShavedSnow.SuspendLayout();
             this.groupBoxStatus.SuspendLayout();
             this.groupBoxCheckAdd.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxThumbnails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIce)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -131,7 +139,7 @@
             this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label9.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
-            this.label9.Location = new System.Drawing.Point(508, 63);
+            this.label9.Location = new System.Drawing.Point(508, 61);
             this.label9.Margin = new System.Windows.Forms.Padding(0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(55, 26);
@@ -146,7 +154,7 @@
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
-            this.label7.Location = new System.Drawing.Point(358, 63);
+            this.label7.Location = new System.Drawing.Point(358, 62);
             this.label7.Margin = new System.Windows.Forms.Padding(0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(93, 26);
@@ -379,7 +387,7 @@
             this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
             this.label14.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(480, 181);
+            this.label14.Location = new System.Drawing.Point(372, 181);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(146, 42);
             this.label14.TabIndex = 142;
@@ -413,7 +421,7 @@
             // pnlDrinks
             // 
             this.pnlDrinks.Controls.Add(this.btnDrinks01);
-            this.pnlDrinks.Location = new System.Drawing.Point(6, 570);
+            this.pnlDrinks.Location = new System.Drawing.Point(6, 560);
             this.pnlDrinks.Name = "pnlDrinks";
             this.pnlDrinks.Size = new System.Drawing.Size(118, 118);
             this.pnlDrinks.TabIndex = 7;
@@ -422,7 +430,7 @@
             // pnlSeasonal
             // 
             this.pnlSeasonal.Controls.Add(this.btnSeasonal01);
-            this.pnlSeasonal.Location = new System.Drawing.Point(6, 435);
+            this.pnlSeasonal.Location = new System.Drawing.Point(6, 420);
             this.pnlSeasonal.Name = "pnlSeasonal";
             this.pnlSeasonal.Size = new System.Drawing.Size(118, 118);
             this.pnlSeasonal.TabIndex = 6;
@@ -431,7 +439,7 @@
             // pnlGrassJelly
             // 
             this.pnlGrassJelly.Controls.Add(this.btnGrassJelly01);
-            this.pnlGrassJelly.Location = new System.Drawing.Point(6, 300);
+            this.pnlGrassJelly.Location = new System.Drawing.Point(6, 283);
             this.pnlGrassJelly.Name = "pnlGrassJelly";
             this.pnlGrassJelly.Size = new System.Drawing.Size(118, 118);
             this.pnlGrassJelly.TabIndex = 5;
@@ -440,7 +448,7 @@
             // pnlShavedIce
             // 
             this.pnlShavedIce.Controls.Add(this.btnShavedIce01);
-            this.pnlShavedIce.Location = new System.Drawing.Point(6, 164);
+            this.pnlShavedIce.Location = new System.Drawing.Point(6, 143);
             this.pnlShavedIce.Name = "pnlShavedIce";
             this.pnlShavedIce.Size = new System.Drawing.Size(118, 118);
             this.pnlShavedIce.TabIndex = 4;
@@ -449,7 +457,7 @@
             // pnlShavedSnow
             // 
             this.pnlShavedSnow.Controls.Add(this.btnShavedSnow01);
-            this.pnlShavedSnow.Location = new System.Drawing.Point(6, 23);
+            this.pnlShavedSnow.Location = new System.Drawing.Point(6, 2);
             this.pnlShavedSnow.Name = "pnlShavedSnow";
             this.pnlShavedSnow.Size = new System.Drawing.Size(118, 118);
             this.pnlShavedSnow.TabIndex = 3;
@@ -551,6 +559,88 @@
             this.txtSearch.TabIndex = 159;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
+            // lblSystemTime
+            // 
+            this.lblSystemTime.AllowDrop = true;
+            this.lblSystemTime.AutoSize = true;
+            this.lblSystemTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(176)))), ((int)(((byte)(227)))));
+            this.lblSystemTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblSystemTime.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSystemTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
+            this.lblSystemTime.Location = new System.Drawing.Point(105, 63);
+            this.lblSystemTime.Margin = new System.Windows.Forms.Padding(0);
+            this.lblSystemTime.Name = "lblSystemTime";
+            this.lblSystemTime.Size = new System.Drawing.Size(24, 26);
+            this.lblSystemTime.TabIndex = 161;
+            this.lblSystemTime.Text = "0";
+            // 
+            // lblCategory
+            // 
+            this.lblCategory.AllowDrop = true;
+            this.lblCategory.AutoSize = true;
+            this.lblCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(176)))), ((int)(((byte)(227)))));
+            this.lblCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblCategory.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
+            this.lblCategory.Location = new System.Drawing.Point(447, 61);
+            this.lblCategory.Margin = new System.Windows.Forms.Padding(0);
+            this.lblCategory.Name = "lblCategory";
+            this.lblCategory.Size = new System.Drawing.Size(24, 26);
+            this.lblCategory.TabIndex = 162;
+            this.lblCategory.Text = "0";
+            // 
+            // lblUserName
+            // 
+            this.lblUserName.AllowDrop = true;
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(176)))), ((int)(((byte)(227)))));
+            this.lblUserName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblUserName.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
+            this.lblUserName.Location = new System.Drawing.Point(555, 61);
+            this.lblUserName.Margin = new System.Windows.Forms.Padding(0);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(24, 26);
+            this.lblUserName.TabIndex = 163;
+            this.lblUserName.Text = "0";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
+            this.label16.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(575, 181);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(146, 42);
+            this.label16.TabIndex = 165;
+            this.label16.Text = "缺貨縮圖";
+            // 
+            // btnSelectInStockImageAdd
+            // 
+            this.btnSelectInStockImageAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(176)))), ((int)(((byte)(227)))));
+            this.btnSelectInStockImageAdd.BackgroundImage = global::IceShop.Properties.Resources.選取缺貨縮圖按鈕;
+            this.btnSelectInStockImageAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSelectInStockImageAdd.FlatAppearance.BorderSize = 0;
+            this.btnSelectInStockImageAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelectInStockImageAdd.Location = new System.Drawing.Point(891, 889);
+            this.btnSelectInStockImageAdd.Name = "btnSelectInStockImageAdd";
+            this.btnSelectInStockImageAdd.Size = new System.Drawing.Size(145, 41);
+            this.btnSelectInStockImageAdd.TabIndex = 166;
+            this.btnSelectInStockImageAdd.UseVisualStyleBackColor = false;
+            this.btnSelectInStockImageAdd.Click += new System.EventHandler(this.btnSelectInStockImageAdd_Click);
+            // 
+            // pictureBoxInStock
+            // 
+            this.pictureBoxInStock.BackColor = System.Drawing.Color.White;
+            this.pictureBoxInStock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBoxInStock.Location = new System.Drawing.Point(549, 238);
+            this.pictureBoxInStock.Name = "pictureBoxInStock";
+            this.pictureBoxInStock.Size = new System.Drawing.Size(198, 238);
+            this.pictureBoxInStock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxInStock.TabIndex = 164;
+            this.pictureBoxInStock.TabStop = false;
+            // 
             // btnSelectImageThumbnailModify
             // 
             this.btnSelectImageThumbnailModify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(176)))), ((int)(((byte)(227)))));
@@ -558,7 +648,7 @@
             this.btnSelectImageThumbnailModify.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSelectImageThumbnailModify.FlatAppearance.BorderSize = 0;
             this.btnSelectImageThumbnailModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelectImageThumbnailModify.Location = new System.Drawing.Point(1183, 891);
+            this.btnSelectImageThumbnailModify.Location = new System.Drawing.Point(1183, 865);
             this.btnSelectImageThumbnailModify.Name = "btnSelectImageThumbnailModify";
             this.btnSelectImageThumbnailModify.Size = new System.Drawing.Size(145, 41);
             this.btnSelectImageThumbnailModify.TabIndex = 156;
@@ -572,7 +662,7 @@
             this.btnSelectImageThumbnailAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSelectImageThumbnailAdd.FlatAppearance.BorderSize = 0;
             this.btnSelectImageThumbnailAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelectImageThumbnailAdd.Location = new System.Drawing.Point(891, 854);
+            this.btnSelectImageThumbnailAdd.Location = new System.Drawing.Point(891, 842);
             this.btnSelectImageThumbnailAdd.Name = "btnSelectImageThumbnailAdd";
             this.btnSelectImageThumbnailAdd.Size = new System.Drawing.Size(145, 41);
             this.btnSelectImageThumbnailAdd.TabIndex = 155;
@@ -600,7 +690,7 @@
             this.btnSelectImageModify.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSelectImageModify.FlatAppearance.BorderSize = 0;
             this.btnSelectImageModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelectImageModify.Location = new System.Drawing.Point(1183, 837);
+            this.btnSelectImageModify.Location = new System.Drawing.Point(1183, 817);
             this.btnSelectImageModify.Name = "btnSelectImageModify";
             this.btnSelectImageModify.Size = new System.Drawing.Size(145, 41);
             this.btnSelectImageModify.TabIndex = 152;
@@ -614,7 +704,7 @@
             this.btnModifySave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnModifySave.FlatAppearance.BorderSize = 0;
             this.btnModifySave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModifySave.Location = new System.Drawing.Point(1183, 946);
+            this.btnModifySave.Location = new System.Drawing.Point(1183, 964);
             this.btnModifySave.Name = "btnModifySave";
             this.btnModifySave.Size = new System.Drawing.Size(145, 41);
             this.btnModifySave.TabIndex = 153;
@@ -628,7 +718,7 @@
             this.btnClearCol.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnClearCol.FlatAppearance.BorderSize = 0;
             this.btnClearCol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClearCol.Location = new System.Drawing.Point(891, 969);
+            this.btnClearCol.Location = new System.Drawing.Point(891, 984);
             this.btnClearCol.Name = "btnClearCol";
             this.btnClearCol.Size = new System.Drawing.Size(145, 41);
             this.btnClearCol.TabIndex = 151;
@@ -642,7 +732,7 @@
             this.btnAddSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddSave.FlatAppearance.BorderSize = 0;
             this.btnAddSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddSave.Location = new System.Drawing.Point(891, 911);
+            this.btnAddSave.Location = new System.Drawing.Point(891, 937);
             this.btnAddSave.Name = "btnAddSave";
             this.btnAddSave.Size = new System.Drawing.Size(145, 41);
             this.btnAddSave.TabIndex = 150;
@@ -656,7 +746,7 @@
             this.btnSelectImageAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSelectImageAdd.FlatAppearance.BorderSize = 0;
             this.btnSelectImageAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelectImageAdd.Location = new System.Drawing.Point(891, 798);
+            this.btnSelectImageAdd.Location = new System.Drawing.Point(891, 795);
             this.btnSelectImageAdd.Name = "btnSelectImageAdd";
             this.btnSelectImageAdd.Size = new System.Drawing.Size(145, 41);
             this.btnSelectImageAdd.TabIndex = 149;
@@ -754,7 +844,7 @@
             // 
             this.pictureBoxThumbnails.BackColor = System.Drawing.Color.White;
             this.pictureBoxThumbnails.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBoxThumbnails.Location = new System.Drawing.Point(454, 238);
+            this.pictureBoxThumbnails.Location = new System.Drawing.Point(344, 238);
             this.pictureBoxThumbnails.Name = "pictureBoxThumbnails";
             this.pictureBoxThumbnails.Size = new System.Drawing.Size(198, 238);
             this.pictureBoxThumbnails.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -797,11 +887,32 @@
             this.pictureBox1.TabIndex = 70;
             this.pictureBox1.TabStop = false;
             // 
+            // btnSelectInStockImageModify
+            // 
+            this.btnSelectInStockImageModify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(176)))), ((int)(((byte)(227)))));
+            this.btnSelectInStockImageModify.BackgroundImage = global::IceShop.Properties.Resources.選取缺貨縮圖按鈕;
+            this.btnSelectInStockImageModify.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSelectInStockImageModify.FlatAppearance.BorderSize = 0;
+            this.btnSelectInStockImageModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelectInStockImageModify.Location = new System.Drawing.Point(1183, 915);
+            this.btnSelectInStockImageModify.Name = "btnSelectInStockImageModify";
+            this.btnSelectInStockImageModify.Size = new System.Drawing.Size(145, 41);
+            this.btnSelectInStockImageModify.TabIndex = 167;
+            this.btnSelectInStockImageModify.UseVisualStyleBackColor = false;
+            this.btnSelectInStockImageModify.Click += new System.EventHandler(this.btnSelectInStockImageModify_Click);
+            // 
             // ProductBackend
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1500, 1030);
+            this.Controls.Add(this.btnSelectInStockImageModify);
+            this.Controls.Add(this.btnSelectInStockImageAdd);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.pictureBoxInStock);
+            this.Controls.Add(this.lblUserName);
+            this.Controls.Add(this.lblCategory);
+            this.Controls.Add(this.lblSystemTime);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.groupBoxCheckAdd);
@@ -860,6 +971,7 @@
             this.groupBoxStatus.PerformLayout();
             this.groupBoxCheckAdd.ResumeLayout(false);
             this.groupBoxCheckAdd.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxThumbnails)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIce)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -927,5 +1039,12 @@
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label lblSystemTime;
+        private System.Windows.Forms.Label lblCategory;
+        private System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.PictureBox pictureBoxInStock;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button btnSelectInStockImageAdd;
+        private System.Windows.Forms.Button btnSelectInStockImageModify;
     }
 }

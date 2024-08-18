@@ -532,6 +532,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(227, 28);
             this.dateTimePicker1.TabIndex = 147;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // dateTimePicker2
             // 
@@ -544,6 +545,7 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(227, 28);
             this.dateTimePicker2.TabIndex = 146;
             this.dateTimePicker2.Value = new System.DateTime(2024, 8, 1, 0, 0, 0, 0);
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // lboxSearchOrder
             // 

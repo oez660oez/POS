@@ -85,3 +85,4 @@ C:\Users\LiYuan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.MemberBac
 C:\Users\LiYuan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.CalculateMoney.resources
 C:\Users\iSpan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.CalculateMoney.resources
 C:\Users\iSpan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.OrderBackend.resources
+C:\Users\LiYuan\Desktop\期中專題\IceShop\IceShop\obj\Debug\IceShop.CarouselControl.resources

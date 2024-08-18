@@ -18,6 +18,11 @@ namespace IceShop
         public Login()
         {
             InitializeComponent();
+            // 添加 CarouselControl
+            CarouselControl carousel = new CarouselControl();
+            carousel.Size = new Size(400, 200);
+            carousel.Location = new Point(10, 180);
+            this.Controls.Add(carousel);
             SetPlaceholder(txtUserName, placeholderUsername);
             SetPlaceholder(txtPassword, placeholderPassword);
         }

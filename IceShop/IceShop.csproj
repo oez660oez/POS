@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CarouselControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CarouselControl.Designer.cs">
+      <DependentUpon>CarouselControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomBackend.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     <Compile Include="StaffBackend\StaffBackend.Designer.cs">
       <DependentUpon>StaffBackend.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CarouselControl.resx">
+      <DependentUpon>CarouselControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomBackend.resx">
       <DependentUpon>CustomBackend.cs</DependentUpon>
     </EmbeddedResource>
@@ -461,6 +470,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\生成報告按鈕.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\選取缺貨縮圖按鈕.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
