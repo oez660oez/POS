@@ -49,7 +49,7 @@
             this.cBoxMinute = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.YearMonth = new System.Windows.Forms.Label();
             this.cBoxDate = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -310,18 +310,18 @@
             this.label7.TabIndex = 53;
             this.label7.Text = "分";
             // 
-            // label8
+            // YearMonth
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
-            this.label8.Location = new System.Drawing.Point(132, 411);
-            this.label8.Margin = new System.Windows.Forms.Padding(0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(182, 42);
-            this.label8.TabIndex = 54;
-            this.label8.Text = "2024年8月";
+            this.YearMonth.AutoSize = true;
+            this.YearMonth.BackColor = System.Drawing.Color.Transparent;
+            this.YearMonth.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.YearMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
+            this.YearMonth.Location = new System.Drawing.Point(101, 410);
+            this.YearMonth.Margin = new System.Windows.Forms.Padding(0);
+            this.YearMonth.Name = "YearMonth";
+            this.YearMonth.Size = new System.Drawing.Size(202, 42);
+            this.YearMonth.TabIndex = 54;
+            this.YearMonth.Text = "2024年12月";
             // 
             // cBoxDate
             // 
@@ -367,7 +367,7 @@
             this.ClientSize = new System.Drawing.Size(800, 1030);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cBoxDate);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.YearMonth);
             this.Controls.Add(this.cBoxMinute);
             this.Controls.Add(this.cBoxHour);
             this.Controls.Add(this.radioButton2);
@@ -424,7 +424,7 @@
         private System.Windows.Forms.ComboBox cBoxMinute;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label YearMonth;
         private System.Windows.Forms.ComboBox cBoxDate;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label5;

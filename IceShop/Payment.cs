@@ -23,6 +23,9 @@ namespace IceShop
 
         private void Payment_Load(object sender, EventArgs e)
         {
+            // 取得目前時間的年月
+            YearMonth.Text = DateTime.Now.ToString("yyyy年MM月");
+
             radioButton1.Checked = true; // 預設選擇內用
             UpdateTotalMoney(); // 初始時更新總價
             for (int i = 1; i <= 31; i += 1)
@@ -179,7 +182,7 @@ namespace IceShop
             {
                 listOrderExport.Add($"加購購物袋+2元");
             }
-            listOrderExport.Add($"預定日期： 2024年 8月 {cBoxDate.SelectedItem.ToString()}日 {cBoxHour.SelectedItem.ToString()}點 {cBoxMinute.SelectedItem.ToString()}分");
+            listOrderExport.Add($"預定日期： {DateTime.Now.ToString("yyyy 年 MM 月")} {cBoxDate.SelectedItem.ToString()}日 {cBoxHour.SelectedItem.ToString()}點 {cBoxMinute.SelectedItem.ToString()}分");
             listOrderExport.Add("========= << 訂購品項 >> =========");
 
             foreach (ArrayList item in GlobalVar.listOrderItemCollect)

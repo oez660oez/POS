@@ -17,9 +17,19 @@ namespace IceShop
     {
         List<int> SearchIDs = new List<int>();//搜尋結果
         int selectId = 0;
+        private Panel productPanel;
         public CustomBackend()
         {
             InitializeComponent();
+            productPanel = new Panel
+            {
+                Anchor = AnchorStyles.Top | AnchorStyles.Left,
+                Location = new Point(297, 114),
+                Size = new Size(1203, 701),
+                BackColor = Color.Transparent,
+                AutoScroll = true
+            };
+            this.Controls.Add(productPanel);
         }
         private void BackendSystem_Load(object sender, EventArgs e)
         {
@@ -203,16 +213,8 @@ namespace IceShop
             int yOffset = 10; // 初始Y偏移
             int xOffset = 10; // 初始X偏移
 
-            Panel newPanel = new Panel
-            {
-                Anchor = AnchorStyles.Top | AnchorStyles.Left,
-                Location = new Point(297, 114),
-                Size = new Size(1203, 701),
-                BackColor = Color.Transparent,
-                AutoScroll = true
-            };
+            productPanel.Controls.Clear();
 
-            this.Controls.Add(newPanel); // 確保將 newPanel 添加到 ShoppingCart 表單中
             SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
             con.Open();
 
@@ -301,13 +303,13 @@ namespace IceShop
                     Text = "----------------------------------------------"
                 };
 
-                newPanel.Controls.Add(myLabelProductName);
-                newPanel.Controls.Add(myLabelProductDescribe);
-                newPanel.Controls.Add(myLabelFlavor);
-                newPanel.Controls.Add(myLabelAddIngredients);
-                newPanel.Controls.Add(myLabelPrice);
-                newPanel.Controls.Add(myLabelCount);
-                newPanel.Controls.Add(myDivider);
+                productPanel.Controls.Add(myLabelProductName);
+                productPanel.Controls.Add(myLabelProductDescribe);
+                productPanel.Controls.Add(myLabelFlavor);
+                productPanel.Controls.Add(myLabelAddIngredients);
+                productPanel.Controls.Add(myLabelPrice);
+                productPanel.Controls.Add(myLabelCount);
+                productPanel.Controls.Add(myDivider);
 
                 // Bring controls to front
                 myLabelProductName.BringToFront();

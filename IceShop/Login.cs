@@ -125,15 +125,7 @@ namespace IceShop
 
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (GlobalVar.isLoginSuccess)
-            {
-                //登入成功
 
-            }
-            else
-            {
-                e.Cancel = true; //取消關閉事件
-            }
         }
         private void SetPlaceholder(TextBox textBox, string placeholderText)
         {

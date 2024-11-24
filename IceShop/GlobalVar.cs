@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Windows.Forms;
 
 namespace IceShop
 {
@@ -15,9 +16,9 @@ namespace IceShop
         public static List<int> listChooseCategory = new List<int>();
         public static List<int> listShavedSnowAllId = new List<int>();
         public static List<ArrayList> listOrderItemCollect = new List<ArrayList>();
-        //C:\Users\iSpan\Desktop\Code\LiYuan\C#_AdoDotNet\Practice\20240730_ListView\Source
-        public static string image_dir = @"C:\Users\LiYuan\Desktop\期中專題\source";
-        //public static string image_dir = @"C:\Users\ISpan\Desktop\期中專題\source";
+        public static string image_dir = Path.Combine(
+            Application.StartupPath, "source"
+        );
         public static string strDBConnectionString = "";
         public static SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
 
@@ -27,6 +28,28 @@ namespace IceShop
             scsb.InitialCatalog = "myIceShop";
             scsb.IntegratedSecurity = true;
             strDBConnectionString = scsb.ConnectionString.ToString();
+        }
+
+        //檢查圖片資料夾
+        private static void SetupImageDirectory()
+        {
+            // 取得應用程式執行檔所在路徑
+            string basePath = Application.StartupPath;
+            image_dir = Path.Combine(basePath, "source");
+
+            // 確保資料夾存在
+            if (!Directory.Exists(image_dir))
+            {
+                try
+                {
+                    Directory.CreateDirectory(image_dir);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"無法建立圖片資料夾: {ex.Message}", "錯誤",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         //會員登入區
