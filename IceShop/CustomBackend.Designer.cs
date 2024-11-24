@@ -264,12 +264,12 @@
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
-            this.label7.Location = new System.Drawing.Point(358, 63);
+            this.label7.Location = new System.Drawing.Point(384, 63);
             this.label7.Margin = new System.Windows.Forms.Padding(0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(93, 26);
+            this.label7.Size = new System.Drawing.Size(55, 26);
             this.label7.TabIndex = 64;
-            this.label7.Text = "身分類別:";
+            this.label7.Text = "身分:";
             // 
             // label9
             // 

@@ -138,12 +138,12 @@
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
-            this.label7.Location = new System.Drawing.Point(1145, 63);
+            this.label7.Location = new System.Drawing.Point(1183, 63);
             this.label7.Margin = new System.Windows.Forms.Padding(0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(93, 26);
+            this.label7.Size = new System.Drawing.Size(55, 26);
             this.label7.TabIndex = 68;
-            this.label7.Text = "身分類別:";
+            this.label7.Text = "身分:";
             // 
             // label6
             // 
@@ -374,6 +374,7 @@
             this.txtPassword.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(787, 369);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.ReadOnly = true;
             this.txtPassword.Size = new System.Drawing.Size(288, 42);
             this.txtPassword.TabIndex = 112;

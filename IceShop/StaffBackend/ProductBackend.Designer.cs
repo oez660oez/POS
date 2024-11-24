@@ -54,10 +54,15 @@
             this.label15 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlDrinks = new System.Windows.Forms.Panel();
+            this.btnDrinks01 = new System.Windows.Forms.Button();
             this.pnlSeasonal = new System.Windows.Forms.Panel();
+            this.btnSeasonal01 = new System.Windows.Forms.Button();
             this.pnlGrassJelly = new System.Windows.Forms.Panel();
+            this.btnGrassJelly01 = new System.Windows.Forms.Button();
             this.pnlShavedIce = new System.Windows.Forms.Panel();
+            this.btnShavedIce01 = new System.Windows.Forms.Button();
             this.pnlShavedSnow = new System.Windows.Forms.Panel();
+            this.btnShavedSnow01 = new System.Windows.Forms.Button();
             this.pnlShow = new System.Windows.Forms.Panel();
             this.groupBoxStatus = new System.Windows.Forms.GroupBox();
             this.groupBoxCheckAdd = new System.Windows.Forms.GroupBox();
@@ -82,11 +87,6 @@
             this.btnSelectImageAdd = new System.Windows.Forms.Button();
             this.buttonModifyDisplay = new System.Windows.Forms.Button();
             this.btnAddProductDisplay = new System.Windows.Forms.Button();
-            this.btnDrinks01 = new System.Windows.Forms.Button();
-            this.btnSeasonal01 = new System.Windows.Forms.Button();
-            this.btnGrassJelly01 = new System.Windows.Forms.Button();
-            this.btnShavedIce01 = new System.Windows.Forms.Button();
-            this.btnShavedSnow01 = new System.Windows.Forms.Button();
             this.pictureBoxThumbnails = new System.Windows.Forms.PictureBox();
             this.pictureBoxIce = new System.Windows.Forms.PictureBox();
             this.btnBack = new System.Windows.Forms.Button();
@@ -154,12 +154,12 @@
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
-            this.label7.Location = new System.Drawing.Point(358, 62);
+            this.label7.Location = new System.Drawing.Point(395, 61);
             this.label7.Margin = new System.Windows.Forms.Padding(0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(93, 26);
+            this.label7.Size = new System.Drawing.Size(55, 26);
             this.label7.TabIndex = 68;
-            this.label7.Text = "身分類別:";
+            this.label7.Text = "身分:";
             // 
             // label6
             // 
@@ -427,6 +427,18 @@
             this.pnlDrinks.TabIndex = 7;
             this.pnlDrinks.Click += new System.EventHandler(this.pnlDrinks_Click);
             // 
+            // btnDrinks01
+            // 
+            this.btnDrinks01.BackgroundImage = global::IceShop.Properties.Resources.飲品系列01;
+            this.btnDrinks01.Enabled = false;
+            this.btnDrinks01.FlatAppearance.BorderSize = 0;
+            this.btnDrinks01.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDrinks01.Location = new System.Drawing.Point(5, 4);
+            this.btnDrinks01.Name = "btnDrinks01";
+            this.btnDrinks01.Size = new System.Drawing.Size(107, 111);
+            this.btnDrinks01.TabIndex = 0;
+            this.btnDrinks01.UseVisualStyleBackColor = true;
+            // 
             // pnlSeasonal
             // 
             this.pnlSeasonal.Controls.Add(this.btnSeasonal01);
@@ -435,6 +447,18 @@
             this.pnlSeasonal.Size = new System.Drawing.Size(118, 118);
             this.pnlSeasonal.TabIndex = 6;
             this.pnlSeasonal.Click += new System.EventHandler(this.pnlSeasonal_Click);
+            // 
+            // btnSeasonal01
+            // 
+            this.btnSeasonal01.BackgroundImage = global::IceShop.Properties.Resources.季節限定01;
+            this.btnSeasonal01.Enabled = false;
+            this.btnSeasonal01.FlatAppearance.BorderSize = 0;
+            this.btnSeasonal01.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeasonal01.Location = new System.Drawing.Point(5, 4);
+            this.btnSeasonal01.Name = "btnSeasonal01";
+            this.btnSeasonal01.Size = new System.Drawing.Size(107, 111);
+            this.btnSeasonal01.TabIndex = 0;
+            this.btnSeasonal01.UseVisualStyleBackColor = true;
             // 
             // pnlGrassJelly
             // 
@@ -445,6 +469,18 @@
             this.pnlGrassJelly.TabIndex = 5;
             this.pnlGrassJelly.Click += new System.EventHandler(this.pnlGrassJelly_Click);
             // 
+            // btnGrassJelly01
+            // 
+            this.btnGrassJelly01.BackgroundImage = global::IceShop.Properties.Resources.仙草系列01;
+            this.btnGrassJelly01.Enabled = false;
+            this.btnGrassJelly01.FlatAppearance.BorderSize = 0;
+            this.btnGrassJelly01.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGrassJelly01.Location = new System.Drawing.Point(5, 4);
+            this.btnGrassJelly01.Name = "btnGrassJelly01";
+            this.btnGrassJelly01.Size = new System.Drawing.Size(107, 111);
+            this.btnGrassJelly01.TabIndex = 0;
+            this.btnGrassJelly01.UseVisualStyleBackColor = true;
+            // 
             // pnlShavedIce
             // 
             this.pnlShavedIce.Controls.Add(this.btnShavedIce01);
@@ -454,6 +490,18 @@
             this.pnlShavedIce.TabIndex = 4;
             this.pnlShavedIce.Click += new System.EventHandler(this.pnlShavedIce_Click);
             // 
+            // btnShavedIce01
+            // 
+            this.btnShavedIce01.BackgroundImage = global::IceShop.Properties.Resources.刨冰系列01;
+            this.btnShavedIce01.Enabled = false;
+            this.btnShavedIce01.FlatAppearance.BorderSize = 0;
+            this.btnShavedIce01.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShavedIce01.Location = new System.Drawing.Point(5, 4);
+            this.btnShavedIce01.Name = "btnShavedIce01";
+            this.btnShavedIce01.Size = new System.Drawing.Size(107, 111);
+            this.btnShavedIce01.TabIndex = 1;
+            this.btnShavedIce01.UseVisualStyleBackColor = true;
+            // 
             // pnlShavedSnow
             // 
             this.pnlShavedSnow.Controls.Add(this.btnShavedSnow01);
@@ -462,6 +510,18 @@
             this.pnlShavedSnow.Size = new System.Drawing.Size(118, 118);
             this.pnlShavedSnow.TabIndex = 3;
             this.pnlShavedSnow.Click += new System.EventHandler(this.pnlShavedSnow_Click);
+            // 
+            // btnShavedSnow01
+            // 
+            this.btnShavedSnow01.BackgroundImage = global::IceShop.Properties.Resources.綿綿冰系列01;
+            this.btnShavedSnow01.Enabled = false;
+            this.btnShavedSnow01.FlatAppearance.BorderSize = 0;
+            this.btnShavedSnow01.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShavedSnow01.Location = new System.Drawing.Point(6, 4);
+            this.btnShavedSnow01.Name = "btnShavedSnow01";
+            this.btnShavedSnow01.Size = new System.Drawing.Size(107, 111);
+            this.btnShavedSnow01.TabIndex = 1;
+            this.btnShavedSnow01.UseVisualStyleBackColor = true;
             // 
             // pnlShow
             // 
@@ -779,66 +839,6 @@
             this.btnAddProductDisplay.TabIndex = 145;
             this.btnAddProductDisplay.UseVisualStyleBackColor = false;
             this.btnAddProductDisplay.Click += new System.EventHandler(this.btnAddProductDisplay_Click);
-            // 
-            // btnDrinks01
-            // 
-            this.btnDrinks01.BackgroundImage = global::IceShop.Properties.Resources.飲品系列01;
-            this.btnDrinks01.Enabled = false;
-            this.btnDrinks01.FlatAppearance.BorderSize = 0;
-            this.btnDrinks01.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDrinks01.Location = new System.Drawing.Point(5, 4);
-            this.btnDrinks01.Name = "btnDrinks01";
-            this.btnDrinks01.Size = new System.Drawing.Size(107, 111);
-            this.btnDrinks01.TabIndex = 0;
-            this.btnDrinks01.UseVisualStyleBackColor = true;
-            // 
-            // btnSeasonal01
-            // 
-            this.btnSeasonal01.BackgroundImage = global::IceShop.Properties.Resources.季節限定01;
-            this.btnSeasonal01.Enabled = false;
-            this.btnSeasonal01.FlatAppearance.BorderSize = 0;
-            this.btnSeasonal01.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeasonal01.Location = new System.Drawing.Point(5, 4);
-            this.btnSeasonal01.Name = "btnSeasonal01";
-            this.btnSeasonal01.Size = new System.Drawing.Size(107, 111);
-            this.btnSeasonal01.TabIndex = 0;
-            this.btnSeasonal01.UseVisualStyleBackColor = true;
-            // 
-            // btnGrassJelly01
-            // 
-            this.btnGrassJelly01.BackgroundImage = global::IceShop.Properties.Resources.仙草系列01;
-            this.btnGrassJelly01.Enabled = false;
-            this.btnGrassJelly01.FlatAppearance.BorderSize = 0;
-            this.btnGrassJelly01.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGrassJelly01.Location = new System.Drawing.Point(5, 4);
-            this.btnGrassJelly01.Name = "btnGrassJelly01";
-            this.btnGrassJelly01.Size = new System.Drawing.Size(107, 111);
-            this.btnGrassJelly01.TabIndex = 0;
-            this.btnGrassJelly01.UseVisualStyleBackColor = true;
-            // 
-            // btnShavedIce01
-            // 
-            this.btnShavedIce01.BackgroundImage = global::IceShop.Properties.Resources.刨冰系列01;
-            this.btnShavedIce01.Enabled = false;
-            this.btnShavedIce01.FlatAppearance.BorderSize = 0;
-            this.btnShavedIce01.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShavedIce01.Location = new System.Drawing.Point(5, 4);
-            this.btnShavedIce01.Name = "btnShavedIce01";
-            this.btnShavedIce01.Size = new System.Drawing.Size(107, 111);
-            this.btnShavedIce01.TabIndex = 1;
-            this.btnShavedIce01.UseVisualStyleBackColor = true;
-            // 
-            // btnShavedSnow01
-            // 
-            this.btnShavedSnow01.BackgroundImage = global::IceShop.Properties.Resources.綿綿冰系列01;
-            this.btnShavedSnow01.Enabled = false;
-            this.btnShavedSnow01.FlatAppearance.BorderSize = 0;
-            this.btnShavedSnow01.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShavedSnow01.Location = new System.Drawing.Point(6, 4);
-            this.btnShavedSnow01.Name = "btnShavedSnow01";
-            this.btnShavedSnow01.Size = new System.Drawing.Size(107, 111);
-            this.btnShavedSnow01.TabIndex = 1;
-            this.btnShavedSnow01.UseVisualStyleBackColor = true;
             // 
             // pictureBoxThumbnails
             // 
